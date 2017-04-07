@@ -15,6 +15,9 @@
 		D92F3F851E97BA1E00438386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92F3F831E97BA1E00438386 /* LaunchScreen.storyboard */; };
 		D92F3F901E97BA1E00438386 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F8F1E97BA1E00438386 /* _____Tests.m */; };
 		D92F3F9B1E97BA1E00438386 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F9A1E97BA1E00438386 /* _____UITests.m */; };
+		D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */; };
+		D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */; };
+		D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F9A1E97BA1E00438386 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
 		D92F3F9C1E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareAbnormalAlertView.h; sourceTree = "<group>"; };
+		D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareAbnormalAlertView.m; sourceTree = "<group>"; };
+		D92F3FAC1E97E8CE00438386 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
+		D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +110,8 @@
 		D92F3F741E97BA1E00438386 /* 弹窗哈哈哈 */ = {
 			isa = PBXGroup;
 			children = (
+				D92F3FAB1E97E8CE00438386 /* 常用代码库 */,
+				D92F3FB21E97E8F800438386 /* 自定义弹窗 */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
 				D92F3F791E97BA1E00438386 /* AppDelegate.m */,
 				D92F3F7B1E97BA1E00438386 /* ViewController.h */,
@@ -138,6 +149,26 @@
 				D92F3F9C1E97BA1E00438386 /* Info.plist */,
 			);
 			path = "弹窗哈哈哈UITests";
+			sourceTree = "<group>";
+		};
+		D92F3FAB1E97E8CE00438386 /* 常用代码库 */ = {
+			isa = PBXGroup;
+			children = (
+				D92F3FAC1E97E8CE00438386 /* UIColor+Util.h */,
+				D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */,
+				D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */,
+				D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */,
+			);
+			path = "常用代码库";
+			sourceTree = "<group>";
+		};
+		D92F3FB21E97E8F800438386 /* 自定义弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */,
+				D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */,
+			);
+			name = "自定义弹窗";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */,
+				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7D1E97BA1E00438386 /* ViewController.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
 				D92F3F771E97BA1E00438386 /* main.m in Sources */,
+				D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
 				INFOPLIST_FILE = "弹窗哈哈哈/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
 				INFOPLIST_FILE = "弹窗哈哈哈/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
