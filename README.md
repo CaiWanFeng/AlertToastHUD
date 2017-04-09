@@ -1,6 +1,5 @@
-![智妍](http://upload-images.jianshu.io/upload_images/1692043-0d36340923f12a74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+### 写在前面
 
-###写在前面
 弹窗是app中常见控件之一，一般由于项目需求，我们很少能直接使用系统提供的弹窗，这个时候就需要我们根据产品需求封装自定义弹窗了。这两天正好封装了一个弹窗，分享出来（主要是思路），希望新手少走点弯路，当然更希望高手能提出一些实在的建议哈哈😄。总之，只要思路清晰点，封装一般的弹窗还是没有问题的😎。
 ###先看看UI设计图
 ![UI设计图](http://upload-images.jianshu.io/upload_images/1692043-a72d97a849bdc225.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -143,6 +142,3 @@ UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"标题" message:@"�
 1. 每个人的编码风格都不同，但有一点毋庸置疑，那就是，每一个开发者对这些常用系统方法肯定都很熟悉，如果你的方法和系统方法类似，相信其他人维护时一定会有似曾相识的感觉。
 2. 我们写代码应该尽量按照官方推荐的编码规范来写，而这些系统方法，就是最好的例子。
 3. 只有这样严格要求自己，养成良好的编码习惯，才算得上一个合格的程序员。
-
-###详情请查看demo
-[点击查看demo](https://github.com/wyzxc/DIYAlertView)
