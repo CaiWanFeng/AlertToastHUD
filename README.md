@@ -7,12 +7,22 @@
 
 ---
 
+
+
 ###我做出的效果
+
+
+
 ![demo中的效果.gif](http://upload-images.jianshu.io/upload_images/1692043-8a0cc01fc7d2fdf4.gif?imageMogr2/auto-orient/strip)
 
 ![项目中的效果，后台未返回说明文字的情况.gif](http://upload-images.jianshu.io/upload_images/1692043-cdcfe763866cb92c.gif?imageMogr2/auto-orient/strip)
 
+
+
 ###思路
+
+
+
 - 封装之前，不如先来看看系统是怎样弹出一个弹窗的：
 
 ```
@@ -38,10 +48,24 @@ UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"标题" message:@"�
   1. 创建一个弹窗对象
   2. show出来
 
+
+
 ###开始封装
+
+
+
 ####一. 弹窗命名
+
+
+
 系统的叫`UIAlertView`，那么我这个根据弹窗的功能就给它取名`DeclareAbnormalAlertView`
+
+
+
 ####二. 构造方法的命名
+
+
+
 系统的叫：
 
 ```
@@ -52,27 +76,46 @@ UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"标题" message:@"�
 ```
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate leftButtonTitle:(NSString *)leftButtonTitle rightButtonTitle:(NSString *)rightButtonTitle;
 ```
+
+
 ####三. 弹出这个弹窗的方法命名
+
+
+
 ```
 /** show出这个弹窗 */
 - (void)show;
 ```
 当然还是show😄
 
+
+
 ####四. 构造方法的实现
+
+
+
 **弹窗，说白了就是一个覆盖在屏幕顶层的半透明view**
 1. 弹窗的最底部是覆盖全屏的半透明view
 2. 根据UI设计图，添加subViews到半透明view上
 3. 这里就不贴代码了，文末有demo😅
 
+
+
 ####五. `show`方法的实现
+
+
+
 `show`其实就是将弹窗放在最顶层，如何将view放在最顶层，我知道的有这几种方式：
 1. 直接在当前视图控制器上放`view`（简直6翻了）
 2. present到一个新的半透明视图控制器（想想`UIAlertViewController`，如果要使用这种弹窗的话，自定义的弹窗就是继承自`UIViewController`而不是`UIView`了）
 3. 使用一个`windowLevel`更高的`UIWindow`（`UIAlertView`就是这种）
 4. 放在`keyWindow`上（我用的就是这种方法）
+5. ​
 
 ####六. 代理方法的命名:
+
+
+
 系统的代理方法叫：
 
 ```
@@ -83,7 +126,12 @@ UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"标题" message:@"�
 - (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 ```
 
+
+
 ###注意事项：
+
+
+
 1. 弹窗里有`UITextView`，注意不要让键盘挡住弹窗。处理方式：监听键盘显示和隐藏并对弹窗做出相应调整：
 
 ```
@@ -119,7 +167,12 @@ UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"标题" message:@"�
 
 ```
 
+
+
 ###使用封装好的弹窗
+
+
+
 ```
         DeclareAbnormalAlertView *alertView = [[DeclareAbnormalAlertView alloc]
                                               initWithTitle:@"填写异常信息" 
