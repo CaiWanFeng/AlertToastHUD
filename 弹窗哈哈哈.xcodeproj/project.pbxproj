@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA9D55DAE836093F486EA54D /* libPods-弹窗哈哈哈.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */; };
 		D92F3F771E97BA1E00438386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F761E97BA1E00438386 /* main.m */; };
 		D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F791E97BA1E00438386 /* AppDelegate.m */; };
 		D92F3F7D1E97BA1E00438386 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F7C1E97BA1E00438386 /* ViewController.m */; };
@@ -18,6 +19,7 @@
 		D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */; };
 		D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */; };
 		D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */; };
+		D94506FE1EE7E2B900BDD860 /* CQPointHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.debug.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.debug.xcconfig"; sourceTree = "<group>"; };
+		CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-弹窗哈哈哈.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F721E97BA1E00438386 /* 弹窗哈哈哈.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "弹窗哈哈哈.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F761E97BA1E00438386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D92F3F781E97BA1E00438386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,10 +53,10 @@
 		D92F3F841E97BA1E00438386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D92F3F861E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3F8B1E97BA1E00438386 /* 弹窗哈哈哈Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F8F1E97BA1E00438386 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
+		D92F3F8F1E97BA1E00438386 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____Tests.m; sourceTree = "<group>"; };
 		D92F3F911E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F9A1E97BA1E00438386 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
+		D92F3F9A1E97BA1E00438386 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____UITests.m; sourceTree = "<group>"; };
 		D92F3F9C1E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareAbnormalAlertView.h; sourceTree = "<group>"; };
 		D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareAbnormalAlertView.m; sourceTree = "<group>"; };
@@ -60,6 +64,9 @@
 		D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
 		D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
 		D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
+		D94506FC1EE7E2B900BDD860 /* CQPointHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQPointHUD.h; sourceTree = "<group>"; };
+		D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQPointHUD.m; sourceTree = "<group>"; };
+		F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.release.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9D55DAE836093F486EA54D /* libPods-弹窗哈哈哈.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0021254BEF2B3EBB350436AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */,
+				F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		30E4F70A689439400EB8AA77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D92F3F691E97BA1E00438386 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +119,8 @@
 				D92F3F8E1E97BA1E00438386 /* 弹窗哈哈哈Tests */,
 				D92F3F991E97BA1E00438386 /* 弹窗哈哈哈UITests */,
 				D92F3F731E97BA1E00438386 /* Products */,
+				0021254BEF2B3EBB350436AF /* Pods */,
+				30E4F70A689439400EB8AA77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +139,7 @@
 			children = (
 				D92F3FAB1E97E8CE00438386 /* 常用代码库 */,
 				D92F3FB21E97E8F800438386 /* 自定义弹窗 */,
+				D94506FB1EE7E26100BDD860 /* 积分HUD */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
 				D92F3F791E97BA1E00438386 /* AppDelegate.m */,
 				D92F3F7B1E97BA1E00438386 /* ViewController.h */,
@@ -171,6 +199,15 @@
 			name = "自定义弹窗";
 			sourceTree = "<group>";
 		};
+		D94506FB1EE7E26100BDD860 /* 积分HUD */ = {
+			isa = PBXGroup;
+			children = (
+				D94506FC1EE7E2B900BDD860 /* CQPointHUD.h */,
+				D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */,
+			);
+			name = "积分HUD";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D92F3F9F1E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈" */;
 			buildPhases = (
+				06BE9FFC1DA4ACA60B8C2119 /* [CP] Check Pods Manifest.lock */,
 				D92F3F6E1E97BA1E00438386 /* Sources */,
 				D92F3F6F1E97BA1E00438386 /* Frameworks */,
 				D92F3F701E97BA1E00438386 /* Resources */,
+				722C53254A71B1DF8841FD34 /* [CP] Embed Pods Frameworks */,
+				931600B4CE1D987674E97906 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,12 +342,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06BE9FFC1DA4ACA60B8C2119 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		722C53254A71B1DF8841FD34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		931600B4CE1D987674E97906 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D92F3F6E1E97BA1E00438386 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */,
+				D94506FE1EE7E2B900BDD860 /* CQPointHUD.m in Sources */,
 				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7D1E97BA1E00438386 /* ViewController.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
@@ -459,6 +548,7 @@
 		};
 		D92F3FA01E97BA1E00438386 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
@@ -472,6 +562,7 @@
 		};
 		D92F3FA11E97BA1E00438386 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
@@ -552,6 +643,7 @@
 				D92F3FA11E97BA1E00438386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D92F3FA21E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈Tests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +652,7 @@
 				D92F3FA41E97BA1E00438386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D92F3FA51E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈UITests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +661,7 @@
 				D92F3FA71E97BA1E00438386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
