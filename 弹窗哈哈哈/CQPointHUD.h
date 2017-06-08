@@ -17,6 +17,9 @@
 + (void)showToastWithMessage:(NSString *)message image:(NSString *)imageName;
 
 /** 带block回调的弹窗 */
-+ (void)showAlertWithButtonClickBlock:(void(^)())buttonClickedBlock;
++ (void)showAlertWithButtonClickedBlock:(void(^)())buttonClickedBlock;
+
+/** 带网络图片与block回调的弹窗 */
++ (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void(^)())buttonClickedBlock;
 
 @end

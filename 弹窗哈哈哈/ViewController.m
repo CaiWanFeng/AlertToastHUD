@@ -47,31 +47,52 @@
     [self.view addSubview:button4];
     [button4 setTitle:@"带block回调的弹窗" forState:UIControlStateNormal];
     [button4 addTarget:self action:@selector(showBlockAlert) forControlEvents:UIControlEventTouchUpInside];
+    
+    // 带网络图片与block回调的弹窗
+    UIButton *button5 = [UIButton buttonWithType:UIButtonTypeSystem];
+    button5.frame = CGRectMake(90, 330, 190, 30);
+    [self.view addSubview:button5];
+    [button5 setTitle:@"带网络图片与block回调的弹窗" forState:UIControlStateNormal];
+    button5.titleLabel.adjustsFontSizeToFitWidth = YES;
+    [button5 addTarget:self action:@selector(showImageAlert) forControlEvents:UIControlEventTouchUpInside];
 }
 
+#pragma mark - 自定义弹窗
 // 弹出弹窗
 - (void)showAlert{
     DeclareAbnormalAlertView *alertView = [[DeclareAbnormalAlertView alloc]initWithTitle:@"这是一个标题" message:@"长亭外，古道边，一行白鹭上青天" delegate:self leftButtonTitle:@"确定" rightButtonTitle:@"取消"];
     [alertView show];
 }
 
+#pragma mark - 纯文本toast
 // 纯文本toast
 - (void)showToast{
     [CQPointHUD showToastWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 
+#pragma mark - 图文toast
 // 图文toast
 - (void)showImageToast{
     [CQPointHUD showToastWithMessage:@"兑换成功" image:@"sign"];
 }
 
+#pragma mark - 带block回调的弹窗
 // 带block回调的弹窗
 - (void)showBlockAlert{
-    [CQPointHUD showAlertWithButtonClickBlock:^{
+    [CQPointHUD showAlertWithButtonClickedBlock:^{
         [CQPointHUD showToastWithMessage:@"兑换按钮点击"];
     }];
 }
 
+#pragma mark - 带网络图片与block回调的弹窗
+/** 带网络图片与block回调的弹窗 */
+- (void)showImageAlert{
+    [CQPointHUD showAlertWithImageURL:@"http://ohbxuuf5q.bkt.clouddn.com/%E6%B3%B0%E5%A6%8D.png" ButtonClickedBlock:^{
+        [CQPointHUD showToastWithMessage:@"网络图片弹窗按钮点击"];
+    }];
+}
+
+#pragma mark - Delegate - 自定义弹窗
 // 弹窗的代理方法
 - (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == AlertButtonLeft) {
