@@ -1,4 +1,5 @@
 platform:ios,'8.0'
 target '弹窗哈哈哈' do
 pod 'Masonry'
+pod 'ReactiveCocoa','~>2.1.8'
 end

@@ -16,4 +16,7 @@
 /** 图文toast提示 */
 + (void)showToastWithMessage:(NSString *)message image:(NSString *)imageName;
 
+/** 带block回调的弹窗 */
++ (void)showAlertWithButtonClickBlock:(void(^)())buttonClickedBlock;
+
 @end

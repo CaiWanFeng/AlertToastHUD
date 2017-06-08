@@ -40,6 +40,13 @@
     button3.backgroundColor = [UIColor orangeColor];
     [button3 setTitle:@"图文toast" forState:UIControlStateNormal];
     [button3 addTarget:self action:@selector(showImageToast) forControlEvents:UIControlEventTouchUpInside];
+    
+    // 带block回调的弹窗
+    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeSystem];
+    button4.frame = CGRectMake(90, 270, 190, 30);
+    [self.view addSubview:button4];
+    [button4 setTitle:@"带block回调的弹窗" forState:UIControlStateNormal];
+    [button4 addTarget:self action:@selector(showBlockAlert) forControlEvents:UIControlEventTouchUpInside];
 }
 
 // 弹出弹窗
@@ -56,6 +63,13 @@
 // 图文toast
 - (void)showImageToast{
     [CQPointHUD showToastWithMessage:@"兑换成功" image:@"sign"];
+}
+
+// 带block回调的弹窗
+- (void)showBlockAlert{
+    [CQPointHUD showAlertWithButtonClickBlock:^{
+        [CQPointHUD showToastWithMessage:@"兑换按钮点击"];
+    }];
 }
 
 // 弹窗的代理方法

@@ -53,10 +53,10 @@
 		D92F3F841E97BA1E00438386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D92F3F861E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3F8B1E97BA1E00438386 /* 弹窗哈哈哈Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F8F1E97BA1E00438386 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____Tests.m; sourceTree = "<group>"; };
+		D92F3F8F1E97BA1E00438386 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
 		D92F3F911E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F9A1E97BA1E00438386 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____UITests.m; sourceTree = "<group>"; };
+		D92F3F9A1E97BA1E00438386 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
 		D92F3F9C1E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareAbnormalAlertView.h; sourceTree = "<group>"; };
 		D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareAbnormalAlertView.m; sourceTree = "<group>"; };
