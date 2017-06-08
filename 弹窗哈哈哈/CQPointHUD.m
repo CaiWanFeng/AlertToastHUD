@@ -192,6 +192,13 @@
         make.bottom.mas_equalTo(bgImageView.mas_top).mas_offset(-22);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
+    
+    // 添加单击取消手势
+    UITapGestureRecognizer *cancelGesture = [[UITapGestureRecognizer alloc] init];
+    [[cancelGesture rac_gestureSignal] subscribeNext:^(id x) {
+        [bgView removeFromSuperview];
+    }];
+    [bgView addGestureRecognizer:cancelGesture];
 }
 
 @end
