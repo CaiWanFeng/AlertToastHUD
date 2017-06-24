@@ -22,4 +22,13 @@
 /** 带网络图片与block回调的弹窗 */
 + (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void(^)())buttonClickedBlock;
 
+/**
+ 兑换成功后展示的弹窗
+ 
+ @param couponName 优惠券名称
+ @param validityTime 有效期
+ @param checkButtonClickedBlock “查看优惠券”按钮点击后的回调
+ */
++ (void)showConversionSucceedAlertWithCouponName:(NSString *)couponName validityTime:(NSString *)validityTime checkCouponButtonClickedBlock:(void(^)())checkButtonClickedBlock;
+
 @end

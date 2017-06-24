@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				D92F3FAB1E97E8CE00438386 /* 常用代码库 */,
-				D92F3FB21E97E8F800438386 /* 自定义弹窗 */,
-				D94506FB1EE7E26100BDD860 /* 积分HUD */,
+				D92F3FB21E97E8F800438386 /* 带输入框的弹窗 */,
+				D94506FB1EE7E26100BDD860 /* 各种HUD和toast */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
 				D92F3F791E97BA1E00438386 /* AppDelegate.m */,
 				D92F3F7B1E97BA1E00438386 /* ViewController.h */,
@@ -190,22 +190,22 @@
 			path = "常用代码库";
 			sourceTree = "<group>";
 		};
-		D92F3FB21E97E8F800438386 /* 自定义弹窗 */ = {
+		D92F3FB21E97E8F800438386 /* 带输入框的弹窗 */ = {
 			isa = PBXGroup;
 			children = (
 				D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */,
 				D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */,
 			);
-			name = "自定义弹窗";
+			name = "带输入框的弹窗";
 			sourceTree = "<group>";
 		};
-		D94506FB1EE7E26100BDD860 /* 积分HUD */ = {
+		D94506FB1EE7E26100BDD860 /* 各种HUD和toast */ = {
 			isa = PBXGroup;
 			children = (
 				D94506FC1EE7E2B900BDD860 /* CQPointHUD.h */,
 				D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */,
 			);
-			name = "积分HUD";
+			name = "各种HUD和toast";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

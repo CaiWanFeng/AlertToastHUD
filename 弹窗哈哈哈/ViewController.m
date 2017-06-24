@@ -9,56 +9,29 @@
 #import "ViewController.h"
 #import "DeclareAbnormalAlertView.h"
 #import "CQPointHUD.h"
+#import <Masonry.h>
+#import "UIView+frameAdjust.h"
 
-@interface ViewController ()<DeclareAbnormalAlertViewDelegate>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DeclareAbnormalAlertViewDelegate>
 
 @end
 
 @implementation ViewController
 
+#pragma mark - 生命周期
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // 自定义弹窗按钮
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(90, 90, 190, 30)];
-    [self.view addSubview:button];
-    button.backgroundColor = [UIColor redColor];
-    [button setTitle:@"点击弹出弹窗" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(showAlert) forControlEvents:UIControlEventTouchDown];
-    
-    // 纯文本toast按钮
-    UIButton *button2 = [[UIButton alloc]initWithFrame:CGRectMake(90, 150, 190, 30)];
-    [self.view addSubview:button2];
-    button2.backgroundColor = [UIColor blueColor];
-    [button2 setTitle:@"纯文本toast" forState:UIControlStateNormal];
-    [button2 addTarget:self action:@selector(showToast) forControlEvents:UIControlEventTouchUpInside];
-    
-    // 图文toast按钮
-    UIButton *button3 = [[UIButton alloc]initWithFrame:CGRectMake(90, 210, 190, 30)];
-    [self.view addSubview:button3];
-    button3.backgroundColor = [UIColor orangeColor];
-    [button3 setTitle:@"图文toast" forState:UIControlStateNormal];
-    [button3 addTarget:self action:@selector(showImageToast) forControlEvents:UIControlEventTouchUpInside];
-    
-    // 带block回调的弹窗
-    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeSystem];
-    button4.frame = CGRectMake(90, 270, 190, 30);
-    [self.view addSubview:button4];
-    [button4 setTitle:@"带block回调的弹窗" forState:UIControlStateNormal];
-    [button4 addTarget:self action:@selector(showBlockAlert) forControlEvents:UIControlEventTouchUpInside];
-    
-    // 带网络图片与block回调的弹窗
-    UIButton *button5 = [UIButton buttonWithType:UIButtonTypeSystem];
-    button5.frame = CGRectMake(90, 330, 190, 30);
-    [self.view addSubview:button5];
-    [button5 setTitle:@"带网络图片与block回调的弹窗" forState:UIControlStateNormal];
-    button5.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [button5 addTarget:self action:@selector(showImageAlert) forControlEvents:UIControlEventTouchUpInside];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height - 20)];
+    [self.view addSubview:tableView];
+    tableView.dataSource = self;
+    tableView.delegate = self;
 }
 
-#pragma mark - 自定义弹窗
-// 弹出弹窗
+#pragma mark - 带输入框的弹窗
+// 带输入框的弹窗
 - (void)showAlert{
     DeclareAbnormalAlertView *alertView = [[DeclareAbnormalAlertView alloc]initWithTitle:@"这是一个标题" message:@"长亭外，古道边，一行白鹭上青天" delegate:self leftButtonTitle:@"确定" rightButtonTitle:@"取消"];
     [alertView show];
@@ -88,17 +61,112 @@
 /** 带网络图片与block回调的弹窗 */
 - (void)showImageAlert{
     [CQPointHUD showAlertWithImageURL:@"http://ohbxuuf5q.bkt.clouddn.com/%E6%B3%B0%E5%A6%8D.png" ButtonClickedBlock:^{
-        [CQPointHUD showToastWithMessage:@"网络图片弹窗按钮点击"];
+        [CQPointHUD showToastWithMessage:@"前去兑换按钮点击"];
     }];
 }
 
-#pragma mark - Delegate - 自定义弹窗
-// 弹窗的代理方法
+#pragma mark - 炫彩UIAlertView
+/** 展示炫彩UIAlertView */
+- (void)showColorfulAlertView{
+    [CQPointHUD showConversionSucceedAlertWithCouponName:@"达利园小面包" validityTime:@"2017-09-01" checkCouponButtonClickedBlock:^{
+        [CQPointHUD showToastWithMessage:@"查看优惠券按钮点击"];
+    }];
+}
+
+#pragma mark - Delegate - 带输入框的弹窗
+// 输入框弹窗的button点击时回调
 - (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == AlertButtonLeft) {
-        NSLog(@"点击了左边的button");
+        [CQPointHUD showToastWithMessage:@"点击了左边的button"];
     }else{
-        NSLog(@"点击了右边的button");
+        [CQPointHUD showToastWithMessage:@"点击了右边的button"];
+    }
+}
+
+#pragma mark - UITableView DataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
+    }
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = @"带输入框的弹窗";
+            break;
+            
+        case 1:
+            cell.textLabel.text = @"纯文本toast";
+            break;
+            
+        case 2:
+            cell.textLabel.text = @"图文toast";
+            break;
+            
+        case 3:
+            cell.textLabel.text = @"带block回调的弹窗";
+            break;
+            
+        case 4:
+            cell.textLabel.text = @"带网络图片与block回调的弹窗";
+            break;
+            
+        case 5:
+            cell.textLabel.text = @"炫彩UIAlertView";
+            break;
+            
+        default:
+            break;
+    }
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 6;
+}
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 0: // 带输入框的弹窗
+        {
+            [self showAlert];
+        }
+            break;
+            
+        case 1: // 纯文本toast
+        {
+            [self showToast];
+        }
+            break;
+            
+        case 2: // 图文toast
+        {
+            [self showImageToast];
+        }
+            break;
+            
+        case 3: // 带block回调的弹窗
+        {
+            [self showBlockAlert];
+        }
+            break;
+            
+        case 4: // 带网络图片与block回调的弹窗
+        {
+            [self showImageAlert];
+        }
+            break;
+            
+        case 5: // 炫彩alertView
+        {
+            [self showColorfulAlertView];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 
