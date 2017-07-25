@@ -10,18 +10,23 @@
 
 @interface CQPointHUD : UIView
 
+#pragma mark - 纯文本toast提示
 /** 纯文本toast提示 */
 + (void)showToastWithMessage:(NSString *)message;
 
+#pragma mark - 图文toast提示
 /** 图文toast提示 */
 + (void)showToastWithMessage:(NSString *)message image:(NSString *)imageName;
 
+#pragma mark - 带block回调的弹窗
 /** 带block回调的弹窗 */
 + (void)showAlertWithButtonClickedBlock:(void(^)())buttonClickedBlock;
 
+#pragma mark - 带网络图片与block回调的弹窗
 /** 带网络图片与block回调的弹窗 */
 + (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void(^)())buttonClickedBlock;
 
+#pragma mark - 炫彩弹窗
 /**
  兑换成功后展示的弹窗
  

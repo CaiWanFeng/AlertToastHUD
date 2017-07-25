@@ -14,16 +14,17 @@
 
 @implementation CQPointHUD
 
+#pragma mark - 纯文本toast提示
 /** 纯文本toast提示 */
-+ (void)showToastWithMessage:(NSString *)message{
++ (void)showToastWithMessage:(NSString *)message {
     // 背景view
-    UIView *bgView = [[UIView alloc]init];
-    [[UIApplication sharedApplication].keyWindow addSubview:bgView];
+    UIView *bgView = [[UIView alloc] init];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
     bgView.layer.cornerRadius = 5;
     
     // label
-    UILabel *label = [[UILabel alloc]init];
+    UILabel *label = [[UILabel alloc] init];
     label.text = message;
     [bgView addSubview:label];
     label.textColor = [UIColor whiteColor];
@@ -54,16 +55,17 @@
     });
 }
 
+#pragma mark - 图文toast提示
 /** 图文toast提示 */
-+ (void)showToastWithMessage:(NSString *)message image:(NSString *)imageName{
++ (void)showToastWithMessage:(NSString *)message image:(NSString *)imageName {
     // 背景view
-    UIView *bgView = [[UIView alloc]init];
-    [[UIApplication sharedApplication].keyWindow addSubview:bgView];
+    UIView *bgView = [[UIView alloc] init];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
     bgView.layer.cornerRadius = 5;
     
     // 图片
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     [bgView addSubview:imageView];
     
     // label
@@ -106,17 +108,19 @@
     });
 }
 
-+ (void)showAlertWithButtonClickedBlock:(void (^)())buttonClickedBlock{
+#pragma mark - 带block回调的弹窗
+/** 带block回调的弹窗 */
++ (void)showAlertWithButtonClickedBlock:(void (^)())buttonClickedBlock {
     // 大背景
-    UIView *bgView = [[UIView alloc]init];
-    [[UIApplication sharedApplication].keyWindow addSubview:bgView];
+    UIView *bgView = [[UIView alloc] init];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
     // 背景图片
-    UIImageView *bgImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sign_bg"]];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_bg"]];
     [bgView addSubview:bgImageView];
     [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(bgView);
@@ -125,7 +129,7 @@
     }];
     
     // 签到label
-    UILabel *signLabel = [[UILabel alloc]init];
+    UILabel *signLabel = [[UILabel alloc] init];
     [bgImageView addSubview:signLabel];
     signLabel.text = @"今日签到获得+10积分";
     signLabel.textAlignment = NSTextAlignmentCenter;
@@ -137,7 +141,7 @@
     }];
     
     // 签到成功图片
-    UIImageView *signImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sign_success"]];
+    UIImageView *signImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_success"]];
     [bgImageView addSubview:signImageView];
     [signImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(signLabel);
@@ -146,7 +150,7 @@
     }];
     
     // 持有积分
-    UILabel *scoreLabel = [[UILabel alloc]init];
+    UILabel *scoreLabel = [[UILabel alloc] init];
     [bgImageView addSubview:scoreLabel];
     scoreLabel.textColor = [UIColor colorWithHexString:@"e83421"];
     scoreLabel.text = @"小主~您的积分已达到500";
@@ -160,7 +164,7 @@
     }];
     
     // 兑换按钮
-    UIButton *conversionButton = [[UIButton alloc]init];
+    UIButton *conversionButton = [[UIButton alloc] init];
     [bgView addSubview:conversionButton];
     conversionButton.backgroundColor = [UIColor colorWithHexString:@"e83421"];
     [conversionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -182,7 +186,7 @@
     }];
     
     // 取消按钮
-    UIButton *cancelButton = [[UIButton alloc]init];
+    UIButton *cancelButton = [[UIButton alloc] init];
     [bgView addSubview:cancelButton];
     [cancelButton setBackgroundImage:[UIImage imageNamed:@"sign_out"] forState:UIControlStateNormal];
     [[cancelButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -202,21 +206,22 @@
     [bgView addGestureRecognizer:cancelGesture];
 }
 
+#pragma mark - 带网络图片与block回调的弹窗
 /**
  带网络图片与block回调的弹窗
 
  @param imageURL 图片URL
  @param buttonClickedBlock 兑换按钮点击时的回调
  */
-+ (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)())buttonClickedBlock{
++ (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)())buttonClickedBlock {
     // 先获取网络图片
-    UIImageView *goodsImageView = [[UIImageView alloc]init];
+    UIImageView *goodsImageView = [[UIImageView alloc] init];
     [goodsImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         // 获取图片成功后再搭建UI
         
         // 大背景
-        UIView *bgView = [[UIView alloc]init];
-        [[UIApplication sharedApplication].keyWindow addSubview:bgView];
+        UIView *bgView = [[UIView alloc] init];
+        [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
         bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
         [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
@@ -231,7 +236,7 @@
         }];
         
         // 签到label
-        UILabel *signLabel = [[UILabel alloc]init];
+        UILabel *signLabel = [[UILabel alloc] init];
         [bgView addSubview:signLabel];
         signLabel.text = @"今日签到获得+10积分";
         signLabel.textAlignment = NSTextAlignmentCenter;
@@ -244,7 +249,7 @@
         }];
         
         // 签到成功图片
-        UIImageView *signImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sign_success"]];
+        UIImageView *signImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_success"]];
         [bgView addSubview:signImageView];
         [signImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(signLabel);
@@ -253,7 +258,7 @@
         }];
         
         // 持有积分
-        UILabel *scoreLabel = [[UILabel alloc]init];
+        UILabel *scoreLabel = [[UILabel alloc] init];
         [bgView addSubview:scoreLabel];
         scoreLabel.textColor = [UIColor whiteColor];
         scoreLabel.text = @"小主~您的积分已达到500";
@@ -267,7 +272,7 @@
         }];
         
         // 兑换按钮
-        UIButton *conversionButton = [[UIButton alloc]init];
+        UIButton *conversionButton = [[UIButton alloc] init];
         [bgView addSubview:conversionButton];
         conversionButton.backgroundColor = [UIColor colorWithHexString:@"e83421"];
         [conversionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -289,7 +294,7 @@
         }];
         
         // 取消按钮
-        UIButton *cancelButton = [[UIButton alloc]init];
+        UIButton *cancelButton = [[UIButton alloc] init];
         [bgView addSubview:cancelButton];
         [cancelButton setBackgroundImage:[UIImage imageNamed:@"sign_out"] forState:UIControlStateNormal];
         [[cancelButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -310,7 +315,7 @@
     }];
 }
 
-#pragma mark - 兑换成功后展示的弹窗
+#pragma mark - 炫彩弹窗
 /**
  兑换成功后展示的弹窗
  
@@ -318,17 +323,17 @@
  @param validityTime 有效期
  @param checkButtonClickedBlock “查看优惠券”按钮点击后的回调
  */
-+ (void)showConversionSucceedAlertWithCouponName:(NSString *)couponName validityTime:(NSString *)validityTime checkCouponButtonClickedBlock:(void (^)())checkButtonClickedBlock{
++ (void)showConversionSucceedAlertWithCouponName:(NSString *)couponName validityTime:(NSString *)validityTime checkCouponButtonClickedBlock:(void (^)())checkButtonClickedBlock {
     // 大背景
-    UIView *bgView = [[UIView alloc]init];
-    [[UIApplication sharedApplication].keyWindow addSubview:bgView];
+    UIView *bgView = [[UIView alloc] init];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
     // 白色view
-    UIView *whiteView = [[UIView alloc]init];
+    UIView *whiteView = [[UIView alloc] init];
     [bgView addSubview:whiteView];
     whiteView.clipsToBounds = YES;
     whiteView.backgroundColor = [UIColor whiteColor];
@@ -339,7 +344,7 @@
     }];
     
     // 标题
-    UILabel *titleLabel = [[UILabel alloc]init];
+    UILabel *titleLabel = [[UILabel alloc] init];
     [whiteView addSubview:titleLabel];
     titleLabel.font = [UIFont boldSystemFontOfSize:17];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -351,7 +356,7 @@
     }];
     
     // 优惠券label
-    UILabel *couponLabel = [[UILabel alloc]init];
+    UILabel *couponLabel = [[UILabel alloc] init];
     [whiteView addSubview:couponLabel];
     couponLabel.text = couponName;
     couponLabel.textAlignment = NSTextAlignmentCenter;
@@ -363,7 +368,7 @@
     }];
     
     // 有效期label
-    UILabel *timeLabel = [[UILabel alloc]init];
+    UILabel *timeLabel = [[UILabel alloc] init];
     [whiteView addSubview:timeLabel];
     timeLabel.textAlignment = NSTextAlignmentCenter;
     timeLabel.font = [UIFont systemFontOfSize:14];
@@ -375,7 +380,7 @@
     }];
     
     // 取消按钮
-    UIButton *cancelButton = [[UIButton alloc]init];
+    UIButton *cancelButton = [[UIButton alloc] init];
     [whiteView addSubview:cancelButton];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -392,7 +397,7 @@
     }];
     
     // 查看优惠券按钮
-    UIButton *checkButton = [[UIButton alloc]init];
+    UIButton *checkButton = [[UIButton alloc] init];
     [whiteView addSubview:checkButton];
     [checkButton setTitle:@"查看优惠券" forState:UIControlStateNormal];
     [checkButton.titleLabel setFont:[UIFont boldSystemFontOfSize:17]];
@@ -408,7 +413,7 @@
     }];
     
     // 横线灰色线
-    UIView *grayLineView1 = [[UIView alloc]init];
+    UIView *grayLineView1 = [[UIView alloc] init];
     [whiteView addSubview:grayLineView1];
     grayLineView1.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.00];
     [grayLineView1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -418,7 +423,7 @@
     }];
     
     // 竖向灰色线
-    UIView *grayLineView2 = [[UIView alloc]init];
+    UIView *grayLineView2 = [[UIView alloc] init];
     [whiteView addSubview:grayLineView2];
     grayLineView2.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:1.00];
     [grayLineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
