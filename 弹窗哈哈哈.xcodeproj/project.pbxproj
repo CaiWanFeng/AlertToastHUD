@@ -19,7 +19,9 @@
 		D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */; };
 		D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */; };
 		D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */; };
-		D94506FE1EE7E2B900BDD860 /* CQPointHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */; };
+		D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQHUD.m */; };
+		D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */; };
+		D9E85D331F3EC5970084F970 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E85D321F3EC5970084F970 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +66,12 @@
 		D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
 		D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
 		D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
-		D94506FC1EE7E2B900BDD860 /* CQPointHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQPointHUD.h; sourceTree = "<group>"; };
-		D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQPointHUD.m; sourceTree = "<group>"; };
+		D94506FC1EE7E2B900BDD860 /* CQHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUD.h; sourceTree = "<group>"; };
+		D94506FD1EE7E2B900BDD860 /* CQHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUD.m; sourceTree = "<group>"; };
+		D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLoadingView.h; sourceTree = "<group>"; };
+		D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQLoadingView.m; sourceTree = "<group>"; };
+		D9E85D311F3EC5970084F970 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D9E85D321F3EC5970084F970 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.release.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +150,8 @@
 				D92F3F791E97BA1E00438386 /* AppDelegate.m */,
 				D92F3F7B1E97BA1E00438386 /* ViewController.h */,
 				D92F3F7C1E97BA1E00438386 /* ViewController.m */,
+				D9E85D311F3EC5970084F970 /* SecondViewController.h */,
+				D9E85D321F3EC5970084F970 /* SecondViewController.m */,
 				D92F3F7E1E97BA1E00438386 /* Main.storyboard */,
 				D92F3F811E97BA1E00438386 /* Assets.xcassets */,
 				D92F3F831E97BA1E00438386 /* LaunchScreen.storyboard */,
@@ -202,8 +210,10 @@
 		D94506FB1EE7E26100BDD860 /* 各种HUD和toast */ = {
 			isa = PBXGroup;
 			children = (
-				D94506FC1EE7E2B900BDD860 /* CQPointHUD.h */,
-				D94506FD1EE7E2B900BDD860 /* CQPointHUD.m */,
+				D94506FC1EE7E2B900BDD860 /* CQHUD.h */,
+				D94506FD1EE7E2B900BDD860 /* CQHUD.m */,
+				D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */,
+				D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */,
 			);
 			name = "各种HUD和toast";
 			sourceTree = "<group>";
@@ -395,13 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E85D331F3EC5970084F970 /* SecondViewController.m in Sources */,
 				D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */,
-				D94506FE1EE7E2B900BDD860 /* CQPointHUD.m in Sources */,
+				D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */,
 				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7D1E97BA1E00438386 /* ViewController.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
 				D92F3F771E97BA1E00438386 /* main.m in Sources */,
 				D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */,
+				D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

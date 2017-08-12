@@ -6,13 +6,14 @@
 //  Copyright © 2017年 kuaijiankang. All rights reserved.
 //
 
-#import "CQPointHUD.h"
+#import "CQHUD.h"
 #import <Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "UIColor+Util.h"
 #import <UIImageView+WebCache.h>
+#import "CQLoadingView.h"
 
-@implementation CQPointHUD
+@implementation CQHUD
 
 #pragma mark - 纯文本toast提示
 /** 纯文本toast提示 */
@@ -197,13 +198,6 @@
         make.bottom.mas_equalTo(bgImageView.mas_top).mas_offset(-22);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
-    
-    // 添加单击取消手势
-    UITapGestureRecognizer *cancelGesture = [[UITapGestureRecognizer alloc] init];
-    [[cancelGesture rac_gestureSignal] subscribeNext:^(id x) {
-        [bgView removeFromSuperview];
-    }];
-    [bgView addGestureRecognizer:cancelGesture];
 }
 
 #pragma mark - 带网络图片与block回调的弹窗
@@ -305,13 +299,6 @@
             make.bottom.mas_equalTo(goodsImageView.mas_top).mas_offset(-22);
             make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
-        
-        // 添加单击取消手势
-        UITapGestureRecognizer *cancelGesture = [[UITapGestureRecognizer alloc] init];
-        [[cancelGesture rac_gestureSignal] subscribeNext:^(id x) {
-            [bgView removeFromSuperview];
-        }];
-        [bgView addGestureRecognizer:cancelGesture];
     }];
 }
 
@@ -432,6 +419,66 @@
         make.centerX.mas_equalTo(whiteView);
         make.width.mas_equalTo(1);
     }];
+}
+
+#pragma mark - 展示loading图
+/** 展示loading图 */
++ (void)showLoading {
+    [CQHUD showLoadingWithMessage:nil];
+}
+
+#pragma mark - 展示带说明信息的loading图
+/**
+ 带说明信息loading图
+
+ @param message 说明信息
+ */
++ (void)showLoadingWithMessage:(NSString *)message {
+    UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
+    [window addSubview:[CQLoadingView sharedInstance]];
+    [CQLoadingView sharedInstance].loadingInfo = message;
+    [[CQLoadingView sharedInstance] mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+}
+
+#pragma mark - 移除loading图
+/** 移除loading图 */
++ (void)dismiss {
+    [[CQLoadingView sharedInstance] removeFromSuperview];
+}
+
+#pragma mark - loading期间，允许或禁止用户交互
+/**
+ loading期间，允许或禁止用户交互
+
+ @param isEnable YES:允许 NO:禁止
+ */
++ (void)enableUserInteraction:(BOOL)isEnable {
+    [CQLoadingView sharedInstance].userInteractionEnabled = !isEnable;
+}
+
+#pragma mark - 展示可控制用户交互的loading图
+/**
+ 展示可控制用户交互的loading图
+
+ @param isEnable 是否允许用户交互
+ */
++ (void)showLoadingWithEnableUserInteraction:(BOOL)isEnable {
+    [CQHUD showLoading];
+    [CQHUD enableUserInteraction:isEnable];
+}
+
+#pragma mark - 展示可控制用户交互并且带说明信息的loading图
+/**
+ 展示可控制用户交互并且带说明信息的loading图
+
+ @param message 说明信息
+ @param isEnable 是否允许用户交互
+ */
++ (void)showLoadingWithMessage:(NSString *)message enableUserInteraction:(BOOL)isEnable {
+    [CQHUD showLoadingWithMessage:message];
+    [CQHUD enableUserInteraction:isEnable];
 }
 
 @end

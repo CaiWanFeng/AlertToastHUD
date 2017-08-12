@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 #import "DeclareAbnormalAlertView.h"
-#import "CQPointHUD.h"
+#import "CQHUD.h"
 #import <Masonry.h>
 #import "UIView+frameAdjust.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DeclareAbnormalAlertViewDelegate>
 
@@ -40,47 +41,58 @@
 #pragma mark - 纯文本toast
 // 纯文本toast
 - (void)showToast{
-    [CQPointHUD showToastWithMessage:@"您还未达到相应积分\n无法兑换商品"];
+    [CQHUD showToastWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 
 #pragma mark - 图文toast
 // 图文toast
 - (void)showImageToast{
-    [CQPointHUD showToastWithMessage:@"兑换成功" image:@"sign"];
+    [CQHUD showToastWithMessage:@"兑换成功" image:@"sign"];
 }
 
 #pragma mark - 带block回调的弹窗
 // 带block回调的弹窗
 - (void)showBlockAlert{
-    [CQPointHUD showAlertWithButtonClickedBlock:^{
-        [CQPointHUD showToastWithMessage:@"兑换按钮点击"];
+    [CQHUD showAlertWithButtonClickedBlock:^{
+        [CQHUD showToastWithMessage:@"兑换按钮点击"];
     }];
 }
 
 #pragma mark - 带网络图片与block回调的弹窗
 /** 带网络图片与block回调的弹窗 */
 - (void)showImageAlert{
-    [CQPointHUD showAlertWithImageURL:@"http://ohbxuuf5q.bkt.clouddn.com/%E6%B3%B0%E5%A6%8D.png" ButtonClickedBlock:^{
-        [CQPointHUD showToastWithMessage:@"前去兑换按钮点击"];
+    [CQHUD showAlertWithImageURL:@"http://ohbxuuf5q.bkt.clouddn.com/%E6%B3%B0%E5%A6%8D.png" ButtonClickedBlock:^{
+        [CQHUD showToastWithMessage:@"前去兑换按钮点击"];
     }];
 }
 
 #pragma mark - 炫彩UIAlertView
 /** 展示炫彩UIAlertView */
 - (void)showColorfulAlertView{
-    [CQPointHUD showConversionSucceedAlertWithCouponName:@"达利园小面包" validityTime:@"2017-09-01" checkCouponButtonClickedBlock:^{
-        [CQPointHUD showToastWithMessage:@"查看优惠券按钮点击"];
+    [CQHUD showConversionSucceedAlertWithCouponName:@"达利园小面包" validityTime:@"2017-09-01" checkCouponButtonClickedBlock:^{
+        [CQHUD showToastWithMessage:@"查看优惠券按钮点击"];
     }];
 }
 
-#pragma mark - Delegate - 带输入框的弹窗
-// 输入框弹窗的button点击时回调
-- (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == AlertButtonLeft) {
-        [CQPointHUD showToastWithMessage:@"点击了左边的button"];
-    }else{
-        [CQPointHUD showToastWithMessage:@"点击了右边的button"];
-    }
+#pragma mark - 展示允许用户交互的loading图
+/** 展示允许用户交互的loading图 */
+- (void)showLoading{
+    SecondViewController *secondVC = [[SecondViewController alloc] init];
+    [self presentViewController:secondVC animated:YES completion:nil];
+}
+
+#pragma mark - 展示禁止用户交互的loading
+/** 展示禁止用户交互的loading */
+- (void)showForbidUserEnableLoading {
+    [CQHUD showLoadingWithMessage:@"支付中。。。" enableUserInteraction:NO];
+    
+    // 3秒后移除loading
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [CQHUD dismiss];
+        [CQHUD showToastWithMessage:@"支付成功！"];
+        
+    });
 }
 
 #pragma mark - UITableView DataSource
@@ -112,7 +124,15 @@
             break;
             
         case 5:
-            cell.textLabel.text = @"炫彩UIAlertView";
+            cell.textLabel.text = @"炫彩AlertView";
+            break;
+            
+        case 6:
+            cell.textLabel.text = @"loading图，允许用户交互";
+            break;
+            
+        case 7:
+            cell.textLabel.text = @"loading图，禁止用户交互，3秒后自动移除";
             break;
             
         default:
@@ -122,7 +142,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    return 8;
 }
 
 #pragma mark - UITableView Delegate
@@ -165,8 +185,30 @@
         }
             break;
             
+        case 6: // 展示允许用户交互的loading图
+        {
+            [self showLoading];
+        }
+            break;
+            
+        case 7: // 展示禁止用户交互的loading图
+        {
+            [self showForbidUserEnableLoading];
+        }
+            break;
+            
         default:
             break;
+    }
+}
+
+#pragma mark - Delegate - 带输入框的弹窗
+// 输入框弹窗的button点击时回调
+- (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == AlertButtonLeft) {
+        [CQHUD showToastWithMessage:@"点击了左边的button"];
+    }else{
+        [CQHUD showToastWithMessage:@"点击了右边的button"];
     }
 }
 

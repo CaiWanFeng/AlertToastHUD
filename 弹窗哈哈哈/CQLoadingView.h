@@ -1,0 +1,19 @@
+//
+//  CQLoadingView.h
+//  弹窗哈哈哈
+//
+//  Created by 蔡强 on 2017/8/12.
+//  Copyright © 2017年 kuaijiankang. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface CQLoadingView : UIView
+
+/** loading信息 */
+@property (nonatomic, copy) NSString *loadingInfo;
+
+/** loading图单例 */
++ (instancetype)sharedInstance;
+
+@end
