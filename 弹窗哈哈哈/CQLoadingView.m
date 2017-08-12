@@ -25,6 +25,7 @@ static CQLoadingView *loadingView;
     return loadingView;
 }
 
+#pragma mark - 构造方法
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.2];
@@ -61,6 +62,7 @@ static CQLoadingView *loadingView;
     return self;
 }
 
+#pragma mark - 赋值loading说明信息
 /** 赋值loading说明信息 */
 - (void)setLoadingInfo:(NSString *)loadingInfo{
     _loadingInfo = loadingInfo;
