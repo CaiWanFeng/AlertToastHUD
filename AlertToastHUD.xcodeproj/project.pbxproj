@@ -135,7 +135,7 @@
 		D92F3F741E97BA1E00438386 /* AlertToastHUD */ = {
 			isa = PBXGroup;
 			children = (
-				D94506FB1EE7E26100BDD860 /* 各种HUD和toast */,
+				D94506FB1EE7E26100BDD860 /* Toast&HUD */,
 				D92F3FB21E97E8F800438386 /* 带输入框的弹窗 */,
 				D92F3FAB1E97E8CE00438386 /* Category */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
@@ -181,7 +181,7 @@
 			name = "带输入框的弹窗";
 			sourceTree = "<group>";
 		};
-		D94506FB1EE7E26100BDD860 /* 各种HUD和toast */ = {
+		D94506FB1EE7E26100BDD860 /* Toast&HUD */ = {
 			isa = PBXGroup;
 			children = (
 				D94506FC1EE7E2B900BDD860 /* CQHUD.h */,
@@ -189,7 +189,7 @@
 				D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */,
 				D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */,
 			);
-			name = "各种HUD和toast";
+			name = "Toast&HUD";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
