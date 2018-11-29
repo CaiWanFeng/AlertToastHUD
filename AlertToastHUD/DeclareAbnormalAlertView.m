@@ -32,9 +32,7 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-@implementation DeclareAbnormalAlertView{
-    UILabel *label;
-}
+@implementation DeclareAbnormalAlertView
 
 #pragma mark - 构造方法
 /**
@@ -47,7 +45,7 @@
  @param rightButtonTitle 右边按钮的title
  @return 一个申报异常的弹窗
  */
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate leftButtonTitle:(NSString *)leftButtonTitle rightButtonTitle:(NSString *)rightButtonTitle{
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate leftButtonTitle:(NSString *)leftButtonTitle rightButtonTitle:(NSString *)rightButtonTitle {
     if (self = [super init]) {
         self.title = title;
         self.message = message;
@@ -56,18 +54,18 @@
         self.rightButtonTitle = rightButtonTitle;
         
         // 接收键盘显示隐藏的通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
         
         // UI搭建
-        [self setUpUI];
+        [self setupUI];
     }
     return self;
 }
 
 #pragma mark - UI搭建
 /** UI搭建 */
-- (void)setUpUI{
+- (void)setupUI {
     self.frame = [UIScreen mainScreen].bounds;
     self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
     [UIView animateWithDuration:0.1 animations:^{
@@ -75,7 +73,7 @@
     }];
     
     //------- 弹窗主内容 -------//
-    self.contentView = [[UIView alloc]init];
+    self.contentView = [[UIView alloc] init];
     self.contentView.frame = CGRectMake((SCREEN_WIDTH - 285) / 2, (SCREEN_HEIGHT - 215) / 2, 285, 215);
     self.contentView.center = self.center;
     [self addSubview:self.contentView];
@@ -83,7 +81,7 @@
     self.contentView.layer.cornerRadius = 6;
     
     // 标题
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, self.contentView.width, 22)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.contentView.width, 22)];
     [self.contentView addSubview:titleLabel];
     titleLabel.font = [UIFont boldSystemFontOfSize:20];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -99,7 +97,7 @@
     self.textView.delegate = self;
     
     // textView里面的占位label
-    self.messageLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, 8, self.textView.width - 16, self.textView.height - 16)];
+    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.textView.width - 16, self.textView.height - 16)];
     self.messageLabel.text = self.message;
     self.messageLabel.numberOfLines = 0;
     self.messageLabel.font = [UIFont systemFontOfSize:12];
@@ -131,7 +129,7 @@
     [abnormalButton addTarget:self action:@selector(abnormalButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
     // 取消按钮
-    UIButton *cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(self.textView.maxX - 100, abnormalButton.minY, 100, 40)];
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(self.textView.maxX - 100, abnormalButton.minY, 100, 40)];
     [self.contentView addSubview:cancelButton];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     cancelButton.backgroundColor = [UIColor colorWithHexString:@"c8c8c8"];
@@ -146,72 +144,62 @@
     
 }
 
-#pragma mark - 弹出此弹窗
+#pragma mark - 弹窗展示/隐藏
+
 /** 弹出此弹窗 */
-- (void)show{
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    [keyWindow addSubview:self];
+- (void)show {
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    [window addSubview:self];
 }
 
-#pragma mark - 移除此弹窗
 /** 移除此弹窗 */
-- (void)dismiss{
+- (void)dismiss {
     [self removeFromSuperview];
 }
 
-#pragma mark - 申报异常按钮点击
+#pragma mark - User Action
+
 /** 申报异常按钮点击 */
-- (void)abnormalButtonClicked{
+- (void)abnormalButtonClicked {
     if ([self.delegate respondsToSelector:@selector(declareAbnormalAlertView:clickedButtonAtIndex:)]) {
         [self.delegate declareAbnormalAlertView:self clickedButtonAtIndex:AlertButtonLeft];
     }
     [self dismiss];
 }
 
-#pragma mark - 取消按钮点击
 /** 取消按钮点击 */
-- (void)cancelButtonClicked{
+- (void)cancelButtonClicked {
     if ([self.delegate respondsToSelector:@selector(declareAbnormalAlertView:clickedButtonAtIndex:)]) {
         [self.delegate declareAbnormalAlertView:self clickedButtonAtIndex:AlertButtonRight];
     }
     [self dismiss];
 }
 
-#pragma mark - UITextView代理方法
-- (void)textViewDidChange:(UITextView *)textView{
-    if ([textView.text isEqualToString:@""]) {
-        self.messageLabel.hidden = NO;
-    }else{
-        self.messageLabel.hidden = YES;
-    }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self endEditing:YES];
 }
 
-/**
- *  键盘将要显示
- *
- *  @param notification 通知
- */
--(void)keyboardWillShow:(NSNotification *)notification
-{
+#pragma mark - 处理键盘显示/隐藏
+
+/** 处理键盘将要显示 */
+- (void)handleKeyboardWillShow:(NSNotification *)notification {
     // 获取到了键盘frame
     CGRect frame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyboardHeight = frame.size.height;
     
     self.contentView.maxY = SCREEN_HEIGHT - keyboardHeight - 10;
 }
-/**
- *  键盘将要隐藏
- *
- *  @param notification 通知
- */
--(void)keyboardWillHidden:(NSNotification *)notification
-{
+
+- (void)handleKeyboardWillHide:(NSNotification *)notification {
     // 弹窗回到屏幕正中
     self.contentView.centerY = SCREEN_HEIGHT / 2;
+
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.textView resignFirstResponder];
+#pragma mark - UITextView Delegate
+
+- (void)textViewDidChange:(UITextView *)textView {
+    self.messageLabel.hidden = ![textView.text isEqualToString:@""];
 }
 
 @end

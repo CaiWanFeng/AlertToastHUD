@@ -40,11 +40,11 @@ typedef NS_ENUM(NSUInteger, AbnormalButton) {
 @interface DeclareAbnormalAlertView : UIView
 
 /** 这个弹窗对应的orderID */
-@property (nonatomic,copy) NSString *orderID;
+@property (nonatomic, copy) NSString *orderID;
 /** 用户填写异常情况的textView */
-@property (nonatomic,strong) UITextView *textView;
+@property (nonatomic, strong) UITextView *textView;
 
-@property (nonatomic,weak) id<DeclareAbnormalAlertViewDelegate> delegate;
+@property (nonatomic, weak) id <DeclareAbnormalAlertViewDelegate> delegate;
 
 /**
  申报异常弹窗的构造方法
