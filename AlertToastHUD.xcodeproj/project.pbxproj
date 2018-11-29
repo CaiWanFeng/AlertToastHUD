@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA9D55DAE836093F486EA54D /* libPods-弹窗哈哈哈.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */; };
+		20E04F8721BF5E5F24204036 /* libPods-AlertToastHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C2A934FB5975966A9EE102 /* libPods-AlertToastHUD.a */; };
 		D92F3F771E97BA1E00438386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F761E97BA1E00438386 /* main.m */; };
 		D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F791E97BA1E00438386 /* AppDelegate.m */; };
 		D92F3F7D1E97BA1E00438386 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F7C1E97BA1E00438386 /* ViewController.m */; };
@@ -40,8 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ED6B111A7E14699C50A39E4 /* Pods-AlertToastHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertToastHUD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlertToastHUD/Pods-AlertToastHUD.debug.xcconfig"; sourceTree = "<group>"; };
+		10F7B68F306501DCF1235EAB /* Pods-AlertToastHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertToastHUD.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlertToastHUD/Pods-AlertToastHUD.release.xcconfig"; sourceTree = "<group>"; };
+		14C2A934FB5975966A9EE102 /* libPods-AlertToastHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlertToastHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.debug.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.debug.xcconfig"; sourceTree = "<group>"; };
-		CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-弹窗哈哈哈.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F721E97BA1E00438386 /* AlertToastHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertToastHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F761E97BA1E00438386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D92F3F781E97BA1E00438386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA9D55DAE836093F486EA54D /* libPods-弹窗哈哈哈.a in Frameworks */,
+				20E04F8721BF5E5F24204036 /* libPods-AlertToastHUD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +102,8 @@
 			children = (
 				A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */,
 				F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */,
+				0ED6B111A7E14699C50A39E4 /* Pods-AlertToastHUD.debug.xcconfig */,
+				10F7B68F306501DCF1235EAB /* Pods-AlertToastHUD.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -107,7 +111,7 @@
 		30E4F70A689439400EB8AA77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */,
+				14C2A934FB5975966A9EE102 /* libPods-AlertToastHUD.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,8 +207,6 @@
 				D92F3F6E1E97BA1E00438386 /* Sources */,
 				D92F3F6F1E97BA1E00438386 /* Frameworks */,
 				D92F3F701E97BA1E00438386 /* Resources */,
-				722C53254A71B1DF8841FD34 /* [CP] Embed Pods Frameworks */,
-				931600B4CE1D987674E97906 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,43 +335,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlertToastHUD-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		722C53254A71B1DF8841FD34 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		931600B4CE1D987674E97906 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -534,7 +509,7 @@
 		};
 		D92F3FA01E97BA1E00438386 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */;
+			baseConfigurationReference = 0ED6B111A7E14699C50A39E4 /* Pods-AlertToastHUD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
@@ -548,7 +523,7 @@
 		};
 		D92F3FA11E97BA1E00438386 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */;
+			baseConfigurationReference = 10F7B68F306501DCF1235EAB /* Pods-AlertToastHUD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;

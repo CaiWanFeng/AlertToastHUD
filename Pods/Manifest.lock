@@ -1,25 +1,31 @@
 PODS:
-  - Masonry (1.0.2)
+  - Masonry (1.1.0)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core (= 2.1.8)
     - ReactiveCocoa/no-arc (= 2.1.8)
   - ReactiveCocoa/Core (2.1.8):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.8)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - SDWebImage (4.2.1):
+    - SDWebImage/Core (= 4.2.1)
+  - SDWebImage/Core (4.2.1)
 
 DEPENDENCIES:
   - Masonry
   - ReactiveCocoa (~> 2.1.8)
   - SDWebImage
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - ReactiveCocoa
+    - SDWebImage
+
 SPEC CHECKSUMS:
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: 74a23459a0cc9ffa1bec6772eeb2895f577303cf
+PODFILE CHECKSUM: 8b2153b6a9ba9c8eef7d967005374bae1ac03b9b
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3

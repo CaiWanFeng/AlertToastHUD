@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-弹窗哈哈哈.xcscheme</key>
+		<key>Pods-AlertToastHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -26,27 +26,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>165270D127E3B6F505D40DC452BA8833</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5CBF283112961DFB21EB3F5D23EDE89</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F3AF9F63AEB9A0963CE17EFA9DAD62A4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

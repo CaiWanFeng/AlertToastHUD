@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '165270D127E3B6F505D40DC452BA8833'
-               BlueprintName = 'Pods-弹窗哈哈哈'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-弹窗哈哈哈.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "926F49D8539F46B0F4220071597B5B86"
+               BlueprintName = "Pods-AlertToastHUD"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libPods-AlertToastHUD.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
