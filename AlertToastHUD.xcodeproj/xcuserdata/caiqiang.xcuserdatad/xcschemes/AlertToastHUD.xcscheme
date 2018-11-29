@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D92F3F711E97BA1E00438386"
-               BuildableName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.app"
-               BlueprintName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;"
-               ReferencedContainer = "container:&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.xcodeproj">
+               BuildableName = "AlertToastHUD.app"
+               BlueprintName = "AlertToastHUD"
+               ReferencedContainer = "container:AlertToastHUD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -33,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D92F3F8A1E97BA1E00438386"
-               BuildableName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;Tests.xctest"
-               BlueprintName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;Tests"
-               ReferencedContainer = "container:&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.xcodeproj">
+               BuildableName = "AlertToastHUDTests.xctest"
+               BlueprintName = "AlertToastHUDTests"
+               ReferencedContainer = "container:AlertToastHUD.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D92F3F951E97BA1E00438386"
-               BuildableName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;UITests.xctest"
-               BlueprintName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;UITests"
-               ReferencedContainer = "container:&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.xcodeproj">
+               BuildableName = "AlertToastHUDUITests.xctest"
+               BlueprintName = "AlertToastHUDUITests"
+               ReferencedContainer = "container:AlertToastHUD.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D92F3F711E97BA1E00438386"
-            BuildableName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.app"
-            BlueprintName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;"
-            ReferencedContainer = "container:&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.xcodeproj">
+            BuildableName = "AlertToastHUD.app"
+            BlueprintName = "AlertToastHUD"
+            ReferencedContainer = "container:AlertToastHUD.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,6 +66,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -76,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D92F3F711E97BA1E00438386"
-            BuildableName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.app"
-            BlueprintName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;"
-            ReferencedContainer = "container:&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.xcodeproj">
+            BuildableName = "AlertToastHUD.app"
+            BlueprintName = "AlertToastHUD"
+            ReferencedContainer = "container:AlertToastHUD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D92F3F711E97BA1E00438386"
-            BuildableName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.app"
-            BlueprintName = "&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;"
-            ReferencedContainer = "container:&#x5f39;&#x7a97;&#x54c8;&#x54c8;&#x54c8;.xcodeproj">
+            BuildableName = "AlertToastHUD.app"
+            BlueprintName = "AlertToastHUD"
+            ReferencedContainer = "container:AlertToastHUD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

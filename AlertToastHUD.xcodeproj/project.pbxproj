@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.debug.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCECE31D5A8D62DEDEAAC73 /* libPods-弹窗哈哈哈.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-弹窗哈哈哈.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F721E97BA1E00438386 /* 弹窗哈哈哈.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "弹窗哈哈哈.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D92F3F721E97BA1E00438386 /* AlertToastHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertToastHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F761E97BA1E00438386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D92F3F781E97BA1E00438386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D92F3F791E97BA1E00438386 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,8 +52,8 @@
 		D92F3F811E97BA1E00438386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D92F3F841E97BA1E00438386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D92F3F861E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D92F3F8B1E97BA1E00438386 /* 弹窗哈哈哈Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D92F3F8B1E97BA1E00438386 /* AlertToastHUDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertToastHUDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D92F3F961E97BA1E00438386 /* AlertToastHUDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertToastHUDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareAbnormalAlertView.h; sourceTree = "<group>"; };
 		D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareAbnormalAlertView.m; sourceTree = "<group>"; };
 		D92F3FAC1E97E8CE00438386 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		D92F3F691E97BA1E00438386 = {
 			isa = PBXGroup;
 			children = (
-				D92F3F741E97BA1E00438386 /* 弹窗哈哈哈 */,
+				D92F3F741E97BA1E00438386 /* AlertToastHUD */,
 				D92F3F731E97BA1E00438386 /* Products */,
 				0021254BEF2B3EBB350436AF /* Pods */,
 				30E4F70A689439400EB8AA77 /* Frameworks */,
@@ -125,14 +125,14 @@
 		D92F3F731E97BA1E00438386 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D92F3F721E97BA1E00438386 /* 弹窗哈哈哈.app */,
-				D92F3F8B1E97BA1E00438386 /* 弹窗哈哈哈Tests.xctest */,
-				D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */,
+				D92F3F721E97BA1E00438386 /* AlertToastHUD.app */,
+				D92F3F8B1E97BA1E00438386 /* AlertToastHUDTests.xctest */,
+				D92F3F961E97BA1E00438386 /* AlertToastHUDUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D92F3F741E97BA1E00438386 /* 弹窗哈哈哈 */ = {
+		D92F3F741E97BA1E00438386 /* AlertToastHUD */ = {
 			isa = PBXGroup;
 			children = (
 				D94506FB1EE7E26100BDD860 /* 各种HUD和toast */,
@@ -150,7 +150,7 @@
 				D92F3F861E97BA1E00438386 /* Info.plist */,
 				D92F3F751E97BA1E00438386 /* Supporting Files */,
 			);
-			path = "弹窗哈哈哈";
+			path = AlertToastHUD;
 			sourceTree = "<group>";
 		};
 		D92F3F751E97BA1E00438386 /* Supporting Files */ = {
@@ -195,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D92F3F711E97BA1E00438386 /* 弹窗哈哈哈 */ = {
+		D92F3F711E97BA1E00438386 /* AlertToastHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D92F3F9F1E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈" */;
+			buildConfigurationList = D92F3F9F1E97BA1E00438386 /* Build configuration list for PBXNativeTarget "AlertToastHUD" */;
 			buildPhases = (
 				06BE9FFC1DA4ACA60B8C2119 /* [CP] Check Pods Manifest.lock */,
 				D92F3F6E1E97BA1E00438386 /* Sources */,
@@ -210,14 +210,14 @@
 			);
 			dependencies = (
 			);
-			name = "弹窗哈哈哈";
+			name = AlertToastHUD;
 			productName = "弹窗哈哈哈";
-			productReference = D92F3F721E97BA1E00438386 /* 弹窗哈哈哈.app */;
+			productReference = D92F3F721E97BA1E00438386 /* AlertToastHUD.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D92F3F8A1E97BA1E00438386 /* 弹窗哈哈哈Tests */ = {
+		D92F3F8A1E97BA1E00438386 /* AlertToastHUDTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D92F3FA21E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈Tests" */;
+			buildConfigurationList = D92F3FA21E97BA1E00438386 /* Build configuration list for PBXNativeTarget "AlertToastHUDTests" */;
 			buildPhases = (
 				D92F3F871E97BA1E00438386 /* Sources */,
 				D92F3F881E97BA1E00438386 /* Frameworks */,
@@ -228,14 +228,14 @@
 			dependencies = (
 				D92F3F8D1E97BA1E00438386 /* PBXTargetDependency */,
 			);
-			name = "弹窗哈哈哈Tests";
+			name = AlertToastHUDTests;
 			productName = "弹窗哈哈哈Tests";
-			productReference = D92F3F8B1E97BA1E00438386 /* 弹窗哈哈哈Tests.xctest */;
+			productReference = D92F3F8B1E97BA1E00438386 /* AlertToastHUDTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D92F3F951E97BA1E00438386 /* 弹窗哈哈哈UITests */ = {
+		D92F3F951E97BA1E00438386 /* AlertToastHUDUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D92F3FA51E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈UITests" */;
+			buildConfigurationList = D92F3FA51E97BA1E00438386 /* Build configuration list for PBXNativeTarget "AlertToastHUDUITests" */;
 			buildPhases = (
 				D92F3F921E97BA1E00438386 /* Sources */,
 				D92F3F931E97BA1E00438386 /* Frameworks */,
@@ -246,9 +246,9 @@
 			dependencies = (
 				D92F3F981E97BA1E00438386 /* PBXTargetDependency */,
 			);
-			name = "弹窗哈哈哈UITests";
+			name = AlertToastHUDUITests;
 			productName = "弹窗哈哈哈UITests";
-			productReference = D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */;
+			productReference = D92F3F961E97BA1E00438386 /* AlertToastHUDUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D92F3F6D1E97BA1E00438386 /* Build configuration list for PBXProject "弹窗哈哈哈" */;
+			buildConfigurationList = D92F3F6D1E97BA1E00438386 /* Build configuration list for PBXProject "AlertToastHUD" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -292,9 +292,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D92F3F711E97BA1E00438386 /* 弹窗哈哈哈 */,
-				D92F3F8A1E97BA1E00438386 /* 弹窗哈哈哈Tests */,
-				D92F3F951E97BA1E00438386 /* 弹窗哈哈哈UITests */,
+				D92F3F711E97BA1E00438386 /* AlertToastHUD */,
+				D92F3F8A1E97BA1E00438386 /* AlertToastHUDTests */,
+				D92F3F951E97BA1E00438386 /* AlertToastHUDUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,12 +410,12 @@
 /* Begin PBXTargetDependency section */
 		D92F3F8D1E97BA1E00438386 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D92F3F711E97BA1E00438386 /* 弹窗哈哈哈 */;
+			target = D92F3F711E97BA1E00438386 /* AlertToastHUD */;
 			targetProxy = D92F3F8C1E97BA1E00438386 /* PBXContainerItemProxy */;
 		};
 		D92F3F981E97BA1E00438386 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D92F3F711E97BA1E00438386 /* 弹窗哈哈哈 */;
+			target = D92F3F711E97BA1E00438386 /* AlertToastHUD */;
 			targetProxy = D92F3F971E97BA1E00438386 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -538,7 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
-				INFOPLIST_FILE = "弹窗哈哈哈/Info.plist";
+				INFOPLIST_FILE = AlertToastHUD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----";
@@ -552,7 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YUSZJ893SU;
-				INFOPLIST_FILE = "弹窗哈哈哈/Info.plist";
+				INFOPLIST_FILE = AlertToastHUD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----";
@@ -565,11 +565,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YUSZJ893SU;
-				INFOPLIST_FILE = "弹窗哈哈哈Tests/Info.plist";
+				INFOPLIST_FILE = AlertToastHUDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/弹窗哈哈哈.app/弹窗哈哈哈";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlertToastHUD.app/AlertToastHUD";
 			};
 			name = Debug;
 		};
@@ -578,11 +578,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YUSZJ893SU;
-				INFOPLIST_FILE = "弹窗哈哈哈Tests/Info.plist";
+				INFOPLIST_FILE = AlertToastHUDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/弹窗哈哈哈.app/弹窗哈哈哈";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlertToastHUD.app/AlertToastHUD";
 			};
 			name = Release;
 		};
@@ -590,11 +590,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = YUSZJ893SU;
-				INFOPLIST_FILE = "弹窗哈哈哈UITests/Info.plist";
+				INFOPLIST_FILE = AlertToastHUDUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "弹窗哈哈哈";
+				TEST_TARGET_NAME = AlertToastHUD;
 			};
 			name = Debug;
 		};
@@ -602,18 +602,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = YUSZJ893SU;
-				INFOPLIST_FILE = "弹窗哈哈哈UITests/Info.plist";
+				INFOPLIST_FILE = AlertToastHUDUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "弹窗哈哈哈";
+				TEST_TARGET_NAME = AlertToastHUD;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D92F3F6D1E97BA1E00438386 /* Build configuration list for PBXProject "弹窗哈哈哈" */ = {
+		D92F3F6D1E97BA1E00438386 /* Build configuration list for PBXProject "AlertToastHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D92F3F9D1E97BA1E00438386 /* Debug */,
@@ -622,7 +622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D92F3F9F1E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈" */ = {
+		D92F3F9F1E97BA1E00438386 /* Build configuration list for PBXNativeTarget "AlertToastHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D92F3FA01E97BA1E00438386 /* Debug */,
@@ -631,7 +631,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D92F3FA21E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈Tests" */ = {
+		D92F3FA21E97BA1E00438386 /* Build configuration list for PBXNativeTarget "AlertToastHUDTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D92F3FA31E97BA1E00438386 /* Debug */,
@@ -640,7 +640,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D92F3FA51E97BA1E00438386 /* Build configuration list for PBXNativeTarget "弹窗哈哈哈UITests" */ = {
+		D92F3FA51E97BA1E00438386 /* Build configuration list for PBXNativeTarget "AlertToastHUDUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D92F3FA61E97BA1E00438386 /* Debug */,
