@@ -25,7 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.width, self.view.height - 20)];
+    self.title = @"Contents";
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:tableView];
     tableView.dataSource = self;
     tableView.delegate = self;
@@ -33,26 +35,26 @@
 
 #pragma mark - 带输入框的弹窗
 // 带输入框的弹窗
-- (void)showAlert{
+- (void)showAlert {
     DeclareAbnormalAlertView *alertView = [[DeclareAbnormalAlertView alloc]initWithTitle:@"这是一个标题" message:@"长亭外，古道边，一行白鹭上青天" delegate:self leftButtonTitle:@"确定" rightButtonTitle:@"取消"];
     [alertView show];
 }
 
 #pragma mark - 纯文本toast
 // 纯文本toast
-- (void)showToast{
+- (void)showToast {
     [CQHUD showToastWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 
 #pragma mark - 图文toast
 // 图文toast
-- (void)showImageToast{
+- (void)showImageToast {
     [CQHUD showToastWithMessage:@"兑换成功" image:@"sign"];
 }
 
 #pragma mark - 带block回调的弹窗
 // 带block回调的弹窗
-- (void)showBlockAlert{
+- (void)showBlockAlert {
     [CQHUD showAlertWithButtonClickedBlock:^{
         [CQHUD showToastWithMessage:@"兑换按钮点击"];
     }];
@@ -60,15 +62,15 @@
 
 #pragma mark - 带网络图片与block回调的弹窗
 /** 带网络图片与block回调的弹窗 */
-- (void)showImageAlert{
-    [CQHUD showAlertWithImageURL:@"http://ohbxuuf5q.bkt.clouddn.com/%E6%B3%B0%E5%A6%8D.png" ButtonClickedBlock:^{
+- (void)showImageAlert {
+    [CQHUD showAlertWithImageURL:@"https://avatars0.githubusercontent.com/u/13911054?s=460&v=4" ButtonClickedBlock:^{
         [CQHUD showToastWithMessage:@"前去兑换按钮点击"];
     }];
 }
 
 #pragma mark - 炫彩UIAlertView
 /** 展示炫彩UIAlertView */
-- (void)showColorfulAlertView{
+- (void)showColorfulAlertView {
     [CQHUD showConversionSucceedAlertWithCouponName:@"达利园小面包" validityTime:@"2017-09-01" checkCouponButtonClickedBlock:^{
         [CQHUD showToastWithMessage:@"查看优惠券按钮点击"];
     }];
@@ -76,9 +78,9 @@
 
 #pragma mark - 展示允许用户交互的loading图
 /** 展示允许用户交互的loading图 */
-- (void)showLoading{
+- (void)showLoading {
     SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [self presentViewController:secondVC animated:YES completion:nil];
+    [self.navigationController pushViewController:secondVC animated:YES];
 }
 
 #pragma mark - 展示禁止用户交互的loading
@@ -97,10 +99,10 @@
 
 #pragma mark - UITableView DataSource
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
     }
     switch (indexPath.row) {
         case 0:
@@ -141,13 +143,13 @@
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 8;
 }
 
 #pragma mark - UITableView Delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0: // 带输入框的弹窗
         {
@@ -204,7 +206,7 @@
 
 #pragma mark - Delegate - 带输入框的弹窗
 // 输入框弹窗的button点击时回调
-- (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+- (void)declareAbnormalAlertView:(DeclareAbnormalAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == AlertButtonLeft) {
         [CQHUD showToastWithMessage:@"点击了左边的button"];
     }else{

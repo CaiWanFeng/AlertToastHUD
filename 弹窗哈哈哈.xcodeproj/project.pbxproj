@@ -143,9 +143,9 @@
 		D92F3F741E97BA1E00438386 /* 弹窗哈哈哈 */ = {
 			isa = PBXGroup;
 			children = (
-				D92F3FAB1E97E8CE00438386 /* 常用代码库 */,
-				D92F3FB21E97E8F800438386 /* 带输入框的弹窗 */,
 				D94506FB1EE7E26100BDD860 /* 各种HUD和toast */,
+				D92F3FB21E97E8F800438386 /* 带输入框的弹窗 */,
+				D92F3FAB1E97E8CE00438386 /* Category */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
 				D92F3F791E97BA1E00438386 /* AppDelegate.m */,
 				D92F3F7B1E97BA1E00438386 /* ViewController.h */,
@@ -187,7 +187,7 @@
 			path = "弹窗哈哈哈UITests";
 			sourceTree = "<group>";
 		};
-		D92F3FAB1E97E8CE00438386 /* 常用代码库 */ = {
+		D92F3FAB1E97E8CE00438386 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				D92F3FAC1E97E8CE00438386 /* UIColor+Util.h */,
@@ -195,7 +195,7 @@
 				D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */,
 				D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */,
 			);
-			path = "常用代码库";
+			path = Category;
 			sourceTree = "<group>";
 		};
 		D92F3FB21E97E8F800438386 /* 带输入框的弹窗 */ = {

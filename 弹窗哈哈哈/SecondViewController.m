@@ -19,23 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    // 返回按钮
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.view addSubview:backButton];
-    backButton.frame = CGRectMake(0, 20, 80, 44);
-    [backButton setTitle:@"返 回" forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.title = @"第二页";
 }
 
-/** 返回上一页按钮点击 */
-- (void)backButtonClicked:(UIButton *)backButton {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     // 展示loading图
     [CQHUD showLoading];
