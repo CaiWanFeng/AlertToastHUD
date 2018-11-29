@@ -14,8 +14,6 @@
 		D92F3F801E97BA1E00438386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92F3F7E1E97BA1E00438386 /* Main.storyboard */; };
 		D92F3F821E97BA1E00438386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92F3F811E97BA1E00438386 /* Assets.xcassets */; };
 		D92F3F851E97BA1E00438386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92F3F831E97BA1E00438386 /* LaunchScreen.storyboard */; };
-		D92F3F901E97BA1E00438386 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F8F1E97BA1E00438386 /* _____Tests.m */; };
-		D92F3F9B1E97BA1E00438386 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F9A1E97BA1E00438386 /* _____UITests.m */; };
 		D92F3FAA1E97E83300438386 /* DeclareAbnormalAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */; };
 		D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */; };
 		D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */; };
@@ -55,11 +53,7 @@
 		D92F3F841E97BA1E00438386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D92F3F861E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3F8B1E97BA1E00438386 /* 弹窗哈哈哈Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F8F1E97BA1E00438386 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
-		D92F3F911E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3F961E97BA1E00438386 /* 弹窗哈哈哈UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "弹窗哈哈哈UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92F3F9A1E97BA1E00438386 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
-		D92F3F9C1E97BA1E00438386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92F3FA81E97E83300438386 /* DeclareAbnormalAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareAbnormalAlertView.h; sourceTree = "<group>"; };
 		D92F3FA91E97E83300438386 /* DeclareAbnormalAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareAbnormalAlertView.m; sourceTree = "<group>"; };
 		D92F3FAC1E97E8CE00438386 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
@@ -122,8 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				D92F3F741E97BA1E00438386 /* 弹窗哈哈哈 */,
-				D92F3F8E1E97BA1E00438386 /* 弹窗哈哈哈Tests */,
-				D92F3F991E97BA1E00438386 /* 弹窗哈哈哈UITests */,
 				D92F3F731E97BA1E00438386 /* Products */,
 				0021254BEF2B3EBB350436AF /* Pods */,
 				30E4F70A689439400EB8AA77 /* Frameworks */,
@@ -167,24 +159,6 @@
 				D92F3F761E97BA1E00438386 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D92F3F8E1E97BA1E00438386 /* 弹窗哈哈哈Tests */ = {
-			isa = PBXGroup;
-			children = (
-				D92F3F8F1E97BA1E00438386 /* _____Tests.m */,
-				D92F3F911E97BA1E00438386 /* Info.plist */,
-			);
-			path = "弹窗哈哈哈Tests";
-			sourceTree = "<group>";
-		};
-		D92F3F991E97BA1E00438386 /* 弹窗哈哈哈UITests */ = {
-			isa = PBXGroup;
-			children = (
-				D92F3F9A1E97BA1E00438386 /* _____UITests.m */,
-				D92F3F9C1E97BA1E00438386 /* Info.plist */,
-			);
-			path = "弹窗哈哈哈UITests";
 			sourceTree = "<group>";
 		};
 		D92F3FAB1E97E8CE00438386 /* Category */ = {
@@ -421,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92F3F901E97BA1E00438386 /* _____Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92F3F9B1E97BA1E00438386 /* _____UITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
