@@ -70,7 +70,7 @@
     [bgView addSubview:imageView];
     
     // label
-    UILabel *label = [[UILabel alloc]init];
+    UILabel *label = [[UILabel alloc] init];
     label.text = message;
     [bgView addSubview:label];
     label.textColor = [UIColor whiteColor];

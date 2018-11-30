@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "926F49D8539F46B0F4220071597B5B86"
+               BlueprintIdentifier = "5167B5F19465E04B67F9C741B9098CE7"
                BlueprintName = "Pods-AlertToastHUD"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-AlertToastHUD.a">

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "CQContentsController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    ViewController *rootVC = [[ViewController alloc] init];
+    CQContentsController *rootVC = [[CQContentsController alloc] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
     [self.window makeKeyAndVisible];
     

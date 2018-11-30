@@ -1,4 +1,5 @@
 PODS:
+  - JSONModel (1.7.0)
   - Masonry (1.1.0)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core (= 2.1.8)
@@ -11,21 +12,24 @@ PODS:
   - SDWebImage/Core (4.2.1)
 
 DEPENDENCIES:
+  - JSONModel
   - Masonry
   - ReactiveCocoa (~> 2.1.8)
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - JSONModel
     - Masonry
     - ReactiveCocoa
     - SDWebImage
 
 SPEC CHECKSUMS:
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: 8b2153b6a9ba9c8eef7d967005374bae1ac03b9b
+PODFILE CHECKSUM: fadab52b83fcd6c7fb36977dd23dfcae2e75246e
 
 COCOAPODS: 1.5.3

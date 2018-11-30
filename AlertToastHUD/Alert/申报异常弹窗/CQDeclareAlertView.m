@@ -1,5 +1,5 @@
 //
-//  DeclareAbnormalAlertView.m
+//  CQDeclareAlertView.m
 //  iDeliver
 //
 //  Created by 蔡强 on 2017/4/3.
@@ -8,11 +8,11 @@
 
 //========== 申报异常弹窗 ==========//
 
-#import "DeclareAbnormalAlertView.h"
+#import "CQDeclareAlertView.h"
 #import "UIColor+Util.h"
 #import "UIView+frameAdjust.h"
 
-@interface DeclareAbnormalAlertView ()<UITextViewDelegate>
+@interface CQDeclareAlertView ()<UITextViewDelegate>
 
 /** 弹窗主内容view */
 @property (nonatomic,strong) UIView   *contentView;
@@ -32,7 +32,7 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-@implementation DeclareAbnormalAlertView
+@implementation CQDeclareAlertView
 
 #pragma mark - 构造方法
 /**
@@ -161,16 +161,16 @@
 
 /** 申报异常按钮点击 */
 - (void)abnormalButtonClicked {
-    if ([self.delegate respondsToSelector:@selector(declareAbnormalAlertView:clickedButtonAtIndex:)]) {
-        [self.delegate declareAbnormalAlertView:self clickedButtonAtIndex:AlertButtonLeft];
+    if ([self.delegate respondsToSelector:@selector(CQDeclareAlertView:clickedButtonAtIndex:)]) {
+        [self.delegate CQDeclareAlertView:self clickedButtonAtIndex:0];
     }
     [self dismiss];
 }
 
 /** 取消按钮点击 */
 - (void)cancelButtonClicked {
-    if ([self.delegate respondsToSelector:@selector(declareAbnormalAlertView:clickedButtonAtIndex:)]) {
-        [self.delegate declareAbnormalAlertView:self clickedButtonAtIndex:AlertButtonRight];
+    if ([self.delegate respondsToSelector:@selector(CQDeclareAlertView:clickedButtonAtIndex:)]) {
+        [self.delegate CQDeclareAlertView:self clickedButtonAtIndex:1];
     }
     [self dismiss];
 }
@@ -193,7 +193,6 @@
 - (void)handleKeyboardWillHide:(NSNotification *)notification {
     // 弹窗回到屏幕正中
     self.contentView.centerY = SCREEN_HEIGHT / 2;
-
 }
 
 #pragma mark - UITextView Delegate
