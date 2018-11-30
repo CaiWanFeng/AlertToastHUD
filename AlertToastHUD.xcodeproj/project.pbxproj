@@ -10,6 +10,7 @@
 		20E04F8721BF5E5F24204036 /* libPods-AlertToastHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C2A934FB5975966A9EE102 /* libPods-AlertToastHUD.a */; };
 		D9098AB221B11B4500224659 /* CQContentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9098AB121B11B4500224659 /* CQContentsController.m */; };
 		D9098AB521B11B7E00224659 /* CQContentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9098AB421B11B7E00224659 /* CQContentsModel.m */; };
+		D9098AB921B1271100224659 /* CQToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D9098AB821B1271100224659 /* CQToast.m */; };
 		D92F3F771E97BA1E00438386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F761E97BA1E00438386 /* main.m */; };
 		D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3F791E97BA1E00438386 /* AppDelegate.m */; };
 		D92F3F801E97BA1E00438386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92F3F7E1E97BA1E00438386 /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		D9098AB121B11B4500224659 /* CQContentsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQContentsController.m; sourceTree = "<group>"; };
 		D9098AB321B11B7E00224659 /* CQContentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQContentsModel.h; sourceTree = "<group>"; };
 		D9098AB421B11B7E00224659 /* CQContentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQContentsModel.m; sourceTree = "<group>"; };
+		D9098AB721B1271100224659 /* CQToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQToast.h; sourceTree = "<group>"; };
+		D9098AB821B1271100224659 /* CQToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQToast.m; sourceTree = "<group>"; };
 		D92F3F721E97BA1E00438386 /* AlertToastHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertToastHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92F3F761E97BA1E00438386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D92F3F781E97BA1E00438386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,7 +130,7 @@
 			path = Contents;
 			sourceTree = "<group>";
 		};
-		D907217321B11596006D6C3F /* Toast&HUD */ = {
+		D907217321B11596006D6C3F /* HUD */ = {
 			isa = PBXGroup;
 			children = (
 				D94506FC1EE7E2B900BDD860 /* CQHUD.h */,
@@ -135,7 +138,7 @@
 				D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */,
 				D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */,
 			);
-			path = "Toast&HUD";
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		D907217421B115C6006D6C3F /* 申报异常弹窗 */ = {
@@ -153,6 +156,15 @@
 				D907217421B115C6006D6C3F /* 申报异常弹窗 */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		D9098AB621B1246E00224659 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				D9098AB721B1271100224659 /* CQToast.h */,
+				D9098AB821B1271100224659 /* CQToast.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		D92F3F691E97BA1E00438386 = {
@@ -180,7 +192,8 @@
 			children = (
 				D907217221B11512006D6C3F /* Contents */,
 				D907217521B11838006D6C3F /* Alert */,
-				D907217321B11596006D6C3F /* Toast&HUD */,
+				D9098AB621B1246E00224659 /* Toast */,
+				D907217321B11596006D6C3F /* HUD */,
 				D92F3FAB1E97E8CE00438386 /* Category */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
 				D92F3F791E97BA1E00438386 /* AppDelegate.m */,
@@ -377,6 +390,7 @@
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
 				D92F3F771E97BA1E00438386 /* main.m in Sources */,
 				D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */,
+				D9098AB921B1271100224659 /* CQToast.m in Sources */,
 				D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */,
 				D9098AB521B11B7E00224659 /* CQContentsModel.m in Sources */,
 			);

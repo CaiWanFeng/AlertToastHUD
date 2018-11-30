@@ -13,6 +13,7 @@
 #import "UIView+frameAdjust.h"
 #import <JSONModel.h>
 #import "CQContentsModel.h"
+#import "CQToast.h"
 
 @interface CQContentsController () <UITableViewDelegate, UITableViewDataSource, CQDeclareAlertViewDelegate>
 
@@ -87,6 +88,7 @@
             // 纯文本toast
             [self showToast];
         }
+            break;
             
         case CQContentsTypeImageToast:
         {
@@ -144,9 +146,9 @@
 // 申报异常弹窗的button点击时回调
 - (void)CQDeclareAlertView:(CQDeclareAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        [CQHUD showToastWithMessage:[NSString stringWithFormat:@"申报异常成功，订单id：%@", alertView.orderID]];
+        [CQToast showWithMessage:[NSString stringWithFormat:@"申报异常成功，订单id：%@", alertView.orderID]];
     } else {
-        [CQHUD showToastWithMessage:@"点击了右边的button"];
+        [CQToast showWithMessage:@"点击了右边的button"];
     }
 }
 
@@ -154,14 +156,14 @@
 
 // 纯文本toast
 - (void)showToast {
-    [CQHUD showToastWithMessage:@"您还未达到相应积分\n无法兑换商品"];
+    [CQToast showWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 
 #pragma mark - 图文toast
 
 // 图文toast
 - (void)showImageToast {
-    [CQHUD showToastWithMessage:@"兑换成功" image:@"sign"];
+    [CQToast showWithMessage:@"兑换成功" image:@"sign"];
 }
 
 #pragma mark - 带block回调的弹窗
@@ -169,7 +171,7 @@
 // 带block回调的弹窗
 - (void)showBlockAlert {
     [CQHUD showAlertWithButtonClickedBlock:^{
-        [CQHUD showToastWithMessage:@"兑换按钮点击"];
+        [CQToast showWithMessage:@"兑换按钮点击"];
     }];
 }
 
@@ -178,7 +180,7 @@
 /** 带网络图片与block回调的弹窗 */
 - (void)showImageAlert {
     [CQHUD showAlertWithImageURL:@"https://avatars0.githubusercontent.com/u/13911054?s=460&v=4" ButtonClickedBlock:^{
-        [CQHUD showToastWithMessage:@"前去兑换按钮点击"];
+        [CQToast showWithMessage:@"前去兑换按钮点击"];
     }];
 }
 
@@ -187,7 +189,7 @@
 /** 展示炫彩UIAlertView */
 - (void)showColorfulAlertView {
     [CQHUD showConversionSucceedAlertWithCouponName:@"达利园小面包" validityTime:@"2017-09-01" checkCouponButtonClickedBlock:^{
-        [CQHUD showToastWithMessage:@"查看优惠券按钮点击"];
+        [CQToast showWithMessage:@"查看优惠券按钮点击"];
     }];
 }
 
@@ -199,7 +201,7 @@
     // 3秒后移除loading
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [CQHUD dismiss];
-        [CQHUD showToastWithMessage:@"支付成功！"];
+        [CQToast showWithMessage:@"支付成功！"];
     });
 }
 
@@ -211,9 +213,8 @@
     // 3秒后移除loading
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [CQHUD dismiss];
-        [CQHUD showToastWithMessage:@"支付成功！"];
+        [CQToast showWithMessage:@"支付成功！"];
     });
 }
-
 
 @end

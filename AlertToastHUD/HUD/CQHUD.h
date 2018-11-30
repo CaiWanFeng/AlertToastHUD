@@ -10,15 +10,6 @@
 
 @interface CQHUD : UIView
 
-#pragma mark - 纯文本toast提示
-/** 纯文本toast提示 */
-+ (void)showToastWithMessage:(NSString *)message;
-
-
-#pragma mark - 图文toast提示
-/** 图文toast提示 */
-+ (void)showToastWithMessage:(NSString *)message image:(NSString *)imageName;
-
 
 #pragma mark - 带block回调的弹窗
 /** 带block回调的弹窗 */

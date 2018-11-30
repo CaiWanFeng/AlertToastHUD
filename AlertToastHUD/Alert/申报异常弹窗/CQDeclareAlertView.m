@@ -141,7 +141,6 @@
     //------- 调整弹窗高度和中心 -------//
     self.contentView.height = cancelButton.maxY + 10;
     self.contentView.center = self.center;
-    
 }
 
 #pragma mark - 弹窗展示/隐藏
