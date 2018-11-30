@@ -27,14 +27,14 @@
 - (NSMutableArray<CQContentsModel *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
-        NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQItemTypeDeclareAlertView)},
-                               @{@"title" : @"纯文本toast", @"type" : @(CQItemTypeTextToast)},
-                               @{@"title" : @"图文toast", @"type" : @(CQItemTypeImageToast)},
-                               @{@"title" : @"带block回调的弹窗", @"type" : @(CQItemTypeBlockAlertView)},
-                               @{@"title" : @"带网络图片与block回调的弹窗", @"type" : @(CQItemTypeImageAlertView)},
-                               @{@"title" : @"炫彩AlertView", @"type" : @(CQItemTypeColorfulAlertView)},
-                               @{@"title" : @"允许用户交互的loading，3秒后移除", @"type" : @(CQItemTypeLoading)},
-                               @{@"title" : @"禁止用户交互的loading，3秒后移除", @"type" : @(CQItemTypeForbidUserEnableLoading)}];
+        NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsTypeDeclareAlertView)},
+                               @{@"title" : @"纯文本toast", @"type" : @(CQContentsTypeTextToast)},
+                               @{@"title" : @"图文toast", @"type" : @(CQContentsTypeImageToast)},
+                               @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsTypeBlockAlertView)},
+                               @{@"title" : @"带网络图片与block回调的弹窗", @"type" : @(CQContentsTypeImageAlertView)},
+                               @{@"title" : @"炫彩AlertView", @"type" : @(CQContentsTypeColorfulAlertView)},
+                               @{@"title" : @"允许用户交互的loading，3秒后移除", @"type" : @(CQContentsTypeLoading)},
+                               @{@"title" : @"禁止用户交互的loading，3秒后移除", @"type" : @(CQContentsTypeForbidUserEnableLoading)}];
         for (NSDictionary *dict in dictArray) {
             CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
             [_dataArray addObject:model];
@@ -75,55 +75,55 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (self.dataArray[indexPath.row].type) {
-        case CQItemTypeDeclareAlertView:
+        case CQContentsTypeDeclareAlertView:
         {
             // 申报异常弹窗
             [self showAlert];
         }
             break;
             
-        case CQItemTypeTextToast:
+        case CQContentsTypeTextToast:
         {
             // 纯文本toast
             [self showToast];
         }
             
-        case CQItemTypeImageToast:
+        case CQContentsTypeImageToast:
         {
             // 图文toast
             [self showImageToast];
         }
             break;
             
-        case CQItemTypeBlockAlertView:
+        case CQContentsTypeBlockAlertView:
         {
             // 带block回调的弹窗
             [self showBlockAlert];
         }
             break;
             
-        case CQItemTypeImageAlertView:
+        case CQContentsTypeImageAlertView:
         {
             // 带网络图片与block回调的弹窗
             [self showImageAlert];
         }
             break;
             
-        case CQItemTypeColorfulAlertView:
+        case CQContentsTypeColorfulAlertView:
         {
             // 炫彩alertView
             [self showColorfulAlertView];
         }
             break;
             
-        case CQItemTypeLoading:
+        case CQContentsTypeLoading:
         {
             // 展示允许用户交互的loading图
             [self showLoading];
         }
             break;
             
-        case CQItemTypeForbidUserEnableLoading:
+        case CQContentsTypeForbidUserEnableLoading:
         {
             // 展示禁止用户交互的loading图
             [self showForbidUserEnableLoading];

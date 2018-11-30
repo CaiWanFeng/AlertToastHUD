@@ -8,28 +8,28 @@
 
 #import "JSONModel.h"
 
-typedef NS_ENUM(NSUInteger, CQItemType) {
+typedef NS_ENUM(NSUInteger, CQContentsType) {
     /** 申报异常弹窗 */
-    CQItemTypeDeclareAlertView,
+    CQContentsTypeDeclareAlertView,
     /** 纯文本toast */
-    CQItemTypeTextToast,
+    CQContentsTypeTextToast,
     /** 图文toast */
-    CQItemTypeImageToast,
+    CQContentsTypeImageToast,
     /** 带block的弹窗 */
-    CQItemTypeBlockAlertView,
+    CQContentsTypeBlockAlertView,
     /** 带block和image的弹窗 */
-    CQItemTypeImageAlertView,
+    CQContentsTypeImageAlertView,
     /** 炫彩AlertView */
-    CQItemTypeColorfulAlertView,
+    CQContentsTypeColorfulAlertView,
     /** Loading */
-    CQItemTypeLoading,
+    CQContentsTypeLoading,
     /** 禁止用户交互的Loading */
-    CQItemTypeForbidUserEnableLoading,
+    CQContentsTypeForbidUserEnableLoading,
 };
 
 @interface CQContentsModel : JSONModel
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) CQItemType type;
+@property (nonatomic, assign) CQContentsType type;
 
 @end
