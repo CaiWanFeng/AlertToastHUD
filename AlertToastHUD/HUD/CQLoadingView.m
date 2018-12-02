@@ -9,19 +9,19 @@
 #import "CQLoadingView.h"
 #import <Masonry.h>
 
-@implementation CQLoadingView{
+@implementation CQLoadingView {
     /** loading信息label */
     UILabel *_loadingInfoLabel;
 }
 
-static CQLoadingView *loadingView;
-
 #pragma mark - loading图单例
 /** loading图单例 */
 + (instancetype)sharedInstance {
-    if (loadingView == nil) {
+    static CQLoadingView *loadingView = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         loadingView = [[CQLoadingView alloc] init];
-    }
+    });
     return loadingView;
 }
 
