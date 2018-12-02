@@ -156,6 +156,10 @@
 
 // 纯文本toast
 - (void)showToast {
+    // 设置toast的默认背景颜色
+    [CQToast setDefaultBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.9]];
+    // 设置toast的默认展示时间
+    [CQToast setDefaultShowTime:2];
     [CQToast showWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 
@@ -163,6 +167,8 @@
 
 // 图文toast
 - (void)showImageToast {
+    [CQToast setDefaultBackgroundColor:[UIColor grayColor]];
+    [CQToast setDefaultShowTime:1];
     [CQToast showWithMessage:@"兑换成功" image:@"sign"];
 }
 

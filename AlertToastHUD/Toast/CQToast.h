@@ -12,8 +12,15 @@
 
 /** 纯文本toast提示 */
 + (void)showWithMessage:(NSString *)message;
++ (void)showWithMessage:(NSString *)message duration:(NSTimeInterval)duration;
 
 /** 图文toast提示 */
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName;
++ (void)showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration;
+
+/** 设置toast展示的默认持续时间 */
++ (void)setDefaultShowTime:(NSTimeInterval)defaultShowTime;
+/** 设置toast的默认背景颜色 */
++ (void)setDefaultBackgroundColor:(UIColor *)color;
 
 @end
