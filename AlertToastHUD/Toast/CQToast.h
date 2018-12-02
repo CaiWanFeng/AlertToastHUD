@@ -18,8 +18,8 @@
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName;
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration;
 
-/** 设置toast展示的默认持续时间 */
-+ (void)setDefaultShowTime:(NSTimeInterval)defaultShowTime;
+/** 设置toast展示的默认时间 */
++ (void)setDefaultDuration:(NSTimeInterval)defaultDuration;
 /** 设置toast的默认背景颜色 */
 + (void)setDefaultBackgroundColor:(UIColor *)color;
 

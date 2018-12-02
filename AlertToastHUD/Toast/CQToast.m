@@ -9,128 +9,135 @@
 #import "CQToast.h"
 #import <Masonry.h>
 
-// 如果没有设置，toast的默认展示时间为2秒
-static NSTimeInterval defaultShowTime = 2;
-// 默认背景颜色
-static UIColor *defaultBackgroundColor;
+// toast默认展示时间
+NSTimeInterval CQToastDefaultDuration = 2;
+// toast默认背景颜色
+UIColor *CQToastDefaultBackgroundColor;
+
+@interface CQToast ()
+
+@property (nonatomic, strong) UILabel     *messageLabel;
+@property (nonatomic, strong) UIImageView *imageView;
+
+@end
 
 @implementation CQToast
 
-#pragma mark - 纯文本toast提示
+#pragma mark - 构造方法
 
-/** 纯文本toast提示 */
-+ (void)showWithMessage:(NSString *)message {
-    [CQToast showWithMessage:message duration:defaultShowTime];
+- (instancetype)init {
+    if (self = [super init]) {
+        // 创建subView
+        self.messageLabel = [[UILabel alloc] init];
+        self.imageView = [[UIImageView alloc] init];
+        [self addSubview:self.messageLabel];
+        [self addSubview:self.imageView];
+        
+        // 两种toast的一致属性
+        self.backgroundColor = CQToastDefaultBackgroundColor ?: [[UIColor blackColor] colorWithAlphaComponent:0.9];
+        self.layer.cornerRadius = 5;
+        self.messageLabel.textColor = [UIColor whiteColor];
+        self.messageLabel.numberOfLines = 0;
+        self.messageLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return self;
 }
 
-+ (void)showWithMessage:(NSString *)message duration:(NSTimeInterval)duration {
-    defaultBackgroundColor = defaultBackgroundColor ?: [[UIColor blackColor] colorWithAlphaComponent:0.9];
-    // 背景view
-    UIView *bgView = [[UIView alloc] init];
-    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
-    bgView.backgroundColor = defaultBackgroundColor;
-    bgView.layer.cornerRadius = 5;
-    
-    // label
-    UILabel *label = [[UILabel alloc] init];
-    label.text = message;
-    [bgView addSubview:label];
-    label.textColor = [UIColor whiteColor];
-    label.numberOfLines = 0;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont boldSystemFontOfSize:15];
-    
-    // 设置背景view的约束
-    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(bgView.superview);
-        make.top.left.mas_equalTo(label).mas_offset(-20);
-        make.bottom.right.mas_equalTo(label).mas_offset(20);
-    }];
+#pragma mark - UI
+
+/** 纯文本toast */
+- (void)setupWithMessage:(NSString *)message {
+    self.messageLabel.text = message;
+    self.messageLabel.font = [UIFont boldSystemFontOfSize:15];
     
     // 设置label的约束
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_lessThanOrEqualTo(140);
-        make.center.mas_equalTo(label.superview);
+        make.center.mas_equalTo(self.messageLabel.superview);
     }];
     
-    // duration秒后移除toast
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.3 animations:^{
-            bgView.alpha = 0;
-        } completion:^(BOOL finished) {
-            [bgView removeFromSuperview];
-        }];
-    });
+    // 设置toast的约束
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.superview);
+        make.bottom.mas_offset(-100);
+        make.top.left.mas_equalTo(self.messageLabel).mas_offset(-20);
+        make.bottom.right.mas_equalTo(self.messageLabel).mas_offset(20);
+    }];
 }
 
-#pragma mark - 图文toast提示
-/** 图文toast提示 */
-+ (void)showWithMessage:(NSString *)message image:(NSString *)imageName {
-    [CQToast showWithMessage:message image:imageName duration:defaultShowTime];
-}
-
-+ (void)showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration {
-    defaultBackgroundColor = defaultBackgroundColor ?: [[UIColor blackColor] colorWithAlphaComponent:0.9];
-    // 背景view
-    UIView *bgView = [[UIView alloc] init];
-    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
-    bgView.backgroundColor = defaultBackgroundColor;
-    bgView.layer.cornerRadius = 5;
-    
-    // 图片
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-    [bgView addSubview:imageView];
-    
+/** 图文toast */
+- (void)setupWithMessage:(NSString *)message image:(NSString *)imageName {
     // label
-    UILabel *label = [[UILabel alloc] init];
-    label.text = message;
-    [bgView addSubview:label];
-    label.textColor = [UIColor whiteColor];
-    label.numberOfLines = 0;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont boldSystemFontOfSize:22];
+    self.messageLabel.text = message;
+    self.messageLabel.font = [UIFont boldSystemFontOfSize:22];
     
-    // 设置背景view的约束
-    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(bgView.superview);
+    // imageView
+    self.imageView.image = [UIImage imageNamed:imageName];
+    
+    // 设置toast的约束
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self.superview);
         make.width.mas_equalTo(150);
     }];
     
     // 设置imageView的约束
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(bgView);
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self);
         make.top.mas_equalTo(20);
         make.size.mas_equalTo(CGSizeMake(34, 34));
     }];
     
     // 设置label的约束
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_lessThanOrEqualTo(130);
-        make.centerX.mas_equalTo(label.superview);
-        make.top.mas_equalTo(imageView.mas_bottom).mas_offset(20);
+        make.centerX.mas_equalTo(self.messageLabel.superview);
+        make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(20);
         make.bottom.mas_offset(-18);
     }];
-    
-    // 2秒后移除toast
+}
+
+#pragma mark - toast提示
+
+/** 纯文本toast提示 */
++ (void)showWithMessage:(NSString *)message {
+    [CQToast showWithMessage:message image:nil duration:CQToastDefaultDuration];
+}
+
++ (void)showWithMessage:(NSString *)message duration:(NSTimeInterval)duration {
+    [CQToast showWithMessage:message image:nil duration:duration];
+}
+
+/** 图文toast提示 */
++ (void)showWithMessage:(NSString *)message image:(NSString *)imageName {
+    [CQToast showWithMessage:message image:imageName duration:CQToastDefaultDuration];
+}
+
++ (void)showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration {
+    CQToast *toast = [[CQToast alloc] init];
+    [[UIApplication sharedApplication].delegate.window addSubview:toast];
+    if (imageName && ![imageName isEqualToString:@""]) {
+        // 图文toast
+        [toast setupWithMessage:message image:imageName];
+    } else {
+        // 纯文本toast
+        [toast setupWithMessage:message];
+    }
+    // 指定时间移除
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.3 animations:^{
-            bgView.alpha = 0;
-        } completion:^(BOOL finished) {
-            [bgView removeFromSuperview];
-        }];
+        [toast removeFromSuperview];
     });
 }
 
-#pragma mark - 默认设置
+#pragma mark - 设置默认属性
 
 /** 设置默认展示时间 */
-+ (void)setDefaultShowTime:(NSTimeInterval)time {
-    defaultShowTime = time;
++ (void)setDefaultDuration:(NSTimeInterval)defaultDuration {
+    CQToastDefaultDuration = defaultDuration;
 }
 
 /** 设置toast的默认背景颜色 */
 + (void)setDefaultBackgroundColor:(UIColor *)color {
-    defaultBackgroundColor = color;
+    CQToastDefaultBackgroundColor = color;
 }
 
 @end
