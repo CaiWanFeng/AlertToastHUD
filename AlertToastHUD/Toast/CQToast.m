@@ -9,10 +9,23 @@
 #import "CQToast.h"
 #import <Masonry.h>
 
+/**
+ toast类型
+ 
+ - CQToastTypeText: 纯文本toast
+ - CQToastTypeImageText: 图文toast
+ */
+typedef NS_ENUM(NSUInteger, CQToastType) {
+    CQToastTypeText,
+    CQToastTypeImageText
+};
+
 // toast默认展示时间
 NSTimeInterval CQToastDefaultDuration = 2;
 // toast默认背景颜色
 UIColor *CQToastDefaultBackgroundColor;
+// toast默认文本颜色
+UIColor *CQToastDefaultTextColor;
 
 @interface CQToast ()
 
@@ -34,9 +47,9 @@ UIColor *CQToastDefaultBackgroundColor;
         [self addSubview:self.imageView];
         
         // 两种toast的一致属性
-        self.backgroundColor = CQToastDefaultBackgroundColor ?: [[UIColor blackColor] colorWithAlphaComponent:0.9];
         self.layer.cornerRadius = 5;
-        self.messageLabel.textColor = [UIColor whiteColor];
+        self.backgroundColor = CQToastDefaultBackgroundColor ?: [[UIColor blackColor] colorWithAlphaComponent:0.9];
+        self.messageLabel.textColor = CQToastDefaultTextColor ?: [UIColor whiteColor];
         self.messageLabel.numberOfLines = 0;
         self.messageLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -44,6 +57,24 @@ UIColor *CQToastDefaultBackgroundColor;
 }
 
 #pragma mark - UI
+
+- (void)setupWithToastType:(CQToastType)type message:(NSString *)message image:(NSString *)imageName {
+    switch (type) {
+        case CQToastTypeText:
+        {
+            // 纯文本toast
+            [self setupWithMessage:message];
+        }
+            break;
+            
+        case CQToastTypeImageText:
+        {
+            // 图文toast
+            [self setupWithMessage:message image:imageName];
+        }
+            break;
+    }
+}
 
 /** 纯文本toast */
 - (void)setupWithMessage:(NSString *)message {
@@ -117,10 +148,10 @@ UIColor *CQToastDefaultBackgroundColor;
     [[UIApplication sharedApplication].delegate.window addSubview:toast];
     if (imageName && ![imageName isEqualToString:@""]) {
         // 图文toast
-        [toast setupWithMessage:message image:imageName];
+        [toast setupWithToastType:CQToastTypeImageText message:message image:imageName];
     } else {
         // 纯文本toast
-        [toast setupWithMessage:message];
+        [toast setupWithToastType:CQToastTypeText message:message image:nil];
     }
     // 指定时间移除
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -138,6 +169,10 @@ UIColor *CQToastDefaultBackgroundColor;
 /** 设置toast的默认背景颜色 */
 + (void)setDefaultBackgroundColor:(UIColor *)color {
     CQToastDefaultBackgroundColor = color;
+}
+
++ (void)setDefaultTextColor:(UIColor *)color {
+    CQToastDefaultTextColor = color;
 }
 
 @end

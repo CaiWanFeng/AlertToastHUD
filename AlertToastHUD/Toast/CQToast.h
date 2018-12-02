@@ -10,17 +10,38 @@
 
 @interface CQToast : UIView
 
-/** 纯文本toast提示 */
+#pragma mark - 纯文本toast
+
+/** 纯文本toast */
 + (void)showWithMessage:(NSString *)message;
+/**
+ 纯文本toast
+
+ @param message 提示内容
+ @param duration toast展示时间
+ */
 + (void)showWithMessage:(NSString *)message duration:(NSTimeInterval)duration;
 
-/** 图文toast提示 */
+#pragma mark - 图文toast
+
+/** 图文toast */
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName;
+/**
+ 图文toast
+
+ @param message 提示内容
+ @param imageName 图片名
+ @param duration toast展示时间
+ */
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration;
 
-/** 设置toast展示的默认时间 */
+#pragma mark - 设置默认属性
+
+/** 设置toast展示的默认时间，未设置为2秒 */
 + (void)setDefaultDuration:(NSTimeInterval)defaultDuration;
 /** 设置toast的默认背景颜色 */
 + (void)setDefaultBackgroundColor:(UIColor *)color;
+/** 设置默认字体颜色，未设置为白色 */
++ (void)setDefaultTextColor:(UIColor *)color;
 
 @end
