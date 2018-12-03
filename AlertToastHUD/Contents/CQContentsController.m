@@ -161,6 +161,7 @@
     // 设置toast的默认展示时间
     [CQToast setDefaultDuration:2];
     [CQToast setDefaultTextColor:[UIColor redColor]];
+    // [CQToast reset]; // 重置默认值
     [CQToast showWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 

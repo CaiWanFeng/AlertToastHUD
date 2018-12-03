@@ -14,6 +14,7 @@
 
 /** 纯文本toast */
 + (void)showWithMessage:(NSString *)message;
+
 /**
  纯文本toast
 
@@ -26,6 +27,7 @@
 
 /** 图文toast */
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName;
+
 /**
  图文toast
 
@@ -45,5 +47,10 @@
 + (void)setDefaultBackgroundColor:(UIColor *)color;
 /** 设置默认字体颜色，未设置为白色 */
 + (void)setDefaultTextColor:(UIColor *)color;
+
+#pragma mark - 重置默认值
+
+/** 重置默认值（这个方法适用于某次改变默认值后又想改回去的情况） */
++ (void)reset;
 
 @end

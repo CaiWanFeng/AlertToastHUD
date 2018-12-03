@@ -188,4 +188,14 @@ UIColor *CQToastDefaultTextColor;
     CQToastDefaultTextColor = color;
 }
 
+#pragma mark - 重置默认值
+
+/** 重置默认值（这个方法适用于某次改变默认值后又想改回去的情况） */
++ (void)reset {
+    CQToastDefaultDuration = 2;
+    CQToastDefaultFadeDuration = 0.3;
+    CQToastDefaultBackgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
+    CQToastDefaultTextColor = [UIColor whiteColor];
+}
+
 @end
