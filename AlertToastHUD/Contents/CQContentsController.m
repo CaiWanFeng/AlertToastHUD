@@ -171,6 +171,7 @@
     [CQToast setDefaultBackgroundColor:[UIColor grayColor]];
     [CQToast setDefaultDuration:1];
     [CQToast setDefaultTextColor:[UIColor blueColor]];
+    [CQToast setDefaultFadeDuration:2];
     [CQToast showWithMessage:@"兑换成功" image:@"sign"];
 }
 

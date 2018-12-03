@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, CQToastType) {
 
 // toast默认展示时间
 NSTimeInterval CQToastDefaultDuration = 2;
+// toast默认消失时间
+NSTimeInterval CQToastDefaultFadeDuration = 0.3;
 // toast默认背景颜色
 UIColor *CQToastDefaultBackgroundColor;
 // toast默认文本颜色
@@ -29,6 +31,7 @@ UIColor *CQToastDefaultTextColor;
 
 @interface CQToast ()
 
+@property (nonatomic, assign) CQToastType type;
 @property (nonatomic, strong) UILabel     *messageLabel;
 @property (nonatomic, strong) UIImageView *imageView;
 
@@ -155,15 +158,24 @@ UIColor *CQToastDefaultTextColor;
     }
     // 指定时间移除
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [toast removeFromSuperview];
+        [UIView animateWithDuration:CQToastDefaultFadeDuration animations:^{
+            toast.alpha = 0;
+        } completion:^(BOOL finished) {
+            [toast removeFromSuperview];
+        }];
     });
 }
 
-#pragma mark - 设置默认属性
+#pragma mark - 设置默认值
 
-/** 设置默认展示时间 */
+/** 设置toast展示的默认时间，未设置为2秒 */
 + (void)setDefaultDuration:(NSTimeInterval)defaultDuration {
     CQToastDefaultDuration = defaultDuration;
+}
+
+/** 设置toast消失的默认时间，未设置为0.3秒 */
++ (void)setDefaultFadeDuration:(NSTimeInterval)defaultFadeDuration {
+    CQToastDefaultFadeDuration = defaultFadeDuration;
 }
 
 /** 设置toast的默认背景颜色 */
@@ -171,6 +183,7 @@ UIColor *CQToastDefaultTextColor;
     CQToastDefaultBackgroundColor = color;
 }
 
+/** 设置默认字体颜色 */
 + (void)setDefaultTextColor:(UIColor *)color {
     CQToastDefaultTextColor = color;
 }

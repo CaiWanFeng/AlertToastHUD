@@ -35,10 +35,12 @@
  */
 + (void)showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration;
 
-#pragma mark - 设置默认属性
+#pragma mark - 设置默认值
 
 /** 设置toast展示的默认时间，未设置为2秒 */
 + (void)setDefaultDuration:(NSTimeInterval)defaultDuration;
+/** 设置toast消失的默认时间，未设置为0.3秒 */
++ (void)setDefaultFadeDuration:(NSTimeInterval)defaultFadeDuration;
 /** 设置toast的默认背景颜色 */
 + (void)setDefaultBackgroundColor:(UIColor *)color;
 /** 设置默认字体颜色，未设置为白色 */
