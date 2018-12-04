@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, CQContentsType) {
     CQContentsTypeTextToast,
     /** 图文toast */
     CQContentsTypeImageToast,
+    /** 赞toast */
+    CQContentsTypeZanToast,
     /** 带block的弹窗 */
     CQContentsTypeBlockAlertView,
     /** 带block和image的弹窗 */

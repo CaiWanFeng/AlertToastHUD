@@ -19,6 +19,11 @@
 		D92F3FAA1E97E83300438386 /* CQDeclareAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FA91E97E83300438386 /* CQDeclareAlertView.m */; };
 		D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */; };
 		D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */; };
+		D93BE01921B6887C004CA3A1 /* zan.png in Resources */ = {isa = PBXBuildFile; fileRef = D93BE01821B6883F004CA3A1 /* zan.png */; };
+		D93BE01C21B68F96004CA3A1 /* CQHomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE01B21B68F96004CA3A1 /* CQHomeTabBarController.m */; };
+		D93BE01F21B68FFF004CA3A1 /* CQAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE01E21B68FFF004CA3A1 /* CQAlertViewController.m */; };
+		D93BE02221B69037004CA3A1 /* CQToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE02121B69037004CA3A1 /* CQToastViewController.m */; };
+		D93BE02521B69097004CA3A1 /* CQHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE02421B69097004CA3A1 /* CQHUDViewController.m */; };
 		D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQHUD.m */; };
 		D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */; };
 /* End PBXBuildFile section */
@@ -67,6 +72,15 @@
 		D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
 		D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
 		D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
+		D93BE01821B6883F004CA3A1 /* zan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zan.png; sourceTree = "<group>"; };
+		D93BE01A21B68F96004CA3A1 /* CQHomeTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQHomeTabBarController.h; sourceTree = "<group>"; };
+		D93BE01B21B68F96004CA3A1 /* CQHomeTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQHomeTabBarController.m; sourceTree = "<group>"; };
+		D93BE01D21B68FFF004CA3A1 /* CQAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQAlertViewController.h; sourceTree = "<group>"; };
+		D93BE01E21B68FFF004CA3A1 /* CQAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQAlertViewController.m; sourceTree = "<group>"; };
+		D93BE02021B69037004CA3A1 /* CQToastViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQToastViewController.h; sourceTree = "<group>"; };
+		D93BE02121B69037004CA3A1 /* CQToastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQToastViewController.m; sourceTree = "<group>"; };
+		D93BE02321B69097004CA3A1 /* CQHUDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQHUDViewController.h; sourceTree = "<group>"; };
+		D93BE02421B69097004CA3A1 /* CQHUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQHUDViewController.m; sourceTree = "<group>"; };
 		D94506FC1EE7E2B900BDD860 /* CQHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUD.h; sourceTree = "<group>"; };
 		D94506FD1EE7E2B900BDD860 /* CQHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUD.m; sourceTree = "<group>"; };
 		D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLoadingView.h; sourceTree = "<group>"; };
@@ -126,6 +140,8 @@
 				D9098AB421B11B7E00224659 /* CQContentsModel.m */,
 				D9098AB021B11B4500224659 /* CQContentsController.h */,
 				D9098AB121B11B4500224659 /* CQContentsController.m */,
+				D93BE01A21B68F96004CA3A1 /* CQHomeTabBarController.h */,
+				D93BE01B21B68F96004CA3A1 /* CQHomeTabBarController.m */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
@@ -137,6 +153,8 @@
 				D94506FD1EE7E2B900BDD860 /* CQHUD.m */,
 				D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */,
 				D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */,
+				D93BE02321B69097004CA3A1 /* CQHUDViewController.h */,
+				D93BE02421B69097004CA3A1 /* CQHUDViewController.m */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -153,6 +171,8 @@
 		D907217521B11838006D6C3F /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				D93BE01D21B68FFF004CA3A1 /* CQAlertViewController.h */,
+				D93BE01E21B68FFF004CA3A1 /* CQAlertViewController.m */,
 				D907217421B115C6006D6C3F /* 申报异常弹窗 */,
 			);
 			path = Alert;
@@ -163,6 +183,9 @@
 			children = (
 				D9098AB721B1271100224659 /* CQToast.h */,
 				D9098AB821B1271100224659 /* CQToast.m */,
+				D93BE02021B69037004CA3A1 /* CQToastViewController.h */,
+				D93BE02121B69037004CA3A1 /* CQToastViewController.m */,
+				D93BE01821B6883F004CA3A1 /* zan.png */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -335,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93BE01921B6887C004CA3A1 /* zan.png in Resources */,
 				D92F3F851E97BA1E00438386 /* LaunchScreen.storyboard in Resources */,
 				D92F3F821E97BA1E00438386 /* Assets.xcassets in Resources */,
 				D92F3F801E97BA1E00438386 /* Main.storyboard in Resources */,
@@ -384,12 +408,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D92F3FAA1E97E83300438386 /* CQDeclareAlertView.m in Sources */,
+				D93BE01F21B68FFF004CA3A1 /* CQAlertViewController.m in Sources */,
 				D9098AB221B11B4500224659 /* CQContentsController.m in Sources */,
+				D93BE01C21B68F96004CA3A1 /* CQHomeTabBarController.m in Sources */,
 				D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */,
 				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
 				D92F3F771E97BA1E00438386 /* main.m in Sources */,
+				D93BE02221B69037004CA3A1 /* CQToastViewController.m in Sources */,
 				D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */,
+				D93BE02521B69097004CA3A1 /* CQHUDViewController.m in Sources */,
 				D9098AB921B1271100224659 /* CQToast.m in Sources */,
 				D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */,
 				D9098AB521B11B7E00224659 /* CQContentsModel.m in Sources */,

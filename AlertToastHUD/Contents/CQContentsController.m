@@ -31,6 +31,7 @@
         NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsTypeDeclareAlertView)},
                                @{@"title" : @"纯文本toast", @"type" : @(CQContentsTypeTextToast)},
                                @{@"title" : @"图文toast", @"type" : @(CQContentsTypeImageToast)},
+                               @{@"title" : @"赞👍", @"type" : @(CQContentsTypeZanToast)},
                                @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsTypeBlockAlertView)},
                                @{@"title" : @"带网络图片与block回调的弹窗", @"type" : @(CQContentsTypeImageAlertView)},
                                @{@"title" : @"炫彩AlertView", @"type" : @(CQContentsTypeColorfulAlertView)},
@@ -94,6 +95,13 @@
         {
             // 图文toast
             [self showImageToast];
+        }
+            break;
+            
+        case CQContentsTypeZanToast:
+        {
+            // 赞
+            [self showZan];
         }
             break;
             
@@ -161,7 +169,7 @@
     // 设置toast的默认展示时间
     [CQToast setDefaultDuration:2];
     [CQToast setDefaultTextColor:[UIColor redColor]];
-    // [CQToast reset]; // 重置默认值
+    [CQToast reset]; // 重置默认值
     [CQToast showWithMessage:@"您还未达到相应积分\n无法兑换商品"];
 }
 
@@ -169,11 +177,20 @@
 
 // 图文toast
 - (void)showImageToast {
-    [CQToast setDefaultBackgroundColor:[UIColor grayColor]];
-    [CQToast setDefaultDuration:1];
-    [CQToast setDefaultTextColor:[UIColor blueColor]];
-    [CQToast setDefaultFadeDuration:2];
-    [CQToast showWithMessage:@"兑换成功" image:@"sign"];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
+        // 测试子线程调用的情况
+        [CQToast setDefaultBackgroundColor:[UIColor grayColor]];
+        [CQToast setDefaultDuration:1];
+        [CQToast setDefaultTextColor:[UIColor blueColor]];
+        [CQToast setDefaultFadeDuration:2];
+        [CQToast showWithMessage:@"兑换成功" image:@"sign"];
+    });
+}
+
+#pragma mark - 赞
+
+- (void)showZan {
+    [CQToast showZan];
 }
 
 #pragma mark - 带block回调的弹窗
