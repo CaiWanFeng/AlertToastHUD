@@ -361,8 +361,7 @@
 				TargetAttributes = {
 					D92F3F711E97BA1E00438386 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = YUSZJ893SU;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					D92F3F8A1E97BA1E00438386 = {
 						CreatedOnToolsVersion = 8.2;
@@ -616,12 +615,14 @@
 			baseConfigurationReference = 0ED6B111A7E14699C50A39E4 /* Pods-AlertToastHUD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YUSZJ893SU;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AlertToastHUD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -630,12 +631,14 @@
 			baseConfigurationReference = 10F7B68F306501DCF1235EAB /* Pods-AlertToastHUD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YUSZJ893SU;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AlertToastHUD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KuaiJianKang.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -12,7 +12,13 @@
 typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
     CQContentsToastStyleText,
     CQContentsToastStyleImageText,
-    CQContentsToastStyleZan
+    CQContentsToastStyleZan,
+    CQContentsToastStyleSpecifyDuration,
+    CQContentsToastStyleChangeBackgroundColor,
+    CQContentsToastStyleChangeTextColor,
+    CQContentsToastStyleChangeDuration,
+    CQContentsToastStyleChangeFadeDuration,
+    CQContentsToastStyleReset
 };
 
 @interface CQToastViewController ()
@@ -28,7 +34,13 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
     // 数据源
     NSArray *dictArray = @[@{@"title" : @"纯文本toast", @"type" : @(CQContentsToastStyleText)},
                            @{@"title" : @"图文toast", @"type" : @(CQContentsToastStyleImageText)},
-                           @{@"title" : @"赞👍", @"type" : @(CQContentsToastStyleZan)}];
+                           @{@"title" : @"赞👍", @"type" : @(CQContentsToastStyleZan)},
+                           @{@"title" : @"指定此toast展示时间为3秒", @"type" : @(CQContentsToastStyleSpecifyDuration)},
+                           @{@"title" : @"修改toast默认背景颜色", @"type" : @(CQContentsToastStyleChangeBackgroundColor)},
+                           @{@"title" : @"修改toast默认字体颜色", @"type" : @(CQContentsToastStyleChangeTextColor)},
+                           @{@"title" : @"修改toast默认展示时间", @"type" : @(CQContentsToastStyleChangeDuration)},
+                           @{@"title" : @"修改toast默认消失时间", @"type" : @(CQContentsToastStyleChangeFadeDuration)},
+                           @{@"title" : @"重置为初始状态", @"type" : @(CQContentsToastStyleReset)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
@@ -42,7 +54,7 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
             case CQContentsToastStyleText:
             {
                 // 纯文本toast
-                [CQToast showWithMessage:@"您还未达到相应积分\n无法兑换商品"];
+                [CQToast showWithMessage:@"这是纯文本toast\n没有图片"];
             }
                 break;
                 
@@ -59,6 +71,55 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
                 [CQToast showZan];
             }
                 break;
+                
+            case CQContentsToastStyleSpecifyDuration:
+            {
+                // 指定toast展示的时间
+                [CQToast showWithMessage:@"这个toast会展示3秒" duration:3];
+            }
+                break;
+                
+            case CQContentsToastStyleChangeBackgroundColor:
+            {
+                // 修改toast默认背景颜色，改为灰色
+                [CQToast setDefaultBackgroundColor:[UIColor grayColor]];
+                [CQToast showWithMessage:@"默认背景颜色已修改为灰色"];
+            }
+                break;
+                
+            case CQContentsToastStyleChangeTextColor:
+            {
+                // 修改toast默认字体颜色，改为蓝色
+                [CQToast setDefaultTextColor:[UIColor blueColor]];
+                [CQToast showWithMessage:@"默认字体颜色已修改为蓝色"];
+            }
+                break;
+                
+            case CQContentsToastStyleChangeDuration:
+            {
+                // 改变toast展示的默认时间，改为1秒
+                [CQToast setDefaultDuration:1];
+                [CQToast showWithMessage:@"默认展示时间已修改为1秒"];
+            }
+                break;
+                
+            case CQContentsToastStyleChangeFadeDuration:
+            {
+                // 改变toast消失的默认时间，改为1.5秒
+                [CQToast setDefaultFadeDuration:1.5];
+                [CQToast showWithMessage:@"默认消失时间已修改为1.5秒"];
+            }
+                break;
+                
+            case CQContentsToastStyleReset:
+            {
+                // 重置为初始状态
+                [CQToast reset];
+                [CQToast showWithMessage:@"已重置"];
+            }
+                break;
+                
+            
         }
     };
 }

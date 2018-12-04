@@ -12,7 +12,8 @@
 typedef NS_ENUM(NSUInteger, CQContentsHudStyle) {
     CQContentsHudStyleLoadingOnly,
     CQContentsHudStyleLoadingWithMessage,
-    CQContentsHudStyleLoadingUserEnabled,
+    CQContentsHudStyleLoadingWithUserEnabled,
+    CQContentsHudStyleLoadingWithoutUserEnabled
 };
 
 @interface CQHUDViewController ()
@@ -28,7 +29,7 @@ typedef NS_ENUM(NSUInteger, CQContentsHudStyle) {
     // 数据源
     NSArray *dictArray = @[@{@"title" : @"纯loading", @"type" : @(CQContentsHudStyleLoadingOnly)},
                            @{@"title" : @"loading+文字", @"type" : @(CQContentsHudStyleLoadingWithMessage)},
-                           @{@"title" : @"允许用户交互", @"type" : @(CQContentsHudStyleLoadingUserEnabled)}];
+                           @{@"title" : @"允许用户交互", @"type" : @(CQContentsHudStyleLoadingWithUserEnabled)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
@@ -57,7 +58,7 @@ typedef NS_ENUM(NSUInteger, CQContentsHudStyle) {
             }
                 break;
                 
-            case CQContentsHudStyleLoadingUserEnabled:
+            case CQContentsHudStyleLoadingWithUserEnabled:
             {
                 [CQHUD showLoadingWithMessage:@"允许交互的loading" enableUserInteraction:YES];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
