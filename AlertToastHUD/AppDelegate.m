@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CQContentsController.h"
+#import "CQHomeTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +21,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    CQContentsController *rootVC = [[CQContentsController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    CQHomeTabBarController *homeTabBarController = [[CQHomeTabBarController alloc] init];
+    self.window.rootViewController = homeTabBarController;
     [self.window makeKeyAndVisible];
     
     return YES;

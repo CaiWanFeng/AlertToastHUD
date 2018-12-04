@@ -1,13 +1,13 @@
 //
-//  CQAlertViewController.h
+//  CQToastViewController.h
 //  AlertToastHUD
 //
 //  Created by caiqiang on 2018/12/4.
 //  Copyright © 2018年 kuaijiankang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CQBaseViewController.h"
 
-@interface CQAlertViewController : UIViewController
+@interface CQToastViewController : CQBaseViewController
 
 @end

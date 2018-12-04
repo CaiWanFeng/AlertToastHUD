@@ -21,17 +21,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    CQAlertViewController *alerVC = [[CQAlertViewController alloc] init];
+    CQAlertViewController  *alerVC    = [[CQAlertViewController alloc] init];
     UINavigationController *alertNavi = [[UINavigationController alloc] initWithRootViewController:alerVC];
+    alerVC.title    = @"alert";
     alertNavi.title = @"alert";
     
-    CQToastViewController *toastVC = [[CQToastViewController alloc] init];
+    CQToastViewController  *toastVC   = [[CQToastViewController alloc] init];
     UINavigationController *toastNavi = [[UINavigationController alloc] initWithRootViewController:toastVC];
+    toastVC.title   = @"toast";
     toastNavi.title = @"toast";
     
-    CQHUDViewController *hudVC = [[CQHUDViewController alloc] init];
+    CQHUDViewController    *hudVC   = [[CQHUDViewController alloc] init];
     UINavigationController *hudNavi = [[UINavigationController alloc] initWithRootViewController:hudVC];
-    hudNavi.title = @"HUD";
+    hudVC.title   = @"hud";
+    hudNavi.title = @"hud";
     
     self.viewControllers = @[alertNavi, toastNavi, hudNavi];
 }
