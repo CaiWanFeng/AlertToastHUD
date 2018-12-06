@@ -53,7 +53,6 @@
 		0ED6B111A7E14699C50A39E4 /* Pods-AlertToastHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertToastHUD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlertToastHUD/Pods-AlertToastHUD.debug.xcconfig"; sourceTree = "<group>"; };
 		10F7B68F306501DCF1235EAB /* Pods-AlertToastHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlertToastHUD.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlertToastHUD/Pods-AlertToastHUD.release.xcconfig"; sourceTree = "<group>"; };
 		14C2A934FB5975966A9EE102 /* libPods-AlertToastHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlertToastHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.debug.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.debug.xcconfig"; sourceTree = "<group>"; };
 		D9098AB321B11B7E00224659 /* CQContentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQContentsModel.h; sourceTree = "<group>"; };
 		D9098AB421B11B7E00224659 /* CQContentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQContentsModel.m; sourceTree = "<group>"; };
 		D9098AB721B1271100224659 /* CQToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQToast.h; sourceTree = "<group>"; };
@@ -97,7 +96,6 @@
 		D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CQBlockSupport.m"; sourceTree = "<group>"; };
 		D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLoadingView.h; sourceTree = "<group>"; };
 		D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQLoadingView.m; sourceTree = "<group>"; };
-		F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.release.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +127,6 @@
 		0021254BEF2B3EBB350436AF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A09A659FE8CF233A855BB915 /* Pods-弹窗哈哈哈.debug.xcconfig */,
-				F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */,
 				0ED6B111A7E14699C50A39E4 /* Pods-AlertToastHUD.debug.xcconfig */,
 				10F7B68F306501DCF1235EAB /* Pods-AlertToastHUD.release.xcconfig */,
 			);
