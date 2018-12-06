@@ -11,11 +11,13 @@
 #import "CQToast.h"
 #import "CQBlockAlertView.h"
 #import "CQImageBlockAlertView.h"
+#import "CQColorfulAlertView.h"
 
 typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     CQContentsAlertTypeDeclare,
     CQContentsAlertTypeBlock,
-    CQContentsAlertTypeImageBlock
+    CQContentsAlertTypeImageBlock,
+    CQContentsAlertTypeColorfulAlertView
 };
 
 @interface CQAlertViewController () <CQDeclareAlertViewDelegate>
@@ -33,7 +35,8 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     // 数据源
     NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsAlertTypeDeclare)},
                            @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsAlertTypeBlock)},
-                           @{@"title" : @"带网络图片和block回调的弹窗", @"type" : @(CQContentsAlertTypeImageBlock)}];
+                           @{@"title" : @"带网络图片和block回调的弹窗", @"type" : @(CQContentsAlertTypeImageBlock)},
+                           @{@"title" : @"炫彩UIAlertView", @"type" : @(CQContentsAlertTypeColorfulAlertView)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
@@ -64,6 +67,13 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
             {
                 // 带网络图片和block的弹窗
                 [strongSelf showImageBlockAlertView];
+            }
+                break;
+                
+            case CQContentsAlertTypeColorfulAlertView:
+            {
+                // 炫彩UIAlertView
+                [strongSelf showColorfulAlertView];
             }
                 break;
         }
@@ -100,6 +110,14 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
 - (void)showImageBlockAlertView {
     [CQImageBlockAlertView alertWithImageURL:@"https://avatars0.githubusercontent.com/u/13911054?s=460&v=4" buttonClickedBlock:^{
         [CQToast showWithMessage:@"去兑换按钮点击"];
+    }];
+}
+
+#pragma mark - 炫彩UIAlertView
+
+- (void)showColorfulAlertView {
+    [CQColorfulAlertView showConversionSucceedAlertWithCouponName:@"兑换成功" validityTime:@"2018-11-11" checkCouponButtonClickedBlock:^{
+        [CQToast showWithMessage:@"兑换成功"];
     }];
 }
 
