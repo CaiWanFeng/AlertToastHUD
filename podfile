@@ -2,6 +2,5 @@ platform:ios,'8.0'
 target 'AlertToastHUD' do
 pod 'Masonry'
 pod 'JSONModel'
-pod 'ReactiveCocoa','~>2.1.8'
 pod 'SDWebImage'
 end
