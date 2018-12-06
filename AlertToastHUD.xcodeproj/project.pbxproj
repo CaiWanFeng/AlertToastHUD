@@ -26,6 +26,9 @@
 		D93BE02521B69097004CA3A1 /* CQHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE02421B69097004CA3A1 /* CQHUDViewController.m */; };
 		D93BE02E21B69A76004CA3A1 /* CQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE02D21B69A76004CA3A1 /* CQBaseViewController.m */; };
 		D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQHUD.m */; };
+		D94A21DB21B8F7440047AFBD /* CQImageBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */; };
+		D99D942E21B8B69700F63425 /* CQBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D942D21B8B69700F63425 /* CQBlockAlertView.m */; };
+		D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */; };
 		D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,12 @@
 		D93BE02D21B69A76004CA3A1 /* CQBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBaseViewController.m; sourceTree = "<group>"; };
 		D94506FC1EE7E2B900BDD860 /* CQHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUD.h; sourceTree = "<group>"; };
 		D94506FD1EE7E2B900BDD860 /* CQHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUD.m; sourceTree = "<group>"; };
+		D94A21D921B8F7440047AFBD /* CQImageBlockAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQImageBlockAlertView.h; sourceTree = "<group>"; };
+		D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQImageBlockAlertView.m; sourceTree = "<group>"; };
+		D99D942C21B8B69700F63425 /* CQBlockAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQBlockAlertView.h; sourceTree = "<group>"; };
+		D99D942D21B8B69700F63425 /* CQBlockAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockAlertView.m; sourceTree = "<group>"; };
+		D99D942F21B8CFA200F63425 /* UIButton+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CQBlockSupport.h"; sourceTree = "<group>"; };
+		D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CQBlockSupport.m"; sourceTree = "<group>"; };
 		D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLoadingView.h; sourceTree = "<group>"; };
 		D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQLoadingView.m; sourceTree = "<group>"; };
 		F63EAC2132A7CC68D3BF4462 /* Pods-弹窗哈哈哈.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-弹窗哈哈哈.release.xcconfig"; path = "Pods/Target Support Files/Pods-弹窗哈哈哈/Pods-弹窗哈哈哈.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				D907217421B115C6006D6C3F /* 申报异常弹窗 */,
+				D99D942B21B8B63D00F63425 /* 带block回调的弹窗 */,
+				D94A21D821B8F5900047AFBD /* 带网络图片与block回调的弹窗 */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -242,6 +253,8 @@
 				D92F3FAD1E97E8CE00438386 /* UIColor+Util.m */,
 				D92F3FAE1E97E8CE00438386 /* UIView+frameAdjust.h */,
 				D92F3FAF1E97E8CE00438386 /* UIView+frameAdjust.m */,
+				D99D942F21B8CFA200F63425 /* UIButton+CQBlockSupport.h */,
+				D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -291,6 +304,24 @@
 				D93BE02D21B69A76004CA3A1 /* CQBaseViewController.m */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		D94A21D821B8F5900047AFBD /* 带网络图片与block回调的弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				D94A21D921B8F7440047AFBD /* CQImageBlockAlertView.h */,
+				D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */,
+			);
+			path = "带网络图片与block回调的弹窗";
+			sourceTree = "<group>";
+		};
+		D99D942B21B8B63D00F63425 /* 带block回调的弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				D99D942C21B8B69700F63425 /* CQBlockAlertView.h */,
+				D99D942D21B8B69700F63425 /* CQBlockAlertView.m */,
+			);
+			path = "带block回调的弹窗";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,12 +484,14 @@
 			files = (
 				D92F3FAA1E97E83300438386 /* CQDeclareAlertView.m in Sources */,
 				D93BE01F21B68FFF004CA3A1 /* CQAlertViewController.m in Sources */,
+				D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */,
 				D9098AB221B11B4500224659 /* CQContentsController.m in Sources */,
 				D93BE01C21B68F96004CA3A1 /* CQHomeTabBarController.m in Sources */,
 				D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */,
 				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
 				D92F3F771E97BA1E00438386 /* main.m in Sources */,
+				D94A21DB21B8F7440047AFBD /* CQImageBlockAlertView.m in Sources */,
 				D93BE02221B69037004CA3A1 /* CQToastViewController.m in Sources */,
 				D92F3FB01E97E8CE00438386 /* UIColor+Util.m in Sources */,
 				D93BE02521B69097004CA3A1 /* CQHUDViewController.m in Sources */,
@@ -466,6 +499,7 @@
 				D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */,
 				D9098AB521B11B7E00224659 /* CQContentsModel.m in Sources */,
 				D93BE02E21B69A76004CA3A1 /* CQBaseViewController.m in Sources */,
+				D99D942E21B8B69700F63425 /* CQBlockAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

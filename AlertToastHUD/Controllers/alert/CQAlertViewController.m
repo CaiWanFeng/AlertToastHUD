@@ -9,9 +9,13 @@
 #import "CQAlertViewController.h"
 #import "CQDeclareAlertView.h"
 #import "CQToast.h"
+#import "CQBlockAlertView.h"
+#import "CQImageBlockAlertView.h"
 
 typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
-    CQContentsAlertTypeDeclare
+    CQContentsAlertTypeDeclare,
+    CQContentsAlertTypeBlock,
+    CQContentsAlertTypeImageBlock
 };
 
 @interface CQAlertViewController () <CQDeclareAlertViewDelegate>
@@ -27,7 +31,9 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     // Do any additional setup after loading the view.
     
     // 数据源
-    NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsAlertTypeDeclare)}];
+    NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsAlertTypeDeclare)},
+                           @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsAlertTypeBlock)},
+                           @{@"title" : @"带网络图片和block回调的弹窗", @"type" : @(CQContentsAlertTypeImageBlock)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
@@ -44,6 +50,20 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
             {
                 // 申报异常弹窗
                 [strongSelf showDeclareAlertView];
+            }
+                break;
+                
+            case CQContentsAlertTypeBlock:
+            {
+                // 带block的弹窗
+                [strongSelf showBlockAlertView];
+            }
+                break;
+                
+            case CQContentsAlertTypeImageBlock:
+            {
+                // 带网络图片和block的弹窗
+                [strongSelf showImageBlockAlertView];
             }
                 break;
         }
@@ -65,6 +85,22 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     } else {
         [CQToast showWithMessage:@"点击了右边的button"];
     }
+}
+
+#pragma mark - 带block的弹窗
+
+- (void)showBlockAlertView {
+    [CQBlockAlertView alertWithButtonClickedBlock:^{
+        [CQToast showWithMessage:@"兑换按钮点击"];
+    }];
+}
+
+#pragma mark - 带网络图片和block的弹窗
+
+- (void)showImageBlockAlertView {
+    [CQImageBlockAlertView alertWithImageURL:@"https://avatars0.githubusercontent.com/u/13911054?s=460&v=4" buttonClickedBlock:^{
+        [CQToast showWithMessage:@"去兑换按钮点击"];
+    }];
 }
 
 @end
