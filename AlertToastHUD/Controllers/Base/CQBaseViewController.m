@@ -36,7 +36,7 @@
 
 #pragma mark - getter & setter
 
--(NSArray<CQContentsModel *> *)dataArray {
+- (NSArray<CQContentsModel *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSArray array];
     }

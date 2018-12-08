@@ -38,7 +38,7 @@
         [bgView addSubview:goodsImageView];
         [goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(bgView);
-            make.centerY.mas_equalTo(bgView).mas_offset(-60);
+            make.centerY.mas_offset(-30);
             make.size.mas_equalTo(CGSizeMake(225, 205));
         }];
         
