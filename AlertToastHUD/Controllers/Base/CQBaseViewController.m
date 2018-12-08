@@ -7,6 +7,7 @@
 //
 
 #import "CQBaseViewController.h"
+#import <Masonry.h>
 
 @interface CQBaseViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -24,10 +25,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tableView = [[UITableView alloc] init];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
 }
 
 #pragma mark - getter & setter
