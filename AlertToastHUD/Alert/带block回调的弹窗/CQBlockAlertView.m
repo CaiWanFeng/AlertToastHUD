@@ -28,8 +28,7 @@
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_bg"]];
     [bgView addSubview:bgImageView];
     [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(bgView);
-        make.centerY.mas_equalTo(bgView).mas_offset(-60);
+        make.center.mas_equalTo(bgView);
         make.size.mas_equalTo(CGSizeMake(285, 185));
     }];
     
