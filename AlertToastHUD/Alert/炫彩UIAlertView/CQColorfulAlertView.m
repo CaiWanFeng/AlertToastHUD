@@ -129,6 +129,16 @@
         make.centerX.mas_equalTo(whiteView);
         make.width.mas_equalTo(1);
     }];
+    
+    // 出场动画
+    bgView.alpha = 0;
+    whiteView.alpha = 0;
+    whiteView.transform = CGAffineTransformScale(whiteView.transform, 0.1, 0.1);
+    [UIView animateWithDuration:0.2 animations:^{
+        whiteView.transform = CGAffineTransformIdentity;
+        bgView.alpha = 1;
+        whiteView.alpha = 1;
+    }];
 }
 
 @end
