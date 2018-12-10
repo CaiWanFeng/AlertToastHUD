@@ -3,7 +3,7 @@
 //  iDeliver
 //
 //  Created by 蔡强 on 2017/4/3.
-//  Copyright © 2017年 kuaijiankang. All rights reserved.
+//  Copyright © 2017年 Caiqiang. All rights reserved.
 //
 
 //========== 申报异常弹窗 ==========//

@@ -2,7 +2,7 @@
 //  UIView+frameAdjust.m
 //  CoreText
 //
-//  Created by KuaiJianKang on 16/9/9.
+//  Created by Caiqiang on 16/9/9.
 //  Copyright © 2016年 CaiQiang. All rights reserved.
 //
 

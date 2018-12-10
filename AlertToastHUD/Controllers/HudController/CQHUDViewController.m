@@ -3,7 +3,7 @@
 //  AlertToastHUD
 //
 //  Created by caiqiang on 2018/12/4.
-//  Copyright © 2018年 kuaijiankang. All rights reserved.
+//  Copyright © 2018年 Caiqiang. All rights reserved.
 //
 
 #import "CQHUDViewController.h"
@@ -27,9 +27,9 @@ typedef NS_ENUM(NSUInteger, CQContentsHudStyle) {
     // Do any additional setup after loading the view.
     
     // 数据源
-    NSArray *dictArray = @[@{@"title" : @"纯loading", @"type" : @(CQContentsHudStyleLoadingOnly)},
-                           @{@"title" : @"loading+文字", @"type" : @(CQContentsHudStyleLoadingWithMessage)},
-                           @{@"title" : @"允许用户交互", @"type" : @(CQContentsHudStyleLoadingWithUserEnabled)}];
+    NSArray *dictArray = @[@{@"title" : @"纯loading，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingOnly)},
+                           @{@"title" : @"loading+文字，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingWithMessage)},
+                           @{@"title" : @"允许用户交互的loading，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingWithUserEnabled)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
