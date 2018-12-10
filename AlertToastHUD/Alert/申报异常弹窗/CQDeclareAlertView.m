@@ -67,10 +67,7 @@
 /** UI搭建 */
 - (void)setupUI {
     self.frame = [UIScreen mainScreen].bounds;
-    self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
-    [UIView animateWithDuration:0.1 animations:^{
-        self.alpha = 1;
-    }];
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     
     //------- 弹窗主内容 -------//
     self.contentView = [[UIView alloc] init];
@@ -147,6 +144,14 @@
 
 /** 弹出此弹窗 */
 - (void)show {
+    // 出场动画
+    self.alpha = 0;
+    self.contentView.transform = CGAffineTransformScale(self.contentView.transform, 1.3, 1.3);
+    [UIView animateWithDuration:0.2 animations:^{
+        self.alpha = 1;
+        self.contentView.transform = CGAffineTransformIdentity;
+    }];
+    
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     [window addSubview:self];
 }
