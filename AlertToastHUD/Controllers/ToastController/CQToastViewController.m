@@ -13,6 +13,7 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
     CQContentsToastStyleText,
     CQContentsToastStyleImageText,
     CQContentsToastStyleZan,
+    CQContentsToastStyleChildThread,
     CQContentsToastStyleSpecifyDuration,
     CQContentsToastStyleChangeBackgroundColor,
     CQContentsToastStyleChangeTextColor,
@@ -35,6 +36,7 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
     NSArray *dictArray = @[@{@"title" : @"纯文本toast", @"type" : @(CQContentsToastStyleText)},
                            @{@"title" : @"图文toast", @"type" : @(CQContentsToastStyleImageText)},
                            @{@"title" : @"赞👍", @"type" : @(CQContentsToastStyleZan)},
+                           @{@"title" : @"子线程调用", @"type" : @(CQContentsToastStyleChildThread)},
                            @{@"title" : @"指定此toast展示时间为3秒", @"type" : @(CQContentsToastStyleSpecifyDuration)},
                            @{@"title" : @"修改toast默认背景颜色", @"type" : @(CQContentsToastStyleChangeBackgroundColor)},
                            @{@"title" : @"修改toast默认字体颜色", @"type" : @(CQContentsToastStyleChangeTextColor)},
@@ -69,6 +71,13 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
             {
                 // 赞
                 [CQToast showZan];
+            }
+                break;
+                
+            case CQContentsToastStyleChildThread:
+            {
+                // 子线程调用
+                [CQToast showWithMessage:@"这个toast是子线程调用的"];
             }
                 break;
                 
@@ -118,8 +127,6 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
                 [CQToast showWithMessage:@"已重置"];
             }
                 break;
-                
-            
         }
     };
 }
