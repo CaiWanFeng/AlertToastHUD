@@ -29,6 +29,8 @@
 		D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DE21B9011E0047AFBD /* CQColorfulAlertView.m */; };
 		D99D942E21B8B69700F63425 /* CQBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D942D21B8B69700F63425 /* CQBlockAlertView.m */; };
 		D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */; };
+		D9DE781221E9BF5D009BF180 /* CQPointsRuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DE781021E9BE1C009BF180 /* CQPointsRuleView.m */; };
+		D9DE781321E9BF67009BF180 /* CQPointsRuleView.h in Sources */ = {isa = PBXBuildFile; fileRef = D9DE781121E9BE1C009BF180 /* CQPointsRuleView.h */; };
 		D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */; };
 		D9EFB67821BACBFE00E12EE1 /* CQWeChatMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB67721BACBFE00E12EE1 /* CQWeChatMenuView.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		D99D942D21B8B69700F63425 /* CQBlockAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockAlertView.m; sourceTree = "<group>"; };
 		D99D942F21B8CFA200F63425 /* UIButton+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CQBlockSupport.h"; sourceTree = "<group>"; };
 		D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CQBlockSupport.m"; sourceTree = "<group>"; };
+		D9DE781021E9BE1C009BF180 /* CQPointsRuleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQPointsRuleView.m; sourceTree = "<group>"; };
+		D9DE781121E9BE1C009BF180 /* CQPointsRuleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQPointsRuleView.h; sourceTree = "<group>"; };
 		D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLoadingView.h; sourceTree = "<group>"; };
 		D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQLoadingView.m; sourceTree = "<group>"; };
 		D9EFB67621BACBFE00E12EE1 /* CQWeChatMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQWeChatMenuView.h; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				D99D942B21B8B63D00F63425 /* 带block回调的弹窗 */,
 				D94A21D821B8F5900047AFBD /* 带网络图片与block回调的弹窗 */,
 				D94A21DC21B900EA0047AFBD /* 炫彩UIAlertView */,
+				D9DE780F21E9BD11009BF180 /* 积分规则说明弹窗 */,
 				D9EFB67521BACB0300E12EE1 /* 微信菜单弹窗 */,
 			);
 			path = Alert;
@@ -332,6 +337,15 @@
 			path = "带block回调的弹窗";
 			sourceTree = "<group>";
 		};
+		D9DE780F21E9BD11009BF180 /* 积分规则说明弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				D9DE781121E9BE1C009BF180 /* CQPointsRuleView.h */,
+				D9DE781021E9BE1C009BF180 /* CQPointsRuleView.m */,
+			);
+			path = "积分规则说明弹窗";
+			sourceTree = "<group>";
+		};
 		D9EFB67521BACB0300E12EE1 /* 微信菜单弹窗 */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +366,7 @@
 				D92F3F6E1E97BA1E00438386 /* Sources */,
 				D92F3F6F1E97BA1E00438386 /* Frameworks */,
 				D92F3F701E97BA1E00438386 /* Resources */,
+				D9BFD416DC98668BDA6BD59F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -492,6 +507,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D9BFD416DC98668BDA6BD59F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlertToastHUD/Pods-AlertToastHUD-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlertToastHUD/Pods-AlertToastHUD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -499,6 +532,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DE781321E9BF67009BF180 /* CQPointsRuleView.h in Sources */,
+				D9DE781221E9BF5D009BF180 /* CQPointsRuleView.m in Sources */,
 				D92F3FAA1E97E83300438386 /* CQDeclareAlertView.m in Sources */,
 				D93BE01F21B68FFF004CA3A1 /* CQAlertViewController.m in Sources */,
 				D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */,

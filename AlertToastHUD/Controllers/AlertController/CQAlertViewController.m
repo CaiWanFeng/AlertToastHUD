@@ -12,12 +12,14 @@
 #import "CQBlockAlertView.h"
 #import "CQImageBlockAlertView.h"
 #import "CQColorfulAlertView.h"
+#import "CQPointsRuleView.h"
 
 typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     CQContentsAlertTypeDeclare,
     CQContentsAlertTypeBlock,
     CQContentsAlertTypeImageBlock,
-    CQContentsAlertTypeColorfulAlertView
+    CQContentsAlertTypeColorfulAlertView,
+    CQContentsAlertTypeRuleView
 };
 
 @interface CQAlertViewController () <CQDeclareAlertViewDelegate>
@@ -36,7 +38,8 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsAlertTypeDeclare)},
                            @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsAlertTypeBlock)},
                            @{@"title" : @"带网络图片和block回调的弹窗", @"type" : @(CQContentsAlertTypeImageBlock)},
-                           @{@"title" : @"炫彩UIAlertView", @"type" : @(CQContentsAlertTypeColorfulAlertView)}];
+                           @{@"title" : @"炫彩UIAlertView", @"type" : @(CQContentsAlertTypeColorfulAlertView)},
+                           @{@"title" : @"积分规则说明弹窗", @"type" : @(CQContentsAlertTypeRuleView)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
@@ -74,6 +77,13 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
             {
                 // 炫彩UIAlertView
                 [strongSelf showColorfulAlertView];
+            }
+                break;
+                
+            case CQContentsAlertTypeRuleView:
+            {
+                // 积分规则弹窗
+                [strongSelf showRuleView];
             }
                 break;
         }
@@ -119,6 +129,12 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     [CQColorfulAlertView showConversionSucceedAlertWithCouponName:@"兑换成功" validityTime:@"2018-11-11" checkCouponButtonClickedBlock:^{
         [CQToast showWithMessage:@"兑换成功"];
     }];
+}
+
+#pragma mark - 规则说明view
+
+- (void)showRuleView {
+    [CQPointsRuleView showWithImageURL:@"https://upload-images.jianshu.io/upload_images/1692043-fac3309a5bfa76db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/780"];
 }
 
 @end

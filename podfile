@@ -1,6 +1,7 @@
 platform:ios,'8.0'
 target 'AlertToastHUD' do
 pod 'Masonry'
+pod 'SVProgressHUD'
 pod 'JSONModel'
 pod 'SDWebImage'
 end
