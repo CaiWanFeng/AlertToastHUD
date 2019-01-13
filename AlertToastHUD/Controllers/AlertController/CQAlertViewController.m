@@ -131,7 +131,7 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     }];
 }
 
-#pragma mark - 规则说明view
+#pragma mark - 积分规则说明弹窗
 
 - (void)showRuleView {
     [CQPointsRuleView showWithImageURL:@"https://upload-images.jianshu.io/upload_images/1692043-fac3309a5bfa76db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/780"];
