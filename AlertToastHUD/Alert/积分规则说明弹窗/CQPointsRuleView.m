@@ -39,7 +39,7 @@
     
     // before animation
     pointsRuleView.alpha = 0;
-    pointsRuleView.imageView.transform = CGAffineTransformScale(pointsRuleView.imageView.transform, 1.2, 1.2);
+    pointsRuleView.imageView.transform = CGAffineTransformScale(pointsRuleView.imageView.transform, 0.2, 0.2);
     
     [[UIApplication sharedApplication].delegate.window addSubview:pointsRuleView];
 }
@@ -55,9 +55,7 @@
         // load image
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:imageURL] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             // call block
-            if (completion) {
-                completion(error ? YES : NO);
-            }
+            !completion ?: completion(error != nil);
         }];
         
         // add tap gesture
