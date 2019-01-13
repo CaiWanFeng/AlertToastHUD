@@ -25,6 +25,7 @@
         [SVProgressHUD dismiss];
         
         if (hasError) {
+            [pointsRuleView removeFromSuperview];
             [SVProgressHUD showErrorWithStatus:@"network error"];
             return;
         }
@@ -60,14 +61,10 @@
         }];
         
         // add tap gesture
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeFromSuperview)];
         [self addGestureRecognizer:tapGesture];
     }
     return self;
-}
-
-- (void)dismiss {
-    [self removeFromSuperview];
 }
 
 - (void)layoutSubviews {
