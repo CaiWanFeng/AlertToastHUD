@@ -9,6 +9,11 @@
 #import "CQToast.h"
 #import <Masonry.h>
 
+NSNotificationName const CQToastWillShowNotification    = @"CQToastWillShowNotification";
+NSNotificationName const CQToastDidShowNotification     = @"CQToastDidShowNotification";
+NSNotificationName const CQToastWillDismissNotification = @"CQToastWillDismissNotification";
+NSNotificationName const CQToastDidDismissNotification  = @"CQToastDidDismissNotification";
+
 /**
  toast的style
  
@@ -211,15 +216,23 @@ static NSTimeInterval CQToastDefaultFadeDuration;
 + (void)p_showWithMessage:(NSString *)message image:(NSString *)imageName duration:(NSTimeInterval)duration style:(CQToastStyle)style {
     // 切换到主线程
     dispatch_async(dispatch_get_main_queue(), ^{
+        // 将要展示
+        [[NSNotificationCenter defaultCenter] postNotificationName:CQToastWillShowNotification object:nil];
         CQToast *toast = [[CQToast alloc] init];
         [[UIApplication sharedApplication].delegate.window addSubview:toast];
         [toast p_setupWithMessage:message image:imageName style:style];
+        // 已经展示
+        [[NSNotificationCenter defaultCenter] postNotificationName:CQToastDidShowNotification object:nil];
         // 指定时间移除
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 将要消失
+            [[NSNotificationCenter defaultCenter] postNotificationName:CQToastWillDismissNotification object:nil];
             [UIView animateWithDuration:CQToastDefaultFadeDuration animations:^{
                 toast.alpha = 0;
             } completion:^(BOOL finished) {
                 [toast removeFromSuperview];
+                // 已经消失
+                [[NSNotificationCenter defaultCenter] postNotificationName:CQToastDidDismissNotification object:nil];
             }];
         });
     });

@@ -8,7 +8,24 @@
 
 #import "CQWeChatMenuView.h"
 
+@interface CQWeChatMenuView () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, copy) dispatch_block_t b;
+
+@end
+
 @implementation CQWeChatMenuView
+
++ (void)showWithItems:(NSArray *)items cellClickedBlock:(void (^)(NSInteger index))block {
+    
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        
+    }
+    return self;
+}
 
 
 

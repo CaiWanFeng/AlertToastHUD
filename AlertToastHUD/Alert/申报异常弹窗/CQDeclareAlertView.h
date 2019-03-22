@@ -9,8 +9,8 @@
 //========== 申报异常弹窗 ==========//
 
 #import <UIKit/UIKit.h>
-@class CQDeclareAlertView;
 
+@class CQDeclareAlertView;
 
 @protocol CQDeclareAlertViewDelegate <NSObject>
 
@@ -18,7 +18,6 @@
 - (void)CQDeclareAlertView:(CQDeclareAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end
-
 
 @interface CQDeclareAlertView : UIView
 

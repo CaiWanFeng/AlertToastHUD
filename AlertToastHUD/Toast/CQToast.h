@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSNotificationName const CQToastWillShowNotification;
+UIKIT_EXTERN NSNotificationName const CQToastDidShowNotification;
+UIKIT_EXTERN NSNotificationName const CQToastWillDismissNotification;
+UIKIT_EXTERN NSNotificationName const CQToastDidDismissNotification;
+
 @interface CQToast : UIView
 
 #pragma mark - show toast

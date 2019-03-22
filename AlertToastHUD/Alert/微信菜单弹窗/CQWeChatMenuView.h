@@ -10,4 +10,6 @@
 
 @interface CQWeChatMenuView : UIView
 
++ (void)showWithItems:(NSArray *)items cellClickedBlock:(void (^)(NSInteger index))block;
+
 @end

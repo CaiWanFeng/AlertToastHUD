@@ -29,6 +29,8 @@
 		D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DE21B9011E0047AFBD /* CQColorfulAlertView.m */; };
 		D99D942E21B8B69700F63425 /* CQBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D942D21B8B69700F63425 /* CQBlockAlertView.m */; };
 		D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */; };
+		D9C21A29221026EF00B40AD9 /* CQWeChatItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C21A28221026EF00B40AD9 /* CQWeChatItemModel.m */; };
+		D9C21A2C2210271900B40AD9 /* CQWeChatItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C21A2B2210271900B40AD9 /* CQWeChatItemCell.m */; };
 		D9DE781221E9BF5D009BF180 /* CQPointsRuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DE781021E9BE1C009BF180 /* CQPointsRuleView.m */; };
 		D9DE781321E9BF67009BF180 /* CQPointsRuleView.h in Sources */ = {isa = PBXBuildFile; fileRef = D9DE781121E9BE1C009BF180 /* CQPointsRuleView.h */; };
 		D9E85D301F3EB3160084F970 /* CQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E85D2F1F3EB3160084F970 /* CQLoadingView.m */; };
@@ -97,6 +99,10 @@
 		D99D942D21B8B69700F63425 /* CQBlockAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockAlertView.m; sourceTree = "<group>"; };
 		D99D942F21B8CFA200F63425 /* UIButton+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CQBlockSupport.h"; sourceTree = "<group>"; };
 		D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CQBlockSupport.m"; sourceTree = "<group>"; };
+		D9C21A27221026EF00B40AD9 /* CQWeChatItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQWeChatItemModel.h; sourceTree = "<group>"; };
+		D9C21A28221026EF00B40AD9 /* CQWeChatItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQWeChatItemModel.m; sourceTree = "<group>"; };
+		D9C21A2A2210271900B40AD9 /* CQWeChatItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQWeChatItemCell.h; sourceTree = "<group>"; };
+		D9C21A2B2210271900B40AD9 /* CQWeChatItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQWeChatItemCell.m; sourceTree = "<group>"; };
 		D9DE781021E9BE1C009BF180 /* CQPointsRuleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQPointsRuleView.m; sourceTree = "<group>"; };
 		D9DE781121E9BE1C009BF180 /* CQPointsRuleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQPointsRuleView.h; sourceTree = "<group>"; };
 		D9E85D2E1F3EB3160084F970 /* CQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLoadingView.h; sourceTree = "<group>"; };
@@ -351,6 +357,10 @@
 			children = (
 				D9EFB67621BACBFE00E12EE1 /* CQWeChatMenuView.h */,
 				D9EFB67721BACBFE00E12EE1 /* CQWeChatMenuView.m */,
+				D9C21A27221026EF00B40AD9 /* CQWeChatItemModel.h */,
+				D9C21A28221026EF00B40AD9 /* CQWeChatItemModel.m */,
+				D9C21A2A2210271900B40AD9 /* CQWeChatItemCell.h */,
+				D9C21A2B2210271900B40AD9 /* CQWeChatItemCell.m */,
 			);
 			path = "微信菜单弹窗";
 			sourceTree = "<group>";
@@ -533,7 +543,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DE781321E9BF67009BF180 /* CQPointsRuleView.h in Sources */,
+				D9C21A2C2210271900B40AD9 /* CQWeChatItemCell.m in Sources */,
 				D9DE781221E9BF5D009BF180 /* CQPointsRuleView.m in Sources */,
+				D9C21A29221026EF00B40AD9 /* CQWeChatItemModel.m in Sources */,
 				D92F3FAA1E97E83300438386 /* CQDeclareAlertView.m in Sources */,
 				D93BE01F21B68FFF004CA3A1 /* CQAlertViewController.m in Sources */,
 				D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */,
