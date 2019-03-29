@@ -10,6 +10,7 @@
 #import "CQAlertViewController.h"
 #import "CQToastViewController.h"
 #import "CQHUDViewController.h"
+#import "CQLoadingViewController.h"
 
 @interface CQHomeTabBarController ()
 
@@ -36,7 +37,12 @@
     hudVC.title   = @"hud";
     hudNavi.title = @"hud";
     
-    self.viewControllers = @[alertNavi, toastNavi, hudNavi];
+    CQLoadingViewController *loadingVC   = [[CQLoadingViewController alloc] init];
+    UINavigationController  *loadingNavi = [[UINavigationController alloc] initWithRootViewController:loadingVC];
+    loadingVC.title   = @"loading";
+    loadingNavi.title = @"loading";
+    
+    self.viewControllers = @[alertNavi, toastNavi, hudNavi, loadingNavi];
 }
 
 @end
