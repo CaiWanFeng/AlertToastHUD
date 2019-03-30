@@ -26,18 +26,12 @@ typedef NS_ENUM(NSUInteger, CQContentsHudStyle) {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 数据源
-    NSArray *dictArray = @[@{@"title" : @"纯loading，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingOnly)},
+    //------- 数据源 -------//
+    self.dataArray = @[@{@"title" : @"纯loading，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingOnly)},
                            @{@"title" : @"loading+文字，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingWithMessage)},
-                           @{@"title" : @"允许用户交互的loading，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingWithUserEnabled)}];
-    NSMutableArray *modelArray = [NSMutableArray array];
-    for (NSDictionary *dict in dictArray) {
-        CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
-        [modelArray addObject:model];
-    }
-    self.dataArray = modelArray.copy;
+                           @{@"title" : @"允许用户交互的loading，3秒自动移除", @"type" : @(CQContentsHudStyleLoadingWithUserEnabled)}].mutableCopy;
     
-    // cell点击时回调
+    //------- cell点击回调 -------//
     self.cellSelectedBlock = ^(NSInteger index) {
         switch (index) {
             case CQContentsHudStyleLoadingOnly:

@@ -27,6 +27,7 @@
 		D93F1FA9224E519700F66239 /* CQLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FA8224E519700F66239 /* CQLoadingViewController.m */; };
 		D93F1FAD224E526F00F66239 /* CQLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FAC224E526F00F66239 /* CQLoading.m */; };
 		D93F1FB1224E6E7800F66239 /* IChuAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FB0224E6E7800F66239 /* IChuAlertView.m */; };
+		D93F1FB6224F6B4100F66239 /* CQPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FB5224F6B4100F66239 /* CQPlaceholderViewController.m */; };
 		D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQHUD.m */; };
 		D94A21DB21B8F7440047AFBD /* CQImageBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */; };
 		D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DE21B9011E0047AFBD /* CQColorfulAlertView.m */; };
@@ -98,6 +99,8 @@
 		D93F1FAC224E526F00F66239 /* CQLoading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQLoading.m; sourceTree = "<group>"; };
 		D93F1FAF224E6E7800F66239 /* IChuAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IChuAlertView.h; sourceTree = "<group>"; };
 		D93F1FB0224E6E7800F66239 /* IChuAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IChuAlertView.m; sourceTree = "<group>"; };
+		D93F1FB4224F6B4100F66239 /* CQPlaceholderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQPlaceholderViewController.h; sourceTree = "<group>"; };
+		D93F1FB5224F6B4100F66239 /* CQPlaceholderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQPlaceholderViewController.m; sourceTree = "<group>"; };
 		D94506FC1EE7E2B900BDD860 /* CQHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUD.h; sourceTree = "<group>"; };
 		D94506FD1EE7E2B900BDD860 /* CQHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUD.m; sourceTree = "<group>"; };
 		D94A21D921B8F7440047AFBD /* CQImageBlockAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQImageBlockAlertView.h; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 				D93BE02721B6986E004CA3A1 /* ToastController */,
 				D93BE02821B69873004CA3A1 /* HudController */,
 				D93F1FA6224E510300F66239 /* LoadingController */,
+				D93F1FB3224F659900F66239 /* PlaceholderViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +251,7 @@
 				D9098AB621B1246E00224659 /* Toast */,
 				D907217321B11596006D6C3F /* HUD */,
 				D93F1FAA224E522800F66239 /* Loading */,
+				D93F1FB2224F652F00F66239 /* PlaceholderView */,
 				D907217221B11512006D6C3F /* Controllers */,
 				D92F3FAB1E97E8CE00438386 /* Category */,
 				D92F3F781E97BA1E00438386 /* AppDelegate.h */,
@@ -353,6 +358,22 @@
 				D93F1FB0224E6E7800F66239 /* IChuAlertView.m */,
 			);
 			path = "iChu app的整套弹窗";
+			sourceTree = "<group>";
+		};
+		D93F1FB2224F652F00F66239 /* PlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlaceholderView;
+			sourceTree = "<group>";
+		};
+		D93F1FB3224F659900F66239 /* PlaceholderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D93F1FB4224F6B4100F66239 /* CQPlaceholderViewController.h */,
+				D93F1FB5224F6B4100F66239 /* CQPlaceholderViewController.m */,
+			);
+			path = PlaceholderViewController;
 			sourceTree = "<group>";
 		};
 		D94A21D821B8F5900047AFBD /* 带网络图片与block回调的弹窗 */ = {
@@ -595,6 +616,7 @@
 				D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */,
 				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,
+				D93F1FB6224F6B4100F66239 /* CQPlaceholderViewController.m in Sources */,
 				D92F3F771E97BA1E00438386 /* main.m in Sources */,
 				D94A21DB21B8F7440047AFBD /* CQImageBlockAlertView.m in Sources */,
 				D93BE02221B69037004CA3A1 /* CQToastViewController.m in Sources */,

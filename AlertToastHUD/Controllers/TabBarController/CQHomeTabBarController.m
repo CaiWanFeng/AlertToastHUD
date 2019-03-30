@@ -11,6 +11,7 @@
 #import "CQToastViewController.h"
 #import "CQHUDViewController.h"
 #import "CQLoadingViewController.h"
+#import "CQPlaceholderViewController.h"
 
 @interface CQHomeTabBarController ()
 
@@ -42,7 +43,12 @@
     loadingVC.title   = @"loading";
     loadingNavi.title = @"loading";
     
-    self.viewControllers = @[alertNavi, toastNavi, hudNavi, loadingNavi];
+    CQPlaceholderViewController *placeholderVC = [[CQPlaceholderViewController alloc] init];
+    UINavigationController *placeholderNavi = [[UINavigationController alloc] initWithRootViewController:placeholderVC];
+    placeholderVC.title   = @"占位图";
+    placeholderNavi.title = @"占位图";
+    
+    self.viewControllers = @[alertNavi, toastNavi, hudNavi, loadingNavi, placeholderNavi];
 }
 
 @end

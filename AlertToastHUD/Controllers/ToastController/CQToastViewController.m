@@ -32,8 +32,8 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 数据源
-    NSArray *dictArray = @[@{@"title" : @"纯文本toast", @"type" : @(CQContentsToastStyleText)},
+    //------- 数据源 -------//
+    self.dataArray = @[@{@"title" : @"纯文本toast", @"type" : @(CQContentsToastStyleText)},
                            @{@"title" : @"图文toast", @"type" : @(CQContentsToastStyleImageText)},
                            @{@"title" : @"赞👍", @"type" : @(CQContentsToastStyleZan)},
                            @{@"title" : @"子线程调用", @"type" : @(CQContentsToastStyleChildThread)},
@@ -42,15 +42,9 @@ typedef NS_ENUM(NSUInteger, CQContentsToastStyle) {
                            @{@"title" : @"修改toast默认字体颜色", @"type" : @(CQContentsToastStyleChangeTextColor)},
                            @{@"title" : @"修改toast默认展示时间", @"type" : @(CQContentsToastStyleChangeDuration)},
                            @{@"title" : @"修改toast默认消失时间", @"type" : @(CQContentsToastStyleChangeFadeDuration)},
-                           @{@"title" : @"重置为初始状态", @"type" : @(CQContentsToastStyleReset)}];
-    NSMutableArray *modelArray = [NSMutableArray array];
-    for (NSDictionary *dict in dictArray) {
-        CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
-        [modelArray addObject:model];
-    }
-    self.dataArray = modelArray.copy;
+                           @{@"title" : @"重置为初始状态", @"type" : @(CQContentsToastStyleReset)}].mutableCopy;
     
-    // cell点击时回调
+    //------- cell点击回调 -------//
     self.cellSelectedBlock = ^(NSInteger index) {
         switch (index) {
             case CQContentsToastStyleText:

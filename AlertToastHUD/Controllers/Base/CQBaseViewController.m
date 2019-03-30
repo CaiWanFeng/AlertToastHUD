@@ -17,8 +17,6 @@
 
 @implementation CQBaseViewController
 
-@synthesize dataArray = _dataArray;
-
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
@@ -34,17 +32,16 @@
     }];
 }
 
-#pragma mark - getter & setter
+#pragma mark - setter
 
-- (NSArray<CQContentsModel *> *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSArray array];
+- (void)setDataArray:(NSMutableArray<CQContentsModel *> *)dataArray {
+    _dataArray = [NSMutableArray array];
+    
+    for (NSDictionary *dict in dataArray) {
+        CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
+        [_dataArray addObject:model];
     }
-    return _dataArray;
-}
-
-- (void)setDataArray:(NSArray<CQContentsModel *> *)dataArray {
-    _dataArray = dataArray;
+    
     [self.tableView reloadData];
 }
 

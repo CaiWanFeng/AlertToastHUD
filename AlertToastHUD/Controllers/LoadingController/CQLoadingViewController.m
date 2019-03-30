@@ -19,18 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 数据源
-    NSArray *dictArray = @[@{@"title" : @"展示在self.view上的loading,3s移除", @"type" : @(0)},
+    //------- 数据源 -------//
+    self.dataArray = @[@{@"title" : @"展示在self.view上的loading,3s移除", @"type" : @(0)},
                            @{@"title" : @"展示在window上的loading,3s移除", @"type" : @(1)},
-                           @{@"title" : @"展示在self.view上带文本的loading,3s移除", @"type" : @(2)}];
-    NSMutableArray *modelArray = [NSMutableArray array];
-    for (NSDictionary *dict in dictArray) {
-        CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
-        [modelArray addObject:model];
-    }
-    self.dataArray = modelArray.copy;
+                           @{@"title" : @"展示在self.view上带文本的loading,3s移除", @"type" : @(2)}].mutableCopy;
     
-    // cell点击时回调
+    //------- cell点击回调 -------//
     __weak typeof(self) weakSelf = self;
     self.cellSelectedBlock = ^(NSInteger index) {
         __strong typeof(self) strongSelf = weakSelf;

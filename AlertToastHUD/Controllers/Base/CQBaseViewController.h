@@ -14,7 +14,7 @@ typedef void(^CellSelectedBlock)(NSInteger index);
 @interface CQBaseViewController : UIViewController
 
 /** 数据源数组 */
-@property (nonatomic, strong) NSArray <CQContentsModel *> *dataArray;
+@property (nonatomic, strong) NSMutableArray <CQContentsModel *> *dataArray;
 /** cell点击时回调 */
 @property (nonatomic, copy) CellSelectedBlock cellSelectedBlock;
 

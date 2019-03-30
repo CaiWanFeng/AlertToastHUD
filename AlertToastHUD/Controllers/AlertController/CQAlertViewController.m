@@ -36,21 +36,15 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 数据源
-    NSArray *dictArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsAlertTypeDeclare)},
+    //------- 数据源 -------//
+    self.dataArray = @[@{@"title" : @"申报异常弹窗", @"type" : @(CQContentsAlertTypeDeclare)},
                            @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsAlertTypeBlock)},
                            @{@"title" : @"带网络图片和block回调的弹窗", @"type" : @(CQContentsAlertTypeImageBlock)},
                            @{@"title" : @"炫彩UIAlertView", @"type" : @(CQContentsAlertTypeColorfulAlertView)},
                            @{@"title" : @"积分规则说明弹窗", @"type" : @(CQContentsAlertTypeRuleView)},
-                           @{@"title" : @"iChu app 整套弹窗", @"type" : @(CQContentsAlertTypeIChu)}];
-    NSMutableArray *modelArray = [NSMutableArray array];
-    for (NSDictionary *dict in dictArray) {
-        CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
-        [modelArray addObject:model];
-    }
-    self.dataArray = modelArray.copy;
+                           @{@"title" : @"iChu app 整套弹窗", @"type" : @(CQContentsAlertTypeIChu)}].mutableCopy;
     
-    // cell点击时回调
+    //------- cell点击回调 -------//
     __weak typeof(self) weakSelf = self;
     self.cellSelectedBlock = ^(NSInteger index) {
         __strong typeof(self) strongSelf = weakSelf;
