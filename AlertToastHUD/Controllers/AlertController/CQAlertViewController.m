@@ -13,13 +13,15 @@
 #import "CQImageBlockAlertView.h"
 #import "CQColorfulAlertView.h"
 #import "CQPointsRuleView.h"
+#import "IChuAlertView.h"
 
 typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
     CQContentsAlertTypeDeclare,
     CQContentsAlertTypeBlock,
     CQContentsAlertTypeImageBlock,
     CQContentsAlertTypeColorfulAlertView,
-    CQContentsAlertTypeRuleView
+    CQContentsAlertTypeRuleView,
+    CQContentsAlertTypeIChu
 };
 
 @interface CQAlertViewController () <CQDeclareAlertViewDelegate>
@@ -39,7 +41,8 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
                            @{@"title" : @"带block回调的弹窗", @"type" : @(CQContentsAlertTypeBlock)},
                            @{@"title" : @"带网络图片和block回调的弹窗", @"type" : @(CQContentsAlertTypeImageBlock)},
                            @{@"title" : @"炫彩UIAlertView", @"type" : @(CQContentsAlertTypeColorfulAlertView)},
-                           @{@"title" : @"积分规则说明弹窗", @"type" : @(CQContentsAlertTypeRuleView)}];
+                           @{@"title" : @"积分规则说明弹窗", @"type" : @(CQContentsAlertTypeRuleView)},
+                           @{@"title" : @"iChu app 整套弹窗", @"type" : @(CQContentsAlertTypeIChu)}];
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
         CQContentsModel *model = [[CQContentsModel alloc] initWithDictionary:dict error:nil];
@@ -84,6 +87,13 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
             {
                 // 积分规则弹窗
                 [strongSelf showRuleView];
+            }
+                break;
+                
+            case CQContentsAlertTypeIChu:
+            {
+                // iChu app 整套弹窗
+                [strongSelf showIChuAlertView];
             }
                 break;
         }
@@ -135,6 +145,12 @@ typedef NS_ENUM(NSUInteger, CQContentsAlertType) {
 
 - (void)showRuleView {
     [CQPointsRuleView showWithImageURL:@"https://upload-images.jianshu.io/upload_images/1692043-fac3309a5bfa76db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/780"];
+}
+
+#pragma mark - iChu app 整套弹窗
+
+- (void)showIChuAlertView {
+    [IChuAlertView showWithTitle:@"标题" content:@"内容" buttonTitles:@[@"知道了"] buttonClickedBlock:nil];
 }
 
 @end

@@ -26,6 +26,7 @@
 		D93BE02E21B69A76004CA3A1 /* CQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93BE02D21B69A76004CA3A1 /* CQBaseViewController.m */; };
 		D93F1FA9224E519700F66239 /* CQLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FA8224E519700F66239 /* CQLoadingViewController.m */; };
 		D93F1FAD224E526F00F66239 /* CQLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FAC224E526F00F66239 /* CQLoading.m */; };
+		D93F1FB1224E6E7800F66239 /* IChuAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D93F1FB0224E6E7800F66239 /* IChuAlertView.m */; };
 		D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQHUD.m */; };
 		D94A21DB21B8F7440047AFBD /* CQImageBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */; };
 		D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DE21B9011E0047AFBD /* CQColorfulAlertView.m */; };
@@ -95,6 +96,8 @@
 		D93F1FA8224E519700F66239 /* CQLoadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQLoadingViewController.m; sourceTree = "<group>"; };
 		D93F1FAB224E526F00F66239 /* CQLoading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQLoading.h; sourceTree = "<group>"; };
 		D93F1FAC224E526F00F66239 /* CQLoading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQLoading.m; sourceTree = "<group>"; };
+		D93F1FAF224E6E7800F66239 /* IChuAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IChuAlertView.h; sourceTree = "<group>"; };
+		D93F1FB0224E6E7800F66239 /* IChuAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IChuAlertView.m; sourceTree = "<group>"; };
 		D94506FC1EE7E2B900BDD860 /* CQHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQHUD.h; sourceTree = "<group>"; };
 		D94506FD1EE7E2B900BDD860 /* CQHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQHUD.m; sourceTree = "<group>"; };
 		D94A21D921B8F7440047AFBD /* CQImageBlockAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQImageBlockAlertView.h; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 				D94A21D821B8F5900047AFBD /* 带网络图片与block回调的弹窗 */,
 				D94A21DC21B900EA0047AFBD /* 炫彩UIAlertView */,
 				D9DE780F21E9BD11009BF180 /* 积分规则说明弹窗 */,
+				D93F1FAE224E6E5100F66239 /* iChu app的整套弹窗 */,
 				D9EFB67521BACB0300E12EE1 /* 微信菜单弹窗 */,
 			);
 			path = Alert;
@@ -340,6 +344,15 @@
 				D93F1FAC224E526F00F66239 /* CQLoading.m */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		D93F1FAE224E6E5100F66239 /* iChu app的整套弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				D93F1FAF224E6E7800F66239 /* IChuAlertView.h */,
+				D93F1FB0224E6E7800F66239 /* IChuAlertView.m */,
+			);
+			path = "iChu app的整套弹窗";
 			sourceTree = "<group>";
 		};
 		D94A21D821B8F5900047AFBD /* 带网络图片与block回调的弹窗 */ = {
@@ -576,6 +589,7 @@
 				D93BE01F21B68FFF004CA3A1 /* CQAlertViewController.m in Sources */,
 				D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */,
 				D93BE01C21B68F96004CA3A1 /* CQHomeTabBarController.m in Sources */,
+				D93F1FB1224E6E7800F66239 /* IChuAlertView.m in Sources */,
 				D93F1FAD224E526F00F66239 /* CQLoading.m in Sources */,
 				D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */,
 				D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */,
