@@ -51,7 +51,7 @@ static NSInteger const kButtonBeginTag = 1000;
     IChuAlertView *alertView = [[IChuAlertView alloc] initWithTitle:title content:content buttonTitles:buttonTitles buttonClickedBlock:buttonClickedBlock];
     [[UIApplication sharedApplication].delegate.window addSubview:alertView];
     [alertView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo([UIApplication sharedApplication].delegate.window);
+        make.edges.mas_equalTo(alertView.superview);
     }];
     
     // 入场动画
