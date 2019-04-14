@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     
     //------- 数据源 -------//
-    self.dataArray = @[@{@"title" : @"展示在self.view上的loading,3s移除", @"type" : @(0)},
+    self.dataArray = @[@{@"title" : @"展示在tableView上的loading,3s移除", @"type" : @(0)},
                            @{@"title" : @"展示在window上的loading,3s移除", @"type" : @(1)},
                            @{@"title" : @"展示在self.view上带文本的loading,3s移除", @"type" : @(2)}].mutableCopy;
     
@@ -31,11 +31,11 @@
         switch (index) {
             case 0:
             {
-                // 展示在self.view上的loading
-                [CQLoading showOnView:strongSelf.view];
+                // 展示在tableView上的loading
+                [CQLoading showOnView:strongSelf.tableView];
                 // 3秒移除
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [CQLoading removeFromView:strongSelf.view];
+                    [CQLoading removeFromView:strongSelf.tableView];
                 });
             }
                 break;

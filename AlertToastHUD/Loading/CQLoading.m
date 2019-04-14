@@ -11,7 +11,7 @@
 
 @interface CQLoading ()
 
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *infoLabel;
 
 @end
@@ -36,7 +36,7 @@
     CQLoading *loading = [[CQLoading alloc] initWithInfo:info];
     [view addSubview:loading];
     [loading mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(view);
+        make.left.top.width.height.mas_equalTo(view);
     }];
 }
 
@@ -52,17 +52,14 @@
     if (self = [super init]) {
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];;
         
-        //------- 旋转菊花 -------//
-        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
-        [self addSubview:self.activityIndicator];
-        [self.activityIndicator mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.mas_equalTo(self);
+        //------- image view -------//
+        self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loading"]];
+        [self addSubview:self.imageView];
+        [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(self);
+            make.bottom.mas_equalTo(self.mas_centerY).mas_offset(-20);
             make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
-        self.activityIndicator.color = [UIColor grayColor];
-        self.activityIndicator.hidesWhenStopped = NO;
-        [self.activityIndicator startAnimating];
-        
         
         //------- info label -------//
         self.infoLabel = [[UILabel alloc] init];
@@ -71,11 +68,19 @@
         self.infoLabel.font = [UIFont systemFontOfSize:14];
         self.infoLabel.textAlignment = NSTextAlignmentCenter;
         [self.infoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_lessThanOrEqualTo(120);
-            make.top.mas_equalTo(self.mas_centerY).mas_offset(20);
+            make.width.mas_lessThanOrEqualTo(220);
+            make.top.mas_equalTo(self.imageView.mas_bottom).mas_offset(20);
             make.centerX.mas_equalTo(self);
-            make.height.mas_greaterThanOrEqualTo(20);
         }];
+        
+        //------- 旋转动画 -------//
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.fromValue = [NSNumber numberWithFloat:0.f];
+        animation.toValue = [NSNumber numberWithFloat: M_PI *2];
+        animation.duration = 1;
+        animation.fillMode = kCAFillModeForwards;
+        animation.repeatCount = MAXFLOAT;
+        [self.imageView.layer addAnimation:animation forKey:nil];
     }
     return self;
 }

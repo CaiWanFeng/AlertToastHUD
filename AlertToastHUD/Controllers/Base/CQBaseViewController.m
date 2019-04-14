@@ -11,8 +11,6 @@
 
 @interface CQBaseViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
-
 @end
 
 @implementation CQBaseViewController
