@@ -45,8 +45,8 @@
     
     CQPlaceholderViewController *placeholderVC = [[CQPlaceholderViewController alloc] init];
     UINavigationController *placeholderNavi = [[UINavigationController alloc] initWithRootViewController:placeholderVC];
-    placeholderVC.title   = @"占位图";
-    placeholderNavi.title = @"占位图";
+    placeholderVC.title   = @"placeholder";
+    placeholderNavi.title = @"placeholder";
     
     self.viewControllers = @[alertNavi, toastNavi, hudNavi, loadingNavi, placeholderNavi];
 }

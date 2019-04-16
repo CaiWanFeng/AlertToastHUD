@@ -54,6 +54,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseID];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseID];
+        cell.textLabel.adjustsFontSizeToFitWidth = YES;
     }
     cell.textLabel.text = self.dataArray[indexPath.row].title;
     return cell;

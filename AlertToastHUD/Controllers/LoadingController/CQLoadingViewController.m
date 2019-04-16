@@ -20,9 +20,10 @@
     // Do any additional setup after loading the view.
     
     //------- 数据源 -------//
-    self.dataArray = @[@{@"title" : @"展示在tableView上的loading,3s移除", @"type" : @(0)},
-                           @{@"title" : @"展示在window上的loading,3s移除", @"type" : @(1)},
-                           @{@"title" : @"展示在self.view上带文本的loading,3s移除", @"type" : @(2)}].mutableCopy;
+    self.dataArray = @[@{@"title" : @"[CQLoading show]; 3秒移除", @"type" : @(0)},
+                       @{@"title" : @"默认展示在delegate.window上", @"type" : @(1)},
+                       @{@"title" : @"展示在指定的view上", @"type" : @(2)},
+                       @{@"title" : @"展示在指定的view上，带文本", @"type" : @(3)}].mutableCopy;
     
     //------- cell点击回调 -------//
     __weak typeof(self) weakSelf = self;
@@ -31,31 +32,34 @@
         switch (index) {
             case 0:
             {
-                // 展示在tableView上的loading
-                [CQLoading showOnView:strongSelf.tableView];
-                // 3秒移除
+                [CQLoading show];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [CQLoading removeFromView:strongSelf.tableView];
+                    [CQLoading remove];
                 });
             }
                 break;
                 
             case 1:
             {
-                // 展示在window上的loading
-                [CQLoading showOnView:[UIApplication sharedApplication].delegate.window];
-                // 3秒移除
+                [CQLoading showWithInfo:@"默认展示在delegate.window上"];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [CQLoading removeFromView:[UIApplication sharedApplication].delegate.window];
+                    [CQLoading remove];
                 });
             }
                 break;
                 
             case 2:
             {
-                // 展示在self.view上带文本的loading
-                [CQLoading showOnView:strongSelf.view info:@"加载中。。。"];
-                // 3秒移除
+                [CQLoading showOnView:strongSelf.view];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [CQLoading removeFromView:strongSelf.view];
+                });
+            }
+                break;
+                
+            case 3:
+            {
+                [CQLoading showOnView:strongSelf.view info:@"loading..."];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [CQLoading removeFromView:strongSelf.view];
                 });

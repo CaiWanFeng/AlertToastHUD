@@ -12,9 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CQLoading : UIView
 
++ (void)show;
++ (void)showWithInfo:(NSString *)info;
 + (void)showOnView:(UIView *)view;
 + (void)showOnView:(UIView *)view info:(NSString *)info;
 
++ (void)remove;
 + (void)removeFromView:(UIView *)view;
 
 @end

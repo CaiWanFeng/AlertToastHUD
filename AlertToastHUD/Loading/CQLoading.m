@@ -9,6 +9,8 @@
 #import "CQLoading.h"
 #import <Masonry.h>
 
+#define CQLoadingDefaultView [UIApplication sharedApplication].delegate.window
+
 @interface CQLoading ()
 
 @property (nonatomic, strong) UIImageView *imageView;
@@ -18,6 +20,16 @@
 
 @implementation CQLoading
 
+#pragma mark - show
+
++ (void)show {
+    [CQLoading showOnView:CQLoadingDefaultView info:@""];
+}
+
++ (void)showWithInfo:(NSString *)info {
+    [CQLoading showOnView:CQLoadingDefaultView info:info];
+}
+
 + (void)showOnView:(UIView *)view {
     [CQLoading showOnView:view info:@""];
 }
@@ -26,18 +38,17 @@
     // 先将view上的loading移除
     [CQLoading removeFromView:view];
     
-    // 后台返回null，不展示文本（后台不返回null到底有多难？）
-    if ([info isKindOfClass:[NSNull class]]) {
-        [CQLoading showOnView:view];
-        return;
-    }
-    
-    // 正常流程
     CQLoading *loading = [[CQLoading alloc] initWithInfo:info];
     [view addSubview:loading];
     [loading mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.width.height.mas_equalTo(view);
     }];
+}
+
+#pragma mark - remove
+
++ (void)remove {
+    [CQLoading removeFromView:CQLoadingDefaultView];
 }
 
 + (void)removeFromView:(UIView *)view {
@@ -48,6 +59,8 @@
     }
 }
 
+#pragma mark - init
+
 - (instancetype)initWithInfo:(NSString *)info {
     if (self = [super init]) {
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];;
@@ -57,8 +70,14 @@
         [self addSubview:self.imageView];
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self);
-            make.bottom.mas_equalTo(self.mas_centerY).mas_offset(-20);
             make.size.mas_equalTo(CGSizeMake(30, 30));
+            if ([info isEqualToString:@""]) {
+                // 纯loading，放view正中
+                make.centerY.mas_equalTo(self);
+            } else {
+                // 有文本的loading，将imageView调高点
+                make.bottom.mas_equalTo(self.mas_centerY).mas_offset(-20);
+            }
         }];
         
         //------- info label -------//
@@ -80,6 +99,7 @@
         animation.duration = 1;
         animation.fillMode = kCAFillModeForwards;
         animation.repeatCount = MAXFLOAT;
+        animation.removedOnCompletion = NO;
         [self.imageView.layer addAnimation:animation forKey:nil];
     }
     return self;
