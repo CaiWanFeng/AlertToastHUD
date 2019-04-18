@@ -59,7 +59,7 @@
                 
             case 3:
             {
-                [CQLoading showOnView:strongSelf.view info:@"loading..."];
+                [CQLoading showOnView:strongSelf.view withInfo:@"loading..."];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [CQLoading removeFromView:strongSelf.view];
                 });

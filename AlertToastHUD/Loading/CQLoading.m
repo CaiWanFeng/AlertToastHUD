@@ -23,25 +23,25 @@
 #pragma mark - show
 
 + (void)show {
-    [CQLoading showOnView:CQLoadingDefaultView info:@""];
+    [CQLoading showOnView:CQLoadingDefaultView withInfo:@""];
 }
 
 + (void)showWithInfo:(NSString *)info {
-    [CQLoading showOnView:CQLoadingDefaultView info:info];
+    [CQLoading showOnView:CQLoadingDefaultView withInfo:info];
 }
 
-+ (void)showOnView:(UIView *)view {
-    [CQLoading showOnView:view info:@""];
++ (void)showOnView:(UIView *)superView {
+    [CQLoading showOnView:superView withInfo:@""];
 }
 
-+ (void)showOnView:(UIView *)view info:(NSString *)info {
++ (void)showOnView:(UIView *)superView withInfo:(NSString *)info {
     // 先将view上的loading移除
-    [CQLoading removeFromView:view];
+    [CQLoading removeFromView:superView];
     
     CQLoading *loading = [[CQLoading alloc] initWithInfo:info];
-    [view addSubview:loading];
+    [superView addSubview:loading];
     [loading mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.width.height.mas_equalTo(view);
+        make.left.top.width.height.mas_equalTo(superView);
     }];
 }
 
@@ -51,8 +51,8 @@
     [CQLoading removeFromView:CQLoadingDefaultView];
 }
 
-+ (void)removeFromView:(UIView *)view {
-    for (UIView *subView in view.subviews) {
++ (void)removeFromView:(UIView *)superView {
+    for (UIView *subView in superView.subviews) {
         if ([subView isMemberOfClass:[CQLoading class]]) {
             [subView removeFromSuperview];
         }

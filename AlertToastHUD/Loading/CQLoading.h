@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)show;
 + (void)showWithInfo:(NSString *)info;
-+ (void)showOnView:(UIView *)view;
-+ (void)showOnView:(UIView *)view info:(NSString *)info;
++ (void)showOnView:(UIView *)superView;
++ (void)showOnView:(UIView *)superView withInfo:(NSString *)info;
 
 + (void)remove;
-+ (void)removeFromView:(UIView *)view;
++ (void)removeFromView:(UIView *)superView;
 
 @end
 
