@@ -219,7 +219,7 @@ static NSTimeInterval CQToastDefaultFadeDuration;
         // 将要展示
         [[NSNotificationCenter defaultCenter] postNotificationName:CQToastWillShowNotification object:nil];
         CQToast *toast = [[CQToast alloc] init];
-        [[UIApplication sharedApplication].delegate.window addSubview:toast];
+        [[UIApplication sharedApplication].windows.lastObject addSubview:toast];
         [toast p_setupWithMessage:message image:imageName style:style];
         // 已经展示
         [[NSNotificationCenter defaultCenter] postNotificationName:CQToastDidShowNotification object:nil];
