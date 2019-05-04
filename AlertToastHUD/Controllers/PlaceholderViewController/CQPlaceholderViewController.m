@@ -10,6 +10,8 @@
 #import "CQPlaceholderView.h"
 #import "CQToast.h"
 #import <Masonry.h>
+#import "CQTableViewAutoShowController.h"
+#import "CQCollectionViewAutoShowController.h"
 
 @interface CQPlaceholderViewController ()
 
@@ -24,14 +26,16 @@
     //------- 数据源 -------//
     self.dataArray = @[@{@"title" : @"展示在self.view上", @"type" : @(0)},
                        @{@"title" : @"展示在self.tableView上", @"type" : @(1)},
-                       @{@"title" : @"重新设置占位图约束", @"type" : @(2)}].mutableCopy;
+                       @{@"title" : @"重新设置占位图约束", @"type" : @(2)},
+                       @{@"title" : @"tableView自动展示占位图", @"type" : @(3)},
+                       @{@"title" : @"collectionView自动展示占位图", @"type" : @(4)}].mutableCopy;
     
     //------- cell点击回调 -------//
     __weak typeof(self) weakSelf = self;
     self.cellSelectedBlock = ^(NSInteger index) {
         __strong typeof(self) strongSelf = weakSelf;
         switch (index) {
-            case 0:
+            case 0: // 展示在self.view上
             {
                 [CQPlaceholderView showOnView:strongSelf.view type:CQPlaceholderViewTypeNetwork viewTapedBlock:^{
                     [CQToast showWithMessage:@"单击移除"];
@@ -40,7 +44,7 @@
             }
                 break;
                 
-            case 1:
+            case 1: // 展示在self.tableView上
             {
                 [CQPlaceholderView showOnView:strongSelf.tableView type:CQPlaceholderViewTypeGoods viewTapedBlock:^{
                     [CQToast showWithMessage:@"单击移除"];
@@ -49,26 +53,35 @@
             }
                 break;
                 
-            case 2:
+            case 2: // 重新设置占位图约束
             {
-                CQPlaceholderView *placeholderView = [CQPlaceholderView showOnView:[UIApplication sharedApplication].delegate.window type:CQPlaceholderViewTypeMessage viewTapedBlock:^{
-                    [CQPlaceholderView removeFromView:[UIApplication sharedApplication].delegate.window];
+                CQPlaceholderView *placeholderView = [CQPlaceholderView showOnView:strongSelf.view type:CQPlaceholderViewTypeMessage viewTapedBlock:^{
+                    [CQPlaceholderView removeFromView:strongSelf.view];
                 }];
                 
                 placeholderView.backgroundColor = [UIColor orangeColor];
                 // 重新设置约束
                 [placeholderView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                    make.center.mas_equalTo(placeholderView.superview);
-                    make.size.mas_equalTo(CGSizeMake(200, 200));
+                    make.top.left.right.mas_offset(0);
+                    make.bottom.mas_offset(-100);
                 }];
             }
                 break;
                 
-            case 3:
+            case 3: // tableView自动展示占位图
             {
-                
+                CQTableViewAutoShowController *vc = [[CQTableViewAutoShowController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [strongSelf.navigationController pushViewController:vc animated:YES];
             }
                 break;
+                
+            case 4: // collectionView自动展示占位图
+            {
+                CQCollectionViewAutoShowController *vc = [[CQCollectionViewAutoShowController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [strongSelf.navigationController pushViewController:vc animated:YES];
+            }
         }
     };
 }

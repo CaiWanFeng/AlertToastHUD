@@ -63,7 +63,7 @@
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self);
             make.size.mas_equalTo(CGSizeMake(80, 80));
-            make.centerY.mas_offset(-50);
+            make.centerY.mas_offset(-80);
         }];
 
         self.label = [[UILabel alloc] init];
