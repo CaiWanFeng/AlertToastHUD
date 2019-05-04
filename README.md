@@ -17,3 +17,5 @@
 13. 2018.07.19 [iOS | 对封装自定义弹窗的一点思考](https://www.jianshu.com/p/541a46d867f9)
 14. 2019.03.30 [iOS实战 | 根据原型图，封装最适合你APP的整套弹窗](https://www.jianshu.com/p/10bbc036b9e8)
 15. 2019.04.16 [iOS实战 | 封装最适合你APP的整套loading](https://www.jianshu.com/p/0a9efb63846d)
+16. 2019.05.02 [iOS实战 | 封装最适合你APP的整套toast](https://www.jianshu.com/p/6a14976f13bb)
+17. 2019.05.04 [iOS实战UI终结篇 | 封装最适合你APP的整套占位图](https://www.jianshu.com/p/4ca75ff5a375)
