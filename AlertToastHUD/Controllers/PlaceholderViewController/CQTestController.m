@@ -1,24 +1,21 @@
 //
-//  CQTableViewAutoShowController.m
+//  CQTestController.m
 //  AlertToastHUD
 //
-//  Created by caiqiang on 2019/4/30.
+//  Created by caiqiang on 2019/5/22.
 //  Copyright © 2019 kuaijiankang. All rights reserved.
 //
 
-#import "CQTableViewAutoShowController.h"
-#import "UITableView+CQPlaceholderView.h"
+#import "CQTestController.h"
 
-@interface CQTableViewAutoShowController () <UITableViewDataSource>
+@interface CQTestController () <UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
-@implementation CQTableViewAutoShowController
-
-#pragma mark - Lazy Load
+@implementation CQTestController
 
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
@@ -27,29 +24,20 @@
     return _dataArray;
 }
 
-#pragma mark - Life Cycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"自动展示占位图";
+    self.title = @"未引入测试";
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.tableView];
-    [self.tableView cq_showPlaceholderViewWhenNoDataWithType:CQPlaceholderViewTypeOrder viewTapedBlock:^{
-        NSLog(@"点击占位图");
-    }];
     self.tableView.dataSource = self;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(addButtonClicked)];
     UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStylePlain target:self action:@selector(deleteButtonClicked)];
     
     self.navigationItem.rightBarButtonItems = @[addButton, deleteButton];
-}
-
-- (void)dealloc {
-    NSLog(@"已释放");
 }
 
 #pragma mark - 添加/删除

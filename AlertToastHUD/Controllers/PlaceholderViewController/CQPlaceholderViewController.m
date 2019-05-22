@@ -12,6 +12,7 @@
 #import <Masonry.h>
 #import "CQTableViewAutoShowController.h"
 #import "CQCollectionViewAutoShowController.h"
+#import "CQTestController.h"
 
 @interface CQPlaceholderViewController ()
 
@@ -28,7 +29,8 @@
                        @{@"title" : @"展示在self.tableView上", @"type" : @(1)},
                        @{@"title" : @"重新设置占位图约束", @"type" : @(2)},
                        @{@"title" : @"tableView自动展示占位图", @"type" : @(3)},
-                       @{@"title" : @"collectionView自动展示占位图", @"type" : @(4)}].mutableCopy;
+                       @{@"title" : @"collectionView自动展示占位图", @"type" : @(4)},
+                       @{@"title" : @"test", @"type" : @(5)}].mutableCopy;
     
     //------- cell点击回调 -------//
     __weak typeof(self) weakSelf = self;
@@ -82,6 +84,15 @@
                 vc.hidesBottomBarWhenPushed = YES;
                 [strongSelf.navigationController pushViewController:vc animated:YES];
             }
+                break;
+                
+            case 5: // collectionView自动展示占位图
+            {
+                CQTestController *testVC = [[CQTestController alloc] init];
+                testVC.hidesBottomBarWhenPushed = YES;
+                [strongSelf.navigationController pushViewController:testVC animated:YES];
+            }
+                break;
         }
     };
 }

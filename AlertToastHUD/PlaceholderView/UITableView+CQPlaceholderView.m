@@ -10,11 +10,16 @@
 #import <objc/runtime.h>
 
 static char *cq_placeholderViewTypeKey = "cq_placeholderViewTypeKey";
+static char *cq_isAutoShowPlaceholderViewKey = "cq_isAutoShowPlaceholderViewKey";
 static char *cq_viewTapedBlockKey = "cq_viewTapedBlockKey";
 
 @interface UITableView ()
 
+/** 占位图类型 */
 @property (nonatomic, assign) CQPlaceholderViewType cq_placeholderViewType;
+/** 是否自动显示占位图 */
+@property (nonatomic, assign) BOOL cq_isAutoShowPlaceholderView;
+/** 占位图点击回调 */
 @property (nonatomic, copy) dispatch_block_t cq_viewTapedBlock;
 
 @end
@@ -31,6 +36,14 @@ static char *cq_viewTapedBlockKey = "cq_viewTapedBlockKey";
     objc_setAssociatedObject(self, cq_placeholderViewTypeKey, [NSNumber numberWithInteger:cq_placeholderViewType], OBJC_ASSOCIATION_ASSIGN);
 }
 
+- (BOOL)cq_isAutoShowPlaceholderView {
+    return [objc_getAssociatedObject(self, cq_isAutoShowPlaceholderViewKey) boolValue];
+}
+
+- (void)setCq_isAutoShowPlaceholderView:(BOOL)cq_isAutoShowPlaceholderView {
+    objc_setAssociatedObject(self, cq_isAutoShowPlaceholderViewKey, [NSNumber numberWithBool:cq_isAutoShowPlaceholderView], OBJC_ASSOCIATION_ASSIGN);
+}
+
 - (dispatch_block_t)cq_viewTapedBlock {
     return objc_getAssociatedObject(self, cq_viewTapedBlockKey);
 }
@@ -39,18 +52,9 @@ static char *cq_viewTapedBlockKey = "cq_viewTapedBlockKey";
     objc_setAssociatedObject(self, cq_viewTapedBlockKey, cq_viewTapedBlock, OBJC_ASSOCIATION_COPY);
 }
 
-#pragma mark - show
-/**
- tableView无数据时自动展示占位图
- 
- @param type 占位图类型
- @param viewTapedBlock 点击占位图的回调
- */
-- (void)cq_showPlaceholderViewWhenNoDataWithType:(CQPlaceholderViewType)type
-                                  viewTapedBlock:(dispatch_block_t)viewTapedBlock {
-    self.cq_placeholderViewType = type;
-    self.cq_viewTapedBlock = viewTapedBlock;
-    
+#pragma mark - load
+
++ (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         SEL APPLE_SEL = @selector(reloadData);
@@ -68,10 +72,29 @@ static char *cq_viewTapedBlockKey = "cq_viewTapedBlockKey";
     });
 }
 
+#pragma mark - show
+/**
+ tableView无数据时自动展示占位图
+ 
+ @param type 占位图类型
+ @param viewTapedBlock 点击占位图的回调
+ */
+- (void)cq_showPlaceholderViewWhenNoDataWithType:(CQPlaceholderViewType)type
+                                  viewTapedBlock:(dispatch_block_t)viewTapedBlock {
+    self.cq_placeholderViewType = type;
+    self.cq_isAutoShowPlaceholderView = YES;
+    self.cq_viewTapedBlock = viewTapedBlock;
+}
+
 #pragma mark - 重新实现reloadData
 
 - (void)cq_reloadData {
     [self cq_reloadData];
+    
+    // 不自动展示占位图
+    if (!self.cq_isAutoShowPlaceholderView) {
+        return;
+    }
     
     id dataSource = self.dataSource;
     

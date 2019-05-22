@@ -32,6 +32,7 @@
 		D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D94506FD1EE7E2B900BDD860 /* CQHUD.m */; };
 		D94A21DB21B8F7440047AFBD /* CQImageBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */; };
 		D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94A21DE21B9011E0047AFBD /* CQColorfulAlertView.m */; };
+		D9545B4222952D19008B6355 /* CQTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9545B4122952D19008B6355 /* CQTestController.m */; };
 		D99D942E21B8B69700F63425 /* CQBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D942D21B8B69700F63425 /* CQBlockAlertView.m */; };
 		D99D943121B8CFA200F63425 /* UIButton+CQBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D99D943021B8CFA200F63425 /* UIButton+CQBlockSupport.m */; };
 		D9A9FEBC2277DDC500E4384E /* UITableView+CQPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A9FEBB2277DDC500E4384E /* UITableView+CQPlaceholderView.m */; };
@@ -114,6 +115,8 @@
 		D94A21DA21B8F7440047AFBD /* CQImageBlockAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQImageBlockAlertView.m; sourceTree = "<group>"; };
 		D94A21DD21B9011E0047AFBD /* CQColorfulAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQColorfulAlertView.h; sourceTree = "<group>"; };
 		D94A21DE21B9011E0047AFBD /* CQColorfulAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQColorfulAlertView.m; sourceTree = "<group>"; };
+		D9545B4022952D19008B6355 /* CQTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQTestController.h; sourceTree = "<group>"; };
+		D9545B4122952D19008B6355 /* CQTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQTestController.m; sourceTree = "<group>"; };
 		D99D942C21B8B69700F63425 /* CQBlockAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CQBlockAlertView.h; sourceTree = "<group>"; };
 		D99D942D21B8B69700F63425 /* CQBlockAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQBlockAlertView.m; sourceTree = "<group>"; };
 		D99D942F21B8CFA200F63425 /* UIButton+CQBlockSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CQBlockSupport.h"; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 				D9A9FEBE2277F51D00E4384E /* CQTableViewAutoShowController.m */,
 				D9A9FECB22784C4800E4384E /* CQCollectionViewAutoShowController.h */,
 				D9A9FECC22784C4800E4384E /* CQCollectionViewAutoShowController.m */,
+				D9545B4022952D19008B6355 /* CQTestController.h */,
+				D9545B4122952D19008B6355 /* CQTestController.m */,
 			);
 			path = PlaceholderViewController;
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				D9A9FEBF2277F51D00E4384E /* CQTableViewAutoShowController.m in Sources */,
 				D93F1FAD224E526F00F66239 /* CQLoading.m in Sources */,
 				D94506FE1EE7E2B900BDD860 /* CQHUD.m in Sources */,
+				D9545B4222952D19008B6355 /* CQTestController.m in Sources */,
 				D94A21DF21B9011E0047AFBD /* CQColorfulAlertView.m in Sources */,
 				D92F3FB11E97E8CE00438386 /* UIView+frameAdjust.m in Sources */,
 				D92F3F7A1E97BA1E00438386 /* AppDelegate.m in Sources */,

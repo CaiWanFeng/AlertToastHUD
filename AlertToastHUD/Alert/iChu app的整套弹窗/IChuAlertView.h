@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param buttonClickedBlock 按钮点击回调
  @return 自定义弹窗实例
  */
-+ (instancetype)showWithTitle:(nullable NSString *)title content:(NSString *)content buttonTitles:(NSArray *)buttonTitles buttonClickedBlock:(nullable void (^)(NSInteger index))buttonClickedBlock;
++ (instancetype)showWithTitle:(nullable NSString *)title content:(NSString *)content buttonTitles:(NSArray <NSString *> *)buttonTitles buttonClickedBlock:(nullable void (^)(NSInteger index))buttonClickedBlock;
 
 /** 设置第几个按钮是主按钮（主按钮为主题色粗体），默认最右边那个是主按钮 */
 - (void)setMainButtonIndex:(NSInteger)mainButtonIndex;

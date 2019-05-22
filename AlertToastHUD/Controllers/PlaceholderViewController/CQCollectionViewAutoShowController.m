@@ -54,6 +54,10 @@ static NSString * const kCellReuseID = @"kCellReuseID";
     self.navigationItem.rightBarButtonItems = @[addButton, deleteButton];
 }
 
+- (void)dealloc {
+    NSLog(@"dealloc");
+}
+
 #pragma mark - 添加/删除
 
 - (void)addButtonClicked {

@@ -47,7 +47,7 @@ static NSInteger const kButtonBeginTag = 1000;
  @param buttonClickedBlock 按钮点击回调
  @return 自定义弹窗实例
  */
-+ (instancetype)showWithTitle:(nullable NSString *)title content:(NSString *)content buttonTitles:(NSArray *)buttonTitles buttonClickedBlock:(nullable void (^)(NSInteger index))buttonClickedBlock {
++ (instancetype)showWithTitle:(nullable NSString *)title content:(NSString *)content buttonTitles:(NSArray <NSString *> *)buttonTitles buttonClickedBlock:(nullable void (^)(NSInteger index))buttonClickedBlock {
     IChuAlertView *alertView = [[IChuAlertView alloc] initWithTitle:title content:content buttonTitles:buttonTitles buttonClickedBlock:buttonClickedBlock];
     [[UIApplication sharedApplication].delegate.window addSubview:alertView];
     [alertView mas_makeConstraints:^(MASConstraintMaker *make) {
